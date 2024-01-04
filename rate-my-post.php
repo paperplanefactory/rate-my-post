@@ -10,8 +10,8 @@
  * Plugin URI:        https://wordpress.org/plugins/rate-my-post/
  * Description:       Allows you to easily add rating functionality to your WordPress website.
  * Version:           3.4.3
- * Author:            Blaz K.
- * Author URI:        https://blazzdev.com
+ * Author:            SurveyWP.
+ * Author URI:        https://surveywp.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       rate-my-post

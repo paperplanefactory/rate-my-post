@@ -11,7 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Rate my Post - WP Rating System allows you to easily add rating functionality to your WordPress website. Visitors can rate your posts/pages and send you private feedback after rating. Functionality to create custom rating widgets that work independently of posts and pages is available in the [PRO version](https://blazzdev.com/products/rate-my-post-pro/).
+Rate my Post - WP Rating System allows you to easily add rating functionality to your WordPress website. Visitors can rate your posts/pages and send you private feedback after rating. Functionality to create custom rating widgets that work independently of posts and pages is available in the [PRO version](https://surveywp.com/).
 
 What sets Rate my Post apart from other WordPress rating plugins is its simplicity, performance and impact on engagement. It works with any page cache plugin and is probably the most customizable free WordPress rating plugin.
 
@@ -35,7 +35,7 @@ While the plugin does not require any coding, it is perfect for developers as we
 
 See:
 
-* **[Documentation](https://blazzdev.com/documentation/rate-my-post-documentation/)**
+* **[Documentation](https://surveywp.com/docs/)**
 
 * **[GitHub](https://github.com/blaz-blazer/rate-my-post)**
 
@@ -53,7 +53,7 @@ It is also possible to embed a rating of whichever post by passing the id of the
 
 = PRO Version =
 
-Rate my Post PRO comes with advanced schema selector which allows you to select schema type directly in the post editor for each post and supports custom rating widgets. Read more about [Rate my Post PRO](https://blazzdev.com/products/rate-my-post-pro/).
+Rate my Post PRO comes with advanced schema selector which allows you to select schema type directly in the post editor for each post and supports custom rating widgets. Read more about [Rate my Post PRO](https://surveywp.com/).
 
 = Components =
 
@@ -209,17 +209,17 @@ The plugin includes five components; rating widget, results widget, social widge
 == Frequently Asked Questions ==
 
 = Support? =
-For support use the support forum, but please do read the guidelines and [documentation](https://blazzdev.com/documentation/rate-my-post-documentation/) before posting.
+For support use the support forum, but please do read the guidelines and [documentation](https://surveywp.com/docs/) before posting.
 = Does it work with caching plugins? =
 Rate my Post works with all caching plugins. If you are using caching plugin other than WP Super Cache, LiteSpeed Cache, WP Fastest Cache, WP Rocket or SG Optimizer, you should enable AJAX load results in the advanced settings.
 = What can be rated? =
 The plugin allows visitors to rate posts, pages and custom post types. It is not possible to rate archives (categories etc.) as the ratings are stored in the post meta. Nevertheless, custom rating widgets are coming soon.
 = The rating widget is displayed multiple times =
-This typically happens with various "page builder" themes. In such cases it's best to include the rating widget with the shortcode [ratemypost] instead of using the automatic option. If that's too much work, you can add it directly to the template of your theme. See the procedure in the [documentation](https://blazzdev.com/documentation/rate-my-post-documentation/) under Troubleshooting -> The “Add rating widget to all posts” feature is not working.
+This typically happens with various "page builder" themes. In such cases it's best to include the rating widget with the shortcode [ratemypost] instead of using the automatic option. If that's too much work, you can add it directly to the template of your theme. See the procedure in the [documentation](https://surveywp.com/docs/) under Troubleshooting -> The “Add rating widget to all posts” feature is not working.
 = Can I have more than one rating widget on a single web page? =
 Yes, it's possible to have multiple rating widgets on a single web page (posts, pages etc.). Nevertheless, this feature only works if ajax load results is disabled.
 = Where do I find the documentation =
-The documentation is available [here](https://blazzdev.com/documentation/rate-my-post-documentation/).
+The documentation is available [here](https://surveywp.com/docs/).
 = The vote count and average rating are not correct on page load =
 Such issues typically appear due to caching. If you are encountering such issues enable Ajax load results in the advanced settings.
 = The plugin stopped working after the update =
@@ -231,17 +231,17 @@ Yes, the plugin is fully compatible with multilingual websites. If you are using
 = Do I have to translate the plugin if my website uses language other than English? =
 Not necessarily because the plugin allows you to customize all frontend strings in the settings. However, backend strings can only be translated with translation files.
 = Does this plugin show rich snippets? =
-The plugin adds structured data for rich snippets, if you choose structured data type in the settings. Note that since September 2019 Google Shows aggregate rating rich snippets only for the following structured data types: Product, Book, Course, CreativeWorkSeason, CreativeWorkSeries, Episode, Game, LocalBusiness, MediaObject, Movie, MusicPlaylist, MusicRecording, Organization, Recipe, HowTo, SoftwareApplication and Event. The plugin supports all these structured data types except HowTo, SoftwareApplication and Event. SoftwareApplication and Event structured data types are available in the [PRO version](https://blazzdev.com/products/rate-my-post-pro/). HowTO is at the moment not supported.
+The plugin adds structured data for rich snippets, if you choose structured data type in the settings. Note that since September 2019 Google Shows aggregate rating rich snippets only for the following structured data types: Product, Book, Course, CreativeWorkSeason, CreativeWorkSeries, Episode, Game, LocalBusiness, MediaObject, Movie, MusicPlaylist, MusicRecording, Organization, Recipe, HowTo, SoftwareApplication and Event. The plugin supports all these structured data types except HowTo, SoftwareApplication and Event. SoftwareApplication and Event structured data types are available in the [PRO version](https://surveywp.com/). HowTO is at the moment not supported.
 = Which structured data type should I choose? =
 You should choose structured data type that fits your blog posts. If your blog posts are recipes than choose Recipe; if they are courses select Course etc. In case your blog posts don't fit any structured data type, then you are according to Google Guidelines not eligible for rich snippets. Learn more about this [here](https://webmasters.googleblog.com/2019/09/making-review-rich-results-more-helpful.html). If you are in doubt about which structured data type to choose (if any) ask for advice on [Google Help Community](https://support.google.com/websearch/community?hl=en). They will provide you with better answers than I can.
 = Optional fields for rich snippets are missing =
-Optional fields are not required for rich snippets to show. Hence, the plugin in some structured data types (for example product) skips the optional fields. The [PRO version](https://blazzdev.com/products/rate-my-post-pro/) of the plugin supports optional fields for all structured data types and provides search engines with a more complete information about pages on your website.
+Optional fields are not required for rich snippets to show. Hence, the plugin in some structured data types (for example product) skips the optional fields. The [PRO version](https://surveywp.com/) of the plugin supports optional fields for all structured data types and provides search engines with a more complete information about pages on your website.
 = Rich snippets are not showing =
 If rich snippets are not showing check that the structured data is valid [here](https://search.google.com/structured-data/testing-tool). If it's valid than search engines probably don't trust your website enough to show rich snippets. You can fix that by producing high-quality content.
 = Where can I see the feedback? =
 You can see the feedback for each post in the post editor at the bottom (meta box). There you can also manipulate ratings and see to which rating the feedback belongs. You can find more info about the rating in the analytics section.
 = How to fix invalid WP token error? =
-The invalid WP token error (refers to WP nonce) appears if a page is cached for more than 24 hours because WordPress nonces are valid for 24 hours. If you get invalid nonce error after rating a post, decrease page cache expiry. Most caching plugins have page cache expiry set to less than 24 hours. Therefore, this problem typically occurs on websites that use multiple page caching solutions. If that's the case on your website try disabling plugins until the error disappears, so you figure out what is causing the issue. You can read more about how to fix this problem [here](https://blazzdev.com/documentation/rate-my-post-documentation/#nonce-info).
+The invalid WP token error (refers to WP nonce) appears if a page is cached for more than 24 hours because WordPress nonces are valid for 24 hours. If you get invalid nonce error after rating a post, decrease page cache expiry. Most caching plugins have page cache expiry set to less than 24 hours. Therefore, this problem typically occurs on websites that use multiple page caching solutions. If that's the case on your website try disabling plugins until the error disappears, so you figure out what is causing the issue. You can read more about how to fix this problem [here](https://surveywp.com/docs/#nonce-info).
 
 == Screenshots ==
 
@@ -331,7 +331,6 @@ The invalid WP token error (refers to WP nonce) appears if a page is cached for 
 * Added double vote protection via user id (applies to logged in users but not admins)
 
 = 3.0.0 =
-* [READ BEFORE UPDATING!!!](https://blazzdev.com/rate-my-post-version-3/)
 * Renamed to Rate my Post - WP Rating System
 * Code refactor, many parts have been rewritten
 * Shortcode accepts post id parameter

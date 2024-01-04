@@ -631,7 +631,7 @@ b) You are limited in the use for publicity purposes of names of
 licensors or authors of the material;
 
 c) You are declined any grant of rights under trademark law for use of
-the trade names, trademarks, or service marks of Blazzdev;
+the trade names, trademarks, or service marks of SurveyWP;
 
 d) You are required to indemnify licensors and authors of that material
 by anyone who conveys the material (or modified versions of it) with

@@ -55,7 +55,7 @@
       </p>
     </div>
     <div class="rmp-pro__link">
-      <a class="rmp-btn rmp-btn--info" href="https://blazzdev.com/products/rate-my-post-pro/" target="_blank">
+      <a class="rmp-btn rmp-btn--info" href="https://surveywp.com/" target="_blank">
         <?php echo ( esc_html__( 'Read More', 'rate-my-post' ) ); ?>
       </a>
     </div>
