@@ -29,16 +29,6 @@ What sets Rate my Post apart from other WordPress rating plugins is its simplici
 * Custom templates for complete customization
 * Works with infinite scroll plugins and popups (implementation requred)
 
-= Developers =
-
-While the plugin does not require any coding, it is perfect for developers as well because it comes with neat hooks and is based on the [WordPress Plugin boilerplate](https://github.com/DevinVinson/WordPress-Plugin-Boilerplate) for a standardized, organized and object-oriented codebase. Since version 3, Webpack is used as a module bundler and Gulp as a task runner.
-
-See:
-
-* **[Documentation](https://surveywp.com/docs/)**
-
-* **[GitHub](https://github.com/blaz-blazer/rate-my-post)**
-
 = Shortcodes =
 
 [ratemypost] - embeds rating widget
@@ -172,22 +162,6 @@ The plugin includes five components; rating widget, results widget, social widge
 11. reCAPTCHA v3 protection
 
 12. Migration tools - easily migrate from kk Star Ratings, YASR or WP-PostRatings
-
-= Translations: =
-
-*Please help translate the plugin to your language [here](https://translate.wordpress.org/projects/wp-plugins/rate-my-post/). The plugin also comes with POT file if you prefer using software such as [Poedit](https://poedit.net/).*
-
-1. German translations thanks to the great German community [see contributors](https://translate.wordpress.org/locale/de/default/wp-plugins/rate-my-post/)
-
-2. Portuguese (Brazil) translations thanks to Douglas [douglasferraz89](https://profiles.wordpress.org/douglasferraz89/)
-
-3. Spanish (Costa Rica) translations thanks to Mario [marbaque](https://profiles.wordpress.org/marbaque/)
-
-4. Spanish (Spain) translations thanks to Javier Esteban [nobnob](https://wordpress.org/support/users/nobnob/)
-
-5. Chinese (China) translations thanks to [lufffy](https://profiles.wordpress.org/lufffy/)
-
-6. Russian translations thanks to Mikhail Alferov [malferov](https://profiles.wordpress.org/malferov/)
 
 == Installation ==
 
