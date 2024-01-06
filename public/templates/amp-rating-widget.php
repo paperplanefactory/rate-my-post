@@ -22,7 +22,7 @@
   $custom_class = $this->custom_class( $post_id );
 ?>
 
-<!-- Rate my Post Plugin - Rating Widget -->
+<!-- Rate My Post Plugin - Rating Widget -->
 <!-- Inspired by AMP by Example - https://ampbyexample.com/advanced/star_rating/ -->
 
 <div class="<?php echo esc_attr( 'rmp-amp-rating-widget ' . $custom_class ); ?>">

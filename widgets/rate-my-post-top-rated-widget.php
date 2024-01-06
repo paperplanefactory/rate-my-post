@@ -14,9 +14,9 @@
    public function __construct() {
      parent::__construct(
        'rate-my-post-top-rated-widget', // Base ID
-       'Top Rated Posts by Rate my Post', // Name
+       'Top Rated Posts by Rate My Post', // Name
        array(
-         'description' => __( 'Displays top rated posts from Rate my Post plugin.', 'rate-my-post' ),
+         'description' => __( 'Displays top rated posts from Rate My Post plugin.', 'rate-my-post' ),
        ) // Args
      );
    }
@@ -42,7 +42,7 @@
       }
 
       ?>
-        <!-- Rate my Post - Top Rated Posts Widget -->
+        <!-- Rate My Post - Top Rated Posts Widget -->
         <div class="rmp-tr-posts-widget">
           <?php foreach ( $topRatedPosts as $post ): ?>
             <div class="rmp-tr-posts-widget__post">
@@ -67,7 +67,7 @@
             </div>
           <?php endforeach; ?>
         </div>
-        <!-- End Rate my Post - Top Rated Posts Widget -->
+        <!-- End Rate My Post - Top Rated Posts Widget -->
       <?php
 
       echo $after_widget;

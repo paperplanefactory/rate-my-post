@@ -49,7 +49,7 @@
           </option>
         </select>
         <p class="rmp-tab-content__notice">
-          <?php echo ( esc_html__( 'Rate my Post supports the following icons: Stars, thumbs and hearts', 'rate-my-post' ) ); ?>.
+          <?php echo ( esc_html__( 'Rate My Post supports the following icons: Stars, thumbs and hearts', 'rate-my-post' ) ); ?>.
         </p>
       </td>
       <td>
@@ -220,7 +220,7 @@
             <?php echo ( esc_html__( 'AMP compatibility mode', 'rate-my-post' ) ); ?>
           </label>
           <p class="rmp-tab-content__notice">
-            <?php echo sprintf( esc_html__('Adds a minimalistic rating and results widget on AMP pages. See the %sdocumentation%s', 'rate-my-post'), '<a href="https://surveywp.com/docs/#AMP_Compatibility_BETA" target="_blank">', '</a>' ); ?>.
+            <?php echo sprintf( esc_html__('Adds a minimalistic rating and results widget on AMP pages. See the %sdocumentation%s', 'rate-my-post'), '<a href="https://feedbackwp.com/docs/#AMP_Compatibility_BETA" target="_blank">', '</a>' ); ?>.
           </p>
         </td>
         <td>
@@ -263,7 +263,7 @@
     <option value="Recipe" <?php echo ($rmp_options['structuredDataType'] === 'Recipe') ? 'selected="selected"':""; ?>>Recipe</option>
   </select>
   <p class="rmp-tab-content__notice">
-    <?php echo sprintf( esc_html__('For more information about structured data and rich snippets see the %sdocumentation%s', 'rate-my-post'), '<a href="https://surveywp.com/docs/#Changing_the_schema_type" target="_blank">', '</a>' ); ?>.
+    <?php echo sprintf( esc_html__('For more information about structured data and rich snippets see the %sdocumentation%s', 'rate-my-post'), '<a href="https://feedbackwp.com/docs/#Changing_the_schema_type" target="_blank">', '</a>' ); ?>.
   </p>
 
   <label class="rmp-tab-content__label" for="rmp-exclude">
@@ -278,7 +278,7 @@
   >
   <p class="rmp-tab-content__notice">
     <?php echo ( esc_html__( 'Insert comma separated post/page IDs', 'rate-my-post' ) ); ?>.
-    <a href="https://surveywp.com/docs/#exclude" target="_blank"><?php echo ( esc_html__( 'Read more', 'rate-my-post' ) ); ?> &raquo;</a>
+    <a href="https://feedbackwp.com/docs/#exclude" target="_blank"><?php echo ( esc_html__( 'Read more', 'rate-my-post' ) ); ?> &raquo;</a>
   </p>
 
   <label class="rmp-tab-content__label" for="rmp-negative-positive">

@@ -24,12 +24,12 @@
 
 <div class="rmp-tab-content js-rmp-tab-content js-rmp-tab-content--6">
   <h2 class="rmp-tab-content__title">
-    <?php echo ( esc_html__( 'Rate my Post Pro', 'rate-my-post' ) ); ?>
+    <?php echo ( esc_html__( 'Rate My Post Pro', 'rate-my-post' ) ); ?>
   </h2>
   <div class="rmp-pro">
 
     <p class="rmp-pro__subtitle">
-      <?php echo ( esc_html__( 'Rate my Post Pro in addition to the free features also includes:', 'rate-my-post' ) ); ?>
+      <?php echo ( esc_html__( 'Rate My Post Pro in addition to the free features also includes:', 'rate-my-post' ) ); ?>
     </p>
     <div class="rmp-pro__features">
       <p class="rmp-pro__feature">
@@ -55,7 +55,7 @@
       </p>
     </div>
     <div class="rmp-pro__link">
-      <a class="rmp-btn rmp-btn--info" href="https://surveywp.com/" target="_blank">
+      <a class="rmp-btn rmp-btn--info" href="https://feedbackwp.com/" target="_blank">
         <?php echo ( esc_html__( 'Read More', 'rate-my-post' ) ); ?>
       </a>
     </div>

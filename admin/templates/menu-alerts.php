@@ -27,7 +27,7 @@
 <?php if ( ! current_user_can( 'manage_options' ) ): ?>
 <div class="rmp-alert">
   <p class="rmp-alert__text">
-    <?php echo ( esc_html__( 'You need to be logged in as administrator to save settings for Rate my Post plugin', 'rate-my-post' ) ); ?>.
+    <?php echo ( esc_html__( 'You need to be logged in as administrator to save settings for Rate My Post plugin', 'rate-my-post' ) ); ?>.
   </p>
 </div>
 <?php endif; ?>
@@ -35,7 +35,7 @@
 <?php if ( version_compare( $wp_version, '4.7.0' ) < 0 ): ?>
   <div class="rmp-alert">
     <p class="rmp-alert__text">
-      <?php echo ( esc_html__( 'Rate my Post requires WordPress version 4.7.0 or higher. Please update your WordPress', 'rate-my-post' ) ); ?>.
+      <?php echo ( esc_html__( 'Rate My Post requires WordPress version 4.7.0 or higher. Please update your WordPress', 'rate-my-post' ) ); ?>.
     </p>
   </div>
 <?php endif; ?>

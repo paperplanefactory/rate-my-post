@@ -27,7 +27,7 @@
 
 <div class="rmp-menu js-rmp-menu">
   <h1 class="rmp-menu__title">
-    Rate my Post
+    Rate My Post
   </h1>
   <!-- tabs -->
   <div class="rmp-menu__tabs">

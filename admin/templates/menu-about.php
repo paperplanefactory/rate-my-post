@@ -30,14 +30,14 @@
   <div class="rmp-about">
 
     <p class="rmp-about__text">
-      <?php echo sprintf( ( esc_html__( 'Hi there,%s Thank you for installing Rate my Post plugin. If you like the plugin please rate it %shere%s - it will take you 5 minutes (less if you are already registered on WordPress) and it means a lot to me since I made this plugin completely for free. If you encounter problems with the plugin, let me know in the %ssupport forum%s. I hope you will enjoy the plugin.', 'rate-my-post' ) ), '<br />', '<a href="https://wordpress.org/support/plugin/rate-my-post/reviews/" target="_blank">', '</a>', '<a href="https://wordpress.org/support/plugin/rate-my-post/" target="_blank">', '</a>'); ?>
+      <?php echo sprintf( ( esc_html__( 'Hi there,%s Thank you for installing Rate My Post plugin. If you like the plugin please rate it %shere%s - it will take you 5 minutes (less if you are already registered on WordPress) and it means a lot to me since I made this plugin completely for free. If you encounter problems with the plugin, let me know in the %ssupport forum%s. I hope you will enjoy the plugin.', 'rate-my-post' ) ), '<br />', '<a href="https://wordpress.org/support/plugin/rate-my-post/reviews/" target="_blank">', '</a>', '<a href="https://wordpress.org/support/plugin/rate-my-post/" target="_blank">', '</a>'); ?>
     </p>
 
     <div class="rmp-about__links">
-      <a class="rmp-about__links__link rmp-btn rmp-btn--info" target="_blank" href="https://surveywp.com/">
+      <a class="rmp-about__links__link rmp-btn rmp-btn--info" target="_blank" href="https://feedbackwp.com/">
         <?php echo ( esc_html__( 'Website', 'rate-my-post' ) ); ?>
       </a>
-      <a class="rmp-about__links__link rmp-btn rmp-btn--info" target="_blank" href="https://surveywp.com/docs/">
+      <a class="rmp-about__links__link rmp-btn rmp-btn--info" target="_blank" href="https://feedbackwp.com/docs/">
         <?php echo ( esc_html__( 'Documentation', 'rate-my-post' ) ); ?>
       </a>
       <p class="rmp-about__links__text">

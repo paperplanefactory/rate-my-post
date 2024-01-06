@@ -3,15 +3,15 @@
 /**
  * @link              http://wordpress.org/plugins/rate-my-post/
  * @since             2.0.0
- * @package           Rate my Post
+ * @package           Rate My Post
  *
  * @wordpress-plugin
- * Plugin Name: 	  	Rate my Post - WP Rating System
- * Plugin URI:        https://wordpress.org/plugins/rate-my-post/
+ * Plugin Name: 	  	Rate My Post - WP Rating System by FeedbackWP
+ * Plugin URI:        https://feedbackwp.com
  * Description:       Allows you to easily add rating functionality to your WordPress website.
- * Version:           3.4.3
- * Author:            SurveyWP.
- * Author URI:        https://surveywp.com
+ * Version:           3.4.4
+ * Author:            FeedbackWP
+ * Author URI:        https://feedbackwp.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       rate-my-post
@@ -34,7 +34,7 @@ function rmp_disable_notice() {
 	?>
     <div class="rmp-admin-notice notice notice-error">
         <h2>
-					Rate my Post <?php echo esc_html__('Notice: Plugin Deactivated', 'rate-my-post'); ?>
+					Rate My Post <?php echo esc_html__('Notice: Plugin Deactivated', 'rate-my-post'); ?>
 				</h2>
 				<p>
 					<?php echo esc_html__('Plugin has been deactivated because the PRO version was detected.', 'rate-my-post'); ?>
@@ -44,7 +44,8 @@ function rmp_disable_notice() {
 }
 
 // Plugin version
-define( 'RATE_MY_POST_VERSION', '3.4.3' );
+define( 'RATE_MY_POST_VERSION', '3.4.4' );
+define('RATE_MY_POST_SYSTEM_FILE_PATH', __FILE__);
 
 // Plugin activation
 function activate_rate_my_post() {

@@ -1,19 +1,19 @@
-=== Rate my Post - WP Rating System ===
-Contributors: blazk
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HJH3AS8TP8FEC&source=url
+=== Rate My Post - WP Rating System by FeedbackWP ===
+Contributors: blazk, collizo4sky, properfraction
+Donate link: https://feedbackwp.com/pricing/
 Tags: Rating System, Rate Post, Rate Page, Star Rating, Post Rating, Post Feedback, Page Feedback, Responsive Star Rating, Lightweight Post Rating, Ajax Post Rating, Post Rating Analytics, Post Rating, Rich Snippet
 Requires at least: 4.7.0
 Tested up to: 6.4
-Stable tag: 3.4.3
+Stable tag: 3.4.4
 Requires PHP: 5.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Rate my Post - WP Rating System allows you to easily add rating functionality to your WordPress website. Visitors can rate your posts/pages and send you private feedback after rating. Functionality to create custom rating widgets that work independently of posts and pages is available in the [PRO version](https://surveywp.com/).
+Rate My Post - WP Rating System by FeedbackWP allows you to easily add rating functionality to your WordPress website. Visitors can rate your posts/pages and send you private feedback after rating. Functionality to create custom rating widgets that work independently of posts and pages is available in the [PRO version](https://feedbackwp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
 
-What sets Rate my Post apart from other WordPress rating plugins is its simplicity, performance and impact on engagement. It works with any page cache plugin and is probably the most customizable free WordPress rating plugin.
+What sets Rate My Post apart from other WordPress rating plugins is its simplicity, performance and impact on engagement. It works with any page cache plugin and is probably the most customizable free WordPress rating plugin.
 
 = Highlights =
 
@@ -29,6 +29,10 @@ What sets Rate my Post apart from other WordPress rating plugins is its simplici
 * Custom templates for complete customization
 * Works with infinite scroll plugins and popups (implementation requred)
 
+> <strong>FeedbackWP Premium</strong><br />
+> This is the lite version of [FeedbackWP Premium](https://feedbackwp.com/pricing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) rating plugin with structured data for rich snippets. <a href="https://feedbackwp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion">Click here to purchase the best WordPress feedback, star rating and rate my post plugin.</a>
+
+
 = Shortcodes =
 
 [ratemypost] - embeds rating widget
@@ -41,9 +45,9 @@ It is also possible to embed a rating of whichever post by passing the id of the
 
 [ratemypost-result id="1"] - embeds results widget for the post with the id of 1
 
-= PRO Version =
+= FeedbackWP Premium =
 
-Rate my Post PRO comes with advanced schema selector which allows you to select schema type directly in the post editor for each post and supports custom rating widgets. Read more about [Rate my Post PRO](https://surveywp.com/).
+[FeedbackWP Premium](https://feedbackwp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) comes with advanced schema selector which allows you to select schema type directly in the post editor for each post and supports custom rating widgets. Read more about [FeedbackWP Premium](https://feedbackwp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
 
 = Components =
 
@@ -137,7 +141,7 @@ The plugin includes five components; rating widget, results widget, social widge
 
 5. Option to show visual rating
 
-= Why use Rate my Post? =
+= Why use Rate My Post? =
 
 1. Increase engagement
 
@@ -167,33 +171,33 @@ The plugin includes five components; rating widget, results widget, social widge
 
 **From the Dashboard (Recommended)**:
 1. Navigate to Dashboard -> Plugins -> Add New
-2. Search for Rate my Post
+2. Search for Rate My Post
 3. Click Install
 4. Click Activate
-5. Click Rate my Post -> Settings in the main menu and configure the plugin
+5. Click Rate My Post -> Settings in the main menu and configure the plugin
 6. Add shortcode [ratemypost] to your posts or embed rating widgets automatically in the Settings
 
 **Manual Installation**:
 1. Unzip downloaded archive and upload rate-my-post folder under your /wp-content/plugins/ directory
 2. Navigate to Dashboard -> Plugins
 3. Click Activate
-4. Click Rate my Post -> Settings in the main menu and configure the plugin
+4. Click Rate My Post -> Settings in the main menu and configure the plugin
 5. Add shortcode [ratemypost] to your posts or embed rating widgets automatically in the Settings
 
 == Frequently Asked Questions ==
 
 = Support? =
-For support use the support forum, but please do read the guidelines and [documentation](https://surveywp.com/docs/) before posting.
+For support use the support forum, but please do read the guidelines and [documentation](https://feedbackwp.com/docs/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) before posting.
 = Does it work with caching plugins? =
-Rate my Post works with all caching plugins. If you are using caching plugin other than WP Super Cache, LiteSpeed Cache, WP Fastest Cache, WP Rocket or SG Optimizer, you should enable AJAX load results in the advanced settings.
+Rate My Post works with all caching plugins. If you are using caching plugin other than WP Super Cache, LiteSpeed Cache, WP Fastest Cache, WP Rocket or SG Optimizer, you should enable AJAX load results in the advanced settings.
 = What can be rated? =
 The plugin allows visitors to rate posts, pages and custom post types. It is not possible to rate archives (categories etc.) as the ratings are stored in the post meta. Nevertheless, custom rating widgets are coming soon.
 = The rating widget is displayed multiple times =
-This typically happens with various "page builder" themes. In such cases it's best to include the rating widget with the shortcode [ratemypost] instead of using the automatic option. If that's too much work, you can add it directly to the template of your theme. See the procedure in the [documentation](https://surveywp.com/docs/) under Troubleshooting -> The “Add rating widget to all posts” feature is not working.
+This typically happens with various "page builder" themes. In such cases it's best to include the rating widget with the shortcode [ratemypost] instead of using the automatic option. If that's too much work, you can add it directly to the template of your theme. See the procedure in the [documentation](https://feedbackwp.com/docs/) under Troubleshooting -> The “Add rating widget to all posts” feature is not working.
 = Can I have more than one rating widget on a single web page? =
 Yes, it's possible to have multiple rating widgets on a single web page (posts, pages etc.). Nevertheless, this feature only works if ajax load results is disabled.
 = Where do I find the documentation =
-The documentation is available [here](https://surveywp.com/docs/).
+The documentation is available [here](https://feedbackwp.com/docs/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
 = The vote count and average rating are not correct on page load =
 Such issues typically appear due to caching. If you are encountering such issues enable Ajax load results in the advanced settings.
 = The plugin stopped working after the update =
@@ -205,17 +209,17 @@ Yes, the plugin is fully compatible with multilingual websites. If you are using
 = Do I have to translate the plugin if my website uses language other than English? =
 Not necessarily because the plugin allows you to customize all frontend strings in the settings. However, backend strings can only be translated with translation files.
 = Does this plugin show rich snippets? =
-The plugin adds structured data for rich snippets, if you choose structured data type in the settings. Note that since September 2019 Google Shows aggregate rating rich snippets only for the following structured data types: Product, Book, Course, CreativeWorkSeason, CreativeWorkSeries, Episode, Game, LocalBusiness, MediaObject, Movie, MusicPlaylist, MusicRecording, Organization, Recipe, HowTo, SoftwareApplication and Event. The plugin supports all these structured data types except HowTo, SoftwareApplication and Event. SoftwareApplication and Event structured data types are available in the [PRO version](https://surveywp.com/). HowTO is at the moment not supported.
+The plugin adds structured data for rich snippets, if you choose structured data type in the settings. Note that since September 2019 Google Shows aggregate rating rich snippets only for the following structured data types: Product, Book, Course, CreativeWorkSeason, CreativeWorkSeries, Episode, Game, LocalBusiness, MediaObject, Movie, MusicPlaylist, MusicRecording, Organization, Recipe, HowTo, SoftwareApplication and Event. The plugin supports all these structured data types except HowTo, SoftwareApplication and Event. SoftwareApplication and Event structured data types are available in the [PRO version](https://feedbackwp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion). HowTO is at the moment not supported.
 = Which structured data type should I choose? =
 You should choose structured data type that fits your blog posts. If your blog posts are recipes than choose Recipe; if they are courses select Course etc. In case your blog posts don't fit any structured data type, then you are according to Google Guidelines not eligible for rich snippets. Learn more about this [here](https://webmasters.googleblog.com/2019/09/making-review-rich-results-more-helpful.html). If you are in doubt about which structured data type to choose (if any) ask for advice on [Google Help Community](https://support.google.com/websearch/community?hl=en). They will provide you with better answers than I can.
 = Optional fields for rich snippets are missing =
-Optional fields are not required for rich snippets to show. Hence, the plugin in some structured data types (for example product) skips the optional fields. The [PRO version](https://surveywp.com/) of the plugin supports optional fields for all structured data types and provides search engines with a more complete information about pages on your website.
+Optional fields are not required for rich snippets to show. Hence, the plugin in some structured data types (for example product) skips the optional fields. The [PRO version](https://feedbackwp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) of the plugin supports optional fields for all structured data types and provides search engines with a more complete information about pages on your website.
 = Rich snippets are not showing =
 If rich snippets are not showing check that the structured data is valid [here](https://search.google.com/structured-data/testing-tool). If it's valid than search engines probably don't trust your website enough to show rich snippets. You can fix that by producing high-quality content.
 = Where can I see the feedback? =
 You can see the feedback for each post in the post editor at the bottom (meta box). There you can also manipulate ratings and see to which rating the feedback belongs. You can find more info about the rating in the analytics section.
 = How to fix invalid WP token error? =
-The invalid WP token error (refers to WP nonce) appears if a page is cached for more than 24 hours because WordPress nonces are valid for 24 hours. If you get invalid nonce error after rating a post, decrease page cache expiry. Most caching plugins have page cache expiry set to less than 24 hours. Therefore, this problem typically occurs on websites that use multiple page caching solutions. If that's the case on your website try disabling plugins until the error disappears, so you figure out what is causing the issue. You can read more about how to fix this problem [here](https://surveywp.com/docs/#nonce-info).
+The invalid WP token error (refers to WP nonce) appears if a page is cached for more than 24 hours because WordPress nonces are valid for 24 hours. If you get invalid nonce error after rating a post, decrease page cache expiry. Most caching plugins have page cache expiry set to less than 24 hours. Therefore, this problem typically occurs on websites that use multiple page caching solutions. If that's the case on your website try disabling plugins until the error disappears, so you figure out what is causing the issue. You can read more about how to fix this problem [here](https://feedbackwp.com/docs/#nonce-info).
 
 == Screenshots ==
 
@@ -228,6 +232,10 @@ The invalid WP token error (refers to WP nonce) appears if a page is cached for 
 7. Manipulate Votes
 
 == Changelog ==
+
+= 3.4.4 =
+* Improved compatibility with latest WP and PHP 8.
+
 = 3.4.3 =
 * Security fix - reported by [Patchstack](https://patchstack.com/)
 * Change compatible to version
@@ -305,7 +313,7 @@ The invalid WP token error (refers to WP nonce) appears if a page is cached for 
 * Added double vote protection via user id (applies to logged in users but not admins)
 
 = 3.0.0 =
-* Renamed to Rate my Post - WP Rating System
+* Renamed to Rate My Post - WP Rating System
 * Code refactor, many parts have been rewritten
 * Shortcode accepts post id parameter
 * Average rating is now stored in post meta
