@@ -268,6 +268,9 @@ class Rate_My_Post_Public {
 
 			// variables
 			$post_id = intval( $_POST['postID'] );
+			if(get_post_status($post_id) == 'private') {
+				die();
+			}
 			$security_options = get_option( 'rmp_security' );
 			$custom_strings = $this->custom_strings( $post_id );
 			$submitted_rating = intval( $_POST['star_rating'] );
@@ -372,6 +375,9 @@ class Rate_My_Post_Public {
 			// variables
 			$options = get_option( 'rmp_options' );
 			$post_id = intval( $_POST['postID'] );
+			if(get_post_status($post_id) == 'private') {
+				die();
+			}
 			$security_options = get_option( 'rmp_security' );
 			$custom_strings = $this->custom_strings( $post_id );
 			$submitted_rating = intval( $_POST['star_rating'] );
