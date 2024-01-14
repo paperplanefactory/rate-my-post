@@ -11,7 +11,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Rate My Post - WP Rating System by FeedbackWP allows you to easily add rating functionality to your WordPress website. Visitors can rate your posts/pages and send you private feedback after rating. Functionality to create custom rating widgets that work independently of posts and pages is available in the [PRO version](https://feedbackwp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
+Rate My Post - WP Rating System by FeedbackWP allows you to easily add rating functionality to your WordPress website. Visitors can rate your posts/pages and send you private feedback after rating.
+
+Functionality to add rating and result widget to custom post types, use different rating icons, create custom rating widgets that work independently of posts and pages is available in the [Premium Version](https://feedbackwp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
 
 What sets Rate My Post apart from other WordPress rating plugins is its simplicity, performance and impact on engagement. It works with any page cache plugin and is probably the most customizable free WordPress rating plugin.
 
@@ -49,6 +51,8 @@ It is also possible to embed a rating of whichever post by passing the id of the
 
 [FeedbackWP Premium](https://feedbackwp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) comes with advanced schema selector which allows you to select schema type directly in the post editor for each post and supports custom rating widgets. Read more about [FeedbackWP Premium](https://feedbackwp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
 
+Option to add rating and feedback result widgets to Custom Post Types (CPT), support for a different icon other than the Star icon are available in [FeedbackWP Premium](https://feedbackwp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
+
 = Components =
 
 The plugin includes five components; rating widget, results widget, social widget, feedback widget and top rated posts widget.
@@ -62,8 +66,6 @@ The plugin includes five components; rating widget, results widget, social widge
 2. Add rating widget to any page/post with shortcode: [ratemypost]
 
 3. Add rating widget to all posts or pages with one click in the settings
-
-4. Option to automatically include rating widget to custom post types
 
 5. Exclude rating widget from certain pages and posts - such as About Us page etc.
 
@@ -100,8 +102,6 @@ The plugin includes five components; rating widget, results widget, social widge
 2. Add results widget to any page/post with shortcode: [ratemypost-result]
 
 3. Add results widget to all posts or pages with one click in the settings
-
-4. Option to automatically include results widget to custom post types
 
 **Feedback Widget Features:**
 
@@ -209,11 +209,11 @@ Yes, the plugin is fully compatible with multilingual websites. If you are using
 = Do I have to translate the plugin if my website uses language other than English? =
 Not necessarily because the plugin allows you to customize all frontend strings in the settings. However, backend strings can only be translated with translation files.
 = Does this plugin show rich snippets? =
-The plugin adds structured data for rich snippets, if you choose structured data type in the settings. Note that since September 2019 Google Shows aggregate rating rich snippets only for the following structured data types: Product, Book, Course, CreativeWorkSeason, CreativeWorkSeries, Episode, Game, LocalBusiness, MediaObject, Movie, MusicPlaylist, MusicRecording, Organization, Recipe, HowTo, SoftwareApplication and Event. The plugin supports all these structured data types except HowTo, SoftwareApplication and Event. SoftwareApplication and Event structured data types are available in the [PRO version](https://feedbackwp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion). HowTO is at the moment not supported.
+The plugin adds structured data for rich snippets, if you choose structured data type in the settings. Note that since September 2019 Google Shows aggregate rating rich snippets only for the following structured data types: Product, Book, Course, CreativeWorkSeason, CreativeWorkSeries, Episode, Game, LocalBusiness, MediaObject, Movie, MusicPlaylist, MusicRecording, Organization, Recipe, HowTo, SoftwareApplication and Event. The plugin supports all these structured data types except HowTo, SoftwareApplication and Event. SoftwareApplication and Event structured data types are available in the [Premium version](https://feedbackwp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion). HowTO is at the moment not supported.
 = Which structured data type should I choose? =
 You should choose structured data type that fits your blog posts. If your blog posts are recipes than choose Recipe; if they are courses select Course etc. In case your blog posts don't fit any structured data type, then you are according to Google Guidelines not eligible for rich snippets. Learn more about this [here](https://webmasters.googleblog.com/2019/09/making-review-rich-results-more-helpful.html). If you are in doubt about which structured data type to choose (if any) ask for advice on [Google Help Community](https://support.google.com/websearch/community?hl=en). They will provide you with better answers than I can.
 = Optional fields for rich snippets are missing =
-Optional fields are not required for rich snippets to show. Hence, the plugin in some structured data types (for example product) skips the optional fields. The [PRO version](https://feedbackwp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) of the plugin supports optional fields for all structured data types and provides search engines with a more complete information about pages on your website.
+Optional fields are not required for rich snippets to show. Hence, the plugin in some structured data types (for example product) skips the optional fields. The [Premium version](https://feedbackwp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) of the plugin supports optional fields for all structured data types and provides search engines with a more complete information about pages on your website.
 = Rich snippets are not showing =
 If rich snippets are not showing check that the structured data is valid [here](https://search.google.com/structured-data/testing-tool). If it's valid than search engines probably don't trust your website enough to show rich snippets. You can fix that by producing high-quality content.
 = Where can I see the feedback? =
