@@ -15,6 +15,13 @@
   if ( ! defined( 'WPINC' ) ) {
   	die;
   }
+
+  $pro_icon_types = [
+      esc_html__( 'Thumbs', 'rate-my-post' ),
+      esc_html__( 'Hearts', 'rate-my-post' ),
+      esc_html__( 'Smileys', 'rate-my-post' ),
+      esc_html__( 'Trophies', 'rate-my-post' )
+  ]
 ?>
 
 <?php $rmp_options = get_option( 'rmp_options' ); ?>
@@ -32,21 +39,15 @@
           <?php echo ( esc_html__( 'Type of rating widget', 'rate-my-post' ) ); ?>
         </label>
         <select class="rmp-tab-content__select js-rmp-option" data-key="icon_type">
+
           <option value="1" <?php echo ($rmp_options['icon_type'] === 1) ? 'selected="selected"':''; ?>>
             <?php echo ( esc_html__( 'Stars', 'rate-my-post' ) ); ?>
           </option>
-          <option value="2" <?php echo ($rmp_options['icon_type'] === 2) ? 'selected="selected"':''; ?>>
-            <?php echo ( esc_html__( 'Thumbs', 'rate-my-post' ) ); ?>
-          </option>
-          <option value="3" <?php echo ($rmp_options['icon_type'] === 3) ? 'selected="selected"':''; ?>>
-            <?php echo ( esc_html__( 'Hearts', 'rate-my-post' ) ); ?>
-          </option>
-          <option value="4" <?php echo ($rmp_options['icon_type'] === 4) ? 'selected="selected"':''; ?>>
-            <?php echo ( esc_html__( 'Smileys', 'rate-my-post' ) ); ?>
-          </option>
-          <option value="5" <?php echo ($rmp_options['icon_type'] === 5) ? 'selected="selected"':''; ?>>
-            <?php echo ( esc_html__( 'Trophies', 'rate-my-post' ) ); ?>
-          </option>
+          <?php foreach ($pro_icon_types as $pro_icon_type) : ?>
+            <option disabled value="">
+              <?php printf('%s (%s)', $pro_icon_type, esc_html__('Premium Upgrade')) ?>
+            </option>
+          <?php endforeach; ?>
         </select>
         <p class="rmp-tab-content__notice">
           <?php echo ( esc_html__( 'Rate My Post supports the following icons: Stars, thumbs and hearts', 'rate-my-post' ) ); ?>.
@@ -465,55 +466,6 @@
       </td>
     </tr>
   </table>
-
-  <hr class="rmp-tab-content__divider" />
-  <!-- CPT Settings -->
-  <h2 class="rmp-tab-content__title">
-    <?php echo ( esc_html__( 'Custom Post Types', 'rate-my-post' ) ); ?>
-  </h2>
-
-  <label class="rmp-tab-content__label" for="rmp-custom-post-types-rating">
-    <?php echo ( esc_html__( 'Add rating widget automatically to custom post types', 'rate-my-post' ) ); ?>:
-  </label>
-  <input
-    type="text"
-    class="rmp-tab-content__input js-rmp-option js-rmp-cpt-rating-input"
-    id="rmp-custom-post-types-rating"
-    data-key="cptRating"
-    value="<?php echo esc_html( implode(',', $rmp_options['cptRating'] ) ); ?>"
-  >
-
-  <p class="rmp-tab-content__notice">
-    <?php echo ( esc_html__( 'Insert comma separated post types. Registered custom post types', 'rate-my-post' ) ); ?>:
-    <?php if ( $this->custom_post_types() ): ?>
-      <span class="rmp-tab-content__notice__selectable js-rmp-cpt-rating">
-        <?php echo $this->custom_post_types(); ?>
-      </span>
-    <?php else: ?>
-      <span>/</span>
-    <?php endif; ?>
-  </p>
-
-  <label class="rmp-tab-content__label" for="rmp-custom-post-types-result">
-    <?php echo ( esc_html__( 'Add result widget automatically to custom post types', 'rate-my-post' ) ); ?>:
-  </label>
-  <input
-    type="text"
-    class="rmp-tab-content__input js-rmp-option js-rmp-cpt-results-input"
-    id="rmp-custom-post-types-result"
-    data-key="cptResult"
-    value="<?php echo esc_html( implode(',', $rmp_options['cptResult'] ) ); ?>"
-  >
-  <p class="rmp-tab-content__notice">
-    <?php echo ( esc_html__( 'Insert comma separated post types. Registered custom post types', 'rate-my-post' ) ); ?>:
-    <?php if ( $this->custom_post_types() ): ?>
-      <span class="rmp-tab-content__notice__selectable js-rmp-cpt-results">
-        <?php echo $this->custom_post_types(); ?>
-      </span>
-    <?php else: ?>
-      <span>/</span>
-    <?php endif; ?>
-  </p>
 
   <hr class="rmp-tab-content__divider" />
 

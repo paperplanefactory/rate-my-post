@@ -33,6 +33,12 @@
     </p>
     <div class="rmp-pro__features">
       <p class="rmp-pro__feature">
+        <?php echo ( esc_html__( 'Add rating to custom post types.', 'rate-my-post' ) ); ?>
+      </p>
+      <p class="rmp-pro__feature">
+        <?php echo ( esc_html__( 'Support for different rating icons other than Stars.', 'rate-my-post' ) ); ?>
+      </p>
+      <p class="rmp-pro__feature">
         <?php echo ( esc_html__( 'Add structured data for rich snippets with not only the required fields but also the optional fields.', 'rate-my-post' ) ); ?>
       </p>
       <p class="rmp-pro__feature">
