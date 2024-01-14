@@ -16,7 +16,7 @@
   $avg_rating = Rate_My_Post_Common::get_average_rating( $post_id );
   $visual_rating = self::get_visual_rating( $post_id );
 ?>
-<!-- Rate My Post Plugin - Results Widget -->
+<!-- FeedbackWP Plugin - Results Widget -->
 <div class="rmp-amp-results-widget">
   <div class="rmp-amp-results-widget__stars">
     <?php echo $visual_rating; ?>

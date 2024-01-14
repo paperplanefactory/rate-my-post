@@ -17,13 +17,13 @@ class Rate_My_Post {
 	// Registers all hooks for the plugin
 	protected $loader;
 
-	// Rate My Post - string
+	// FeedbackWP - string
 	protected $rate_my_post;
 
 	//Plugin current version - string
 	protected $version;
 
-    // Set the Rate My Post and the plugin version, and fire the methods!
+    // Set the FeedbackWP and the plugin version, and fire the methods!
 	public function __construct() {
 		if ( defined( 'RATE_MY_POST_VERSION' ) ) {
 			$this->version = RATE_MY_POST_VERSION;
@@ -167,7 +167,7 @@ class Rate_My_Post {
 		$this->loader->run();
 	}
 
-	// Rate My Post for identification
+	// FeedbackWP for identification
 	public function get_rate_my_post() {
 		return $this->rate_my_post;
 	}

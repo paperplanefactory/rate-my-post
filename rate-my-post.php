@@ -3,10 +3,10 @@
 /**
  * @link              http://wordpress.org/plugins/rate-my-post/
  * @since             2.0.0
- * @package           Rate My Post
+ * @package           FeedbackWP
  *
  * @wordpress-plugin
- * Plugin Name: 	  	Rate My Post - WP Rating System by FeedbackWP
+ * Plugin Name: 	  	FeedbackWP - WP Rating System by FeedbackWP
  * Plugin URI:        https://feedbackwp.com
  * Description:       Allows you to easily add rating functionality to your WordPress website.
  * Version:           3.4.5
@@ -34,7 +34,7 @@ function rmp_disable_notice() {
 	?>
     <div class="rmp-admin-notice notice notice-error">
         <h2>
-					Rate My Post <?php echo esc_html__('Notice: Plugin Deactivated', 'rate-my-post'); ?>
+					FeedbackWP <?php echo esc_html__('Notice: Plugin Deactivated', 'rate-my-post'); ?>
 				</h2>
 				<p>
 					<?php echo esc_html__('Plugin has been deactivated because the PRO version was detected.', 'rate-my-post'); ?>

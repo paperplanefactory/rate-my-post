@@ -23,7 +23,7 @@
 ?>
 <div class="rmp-analytics js-rmp-orderly-tables">
   <h1 class="rmp-analytics__title">
-    <?php echo ( esc_html__( 'Rate My Post Analytics', 'rate-my-post' ) ); ?>
+    <?php echo ( esc_html__( 'FeedbackWP Analytics', 'rate-my-post' ) ); ?>
   </h1>
   <p class="rmp-analytics__notice">
     <?php echo ( esc_html__( 'Here you can see the details about the last 100 votes on your website.', 'rate-my-post' ) ); ?>

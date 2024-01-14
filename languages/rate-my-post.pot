@@ -114,11 +114,11 @@ msgid "You've been using %s for a while now. Maybe it's time to check out the PR
 msgstr ""
 
 #: admin/templates/admin-notices.php:40, rate-my-post/admin/templates/admin-notices.php:40
-msgid "See Rate my Post PRO"
+msgid "See FeedbackWP PRemium"
 msgstr ""
 
 #: admin/templates/analytics.php:26, rate-my-post/admin/templates/analytics.php:26
-msgid "Rate my Post Analytics"
+msgid "FeedbackWP Analytics"
 msgstr ""
 
 #: admin/templates/analytics.php:29, rate-my-post/admin/templates/analytics.php:29
@@ -178,7 +178,7 @@ msgid "About Plugin"
 msgstr ""
 
 #: admin/templates/menu-about.php:33, rate-my-post/admin/templates/menu-about.php:33
-msgid "Hi there,%s Thank you for installing Rate my Post plugin. If you like the plugin please rate it %shere%s - it will take you 5 minutes (less if you are already registered on WordPress) and it means a lot to me since I made this plugin completely for free. If you encounter problems with the plugin, let me know in the %ssupport forum%s. I hope you will enjoy the plugin. %s %s Best regards,%s %s - the developer of Rate my Post plugin"
+msgid "Hi there,%s Thank you for installing FeedbackWP plugin. If you like the plugin please rate it %shere%s - it will take you 5 minutes (less if you are already registered on WordPress) and it means a lot to me since I made this plugin completely for free. If you encounter problems with the plugin, let me know in the %ssupport forum%s. I hope you will enjoy the plugin. %s %s Best regards,%s %s - the developer of FeedbackWP plugin"
 msgstr ""
 
 #: admin/templates/menu-about.php:38, rate-my-post/admin/templates/menu-about.php:38
@@ -202,11 +202,11 @@ msgid "Become a supporter and ensure further development of the plugin!"
 msgstr ""
 
 #: admin/templates/menu-alerts.php:30, rate-my-post/admin/templates/menu-alerts.php:30
-msgid "You need to be logged in as administrator to save settings for Rate my Post plugin"
+msgid "You need to be logged in as administrator to save settings for FeedbackWP plugin"
 msgstr ""
 
 #: admin/templates/menu-alerts.php:38, rate-my-post/admin/templates/menu-alerts.php:38
-msgid "Rate my Post requires WordPress version 4.7.0 or higher. Please update your WordPress"
+msgid "FeedbackWP requires WordPress version 4.7.0 or higher. Please update your WordPress"
 msgstr ""
 
 #: admin/templates/menu-alerts.php:46, rate-my-post/admin/templates/menu-alerts.php:46
@@ -430,7 +430,7 @@ msgid "No rating plugin found. Migration is not possible."
 msgstr ""
 
 #: admin/templates/menu-migration.php:40, rate-my-post/admin/templates/menu-migration.php:40
-msgid "Note: If you already used Rate my Post plugin, the Rate my Post ratings will be overwritten during the migration!"
+msgid "Note: If you already used FeedbackWP plugin, the FeedbackWP ratings will be overwritten during the migration!"
 msgstr ""
 
 #: admin/templates/menu-migration.php:43, rate-my-post/admin/templates/menu-migration.php:43
@@ -478,7 +478,7 @@ msgid "Trophies"
 msgstr ""
 
 #: admin/templates/menu-options.php:52, rate-my-post/admin/templates/menu-options.php:52
-msgid "Rate my Post supports the following icons: Stars, thumbs and hearts"
+msgid "FeedbackWP supports the following icons: Stars, thumbs and hearts"
 msgstr ""
 
 #: admin/templates/menu-options.php:57, rate-my-post/admin/templates/menu-options.php:57
@@ -934,11 +934,11 @@ msgid "Delete Feedback"
 msgstr ""
 
 #: admin/templates/pro-version.php:27, rate-my-post/admin/templates/pro-version.php:27
-msgid "Rate my Post Pro"
+msgid "FeedbackWP Premium"
 msgstr ""
 
 #: admin/templates/pro-version.php:32, rate-my-post/admin/templates/pro-version.php:32
-msgid "Rate my Post Pro in addition to the free features also includes:"
+msgid "FeedbackWP Premium in addition to the free features also includes:"
 msgstr ""
 
 #: admin/templates/pro-version.php:36, rate-my-post/admin/templates/pro-version.php:36
@@ -974,11 +974,11 @@ msgid "Read More"
 msgstr ""
 
 #: admin/templates/stats.php:22, rate-my-post/admin/templates/stats.php:22
-msgid "Rate my Post Stats"
+msgid "FeedbackWP Stats"
 msgstr ""
 
 #: admin/templates/stats.php:26, rate-my-post/admin/templates/stats.php:26
-msgid "Displaying only rated posts and pages! To see feedback or change ratings click on a post/page title below and find the Rate my Post meta box at the bottom."
+msgid "Displaying only rated posts and pages! To see feedback or change ratings click on a post/page title below and find the FeedbackWP meta box at the bottom."
 msgstr ""
 
 #: admin/templates/stats.php:33, rate-my-post/admin/templates/stats.php:33
@@ -1158,7 +1158,7 @@ msgid "Plugin has been deactivated because the PRO version was detected."
 msgstr ""
 
 #: rate-my-post/widgets/rate-my-post-top-rated-widget.php:19, widgets/rate-my-post-top-rated-widget.php:19
-msgid "Displays top rated posts from Rate my Post plugin."
+msgid "Displays top rated posts from FeedbackWP plugin."
 msgstr ""
 
 #: rate-my-post/widgets/rate-my-post-top-rated-widget.php:91, widgets/rate-my-post-top-rated-widget.php:91

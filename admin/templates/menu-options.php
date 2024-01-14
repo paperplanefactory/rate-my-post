@@ -50,7 +50,7 @@
           <?php endforeach; ?>
         </select>
         <p class="rmp-tab-content__notice">
-          <?php echo ( esc_html__( 'Rate My Post supports the following icons: Stars, thumbs and hearts', 'rate-my-post' ) ); ?>.
+          <?php echo ( esc_html__( 'FeedbackWP supports the following icons: Stars, thumbs and hearts', 'rate-my-post' ) ); ?>.
         </p>
       </td>
       <td>

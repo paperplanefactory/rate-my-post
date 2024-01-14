@@ -24,7 +24,7 @@
   }
 ?>
 
-<!-- Rate My Post Plugin - Results Widget -->
+<!-- FeedbackWP Plugin - Results Widget -->
 <div
   class="rmp-results-widget js-rmp-results-widget <?php echo esc_attr( 'js-rmp-results-widget--' . $post_id ); ?> <?php echo ( $avg_rating ) ? '' : 'rmp-results-widget--not-rated'; ?>"
   data-post-id="<?php echo esc_attr( $post_id ); ?>"

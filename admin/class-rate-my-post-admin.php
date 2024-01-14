@@ -70,7 +70,7 @@ class Rate_My_Post_Admin {
 		if ( ! $this->has_required_capability( $post_id ) ) {
 			return;
 		}
-		add_meta_box( 'rmp-rate-id', 'Rate My Post Ratings', array( $this, 'display_metabox' ), $this->define_post_types() );
+		add_meta_box( 'rmp-rate-id', 'FeedbackWP Ratings', array( $this, 'display_metabox' ), $this->define_post_types() );
 	}
 
 	public function display_metabox() {
@@ -280,13 +280,13 @@ class Rate_My_Post_Admin {
   //---------------------------------------------------
   public function menu_section() {
 		// main item
-    add_menu_page( 'Rate My Post', 'Rate My Post', 'edit_others_posts', 'rate-my-post', array( $this, 'menu_section_display' ), 'dashicons-thumbs-up', 24 );
+    add_menu_page( 'FeedbackWP', 'FeedbackWP', 'edit_others_posts', 'rate-my-post', array( $this, 'menu_section_display' ), 'dashicons-thumbs-up', 24 );
 		// settings item
-		add_submenu_page('rate-my-post', 'Rate My Post Settings', esc_html__( 'Settings', 'rate-my-post' ), 'edit_others_posts', 'rate-my-post' );
+		add_submenu_page('rate-my-post', 'FeedbackWP Settings', esc_html__( 'Settings', 'rate-my-post' ), 'edit_others_posts', 'rate-my-post' );
 		// stats item
-		add_submenu_page( 'rate-my-post', 'Rate My Post Stats', esc_html__( 'Stats', 'rate-my-post' ), 'edit_others_posts', 'rate-my-post-stats', array( $this, 'submenu_stats_display' ) );
+		add_submenu_page( 'rate-my-post', 'FeedbackWP Stats', esc_html__( 'Stats', 'rate-my-post' ), 'edit_others_posts', 'rate-my-post-stats', array( $this, 'submenu_stats_display' ) );
 		// analytics item
-		add_submenu_page( 'rate-my-post', 'Rate My Post Analytics', esc_html__( 'Analytics', 'rate-my-post' ), 'edit_others_posts', 'rate-my-post-analytics', array( $this, 'submenu_analytics_display' ) );
+		add_submenu_page( 'rate-my-post', 'FeedbackWP Analytics', esc_html__( 'Analytics', 'rate-my-post' ), 'edit_others_posts', 'rate-my-post-analytics', array( $this, 'submenu_analytics_display' ) );
 		// custom rating widgets
 		if( class_exists( 'Rate_My_Post_Pro' ) ) { // PRO only
 			add_submenu_page( 'rate-my-post', esc_html__( 'Custom Rating Widgets', 'rate-my-post' ), esc_html__( 'Custom Rating Widgets', 'rate-my-post' ), 'edit_others_posts','edit.php?post_type=crw');

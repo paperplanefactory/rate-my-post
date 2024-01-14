@@ -19,11 +19,11 @@
 ?>
 <div class="rmp-stats js-rmp-orderly-tables">
   <h1 class="rmp-stats__title">
-    <?php echo ( esc_html__( 'Rate My Post Stats', 'rate-my-post' ) ); ?>
+    <?php echo ( esc_html__( 'FeedbackWP Stats', 'rate-my-post' ) ); ?>
   </h1>
 
   <p class="rmp-stats__notice">
-    <?php echo ( esc_html__( 'Displaying only rated posts and pages! To see feedback or change ratings click on a post/page title below and find the Rate My Post meta box at the bottom.', 'rate-my-post' ) ); ?>
+    <?php echo ( esc_html__( 'Displaying only rated posts and pages! To see feedback or change ratings click on a post/page title below and find the FeedbackWP meta box at the bottom.', 'rate-my-post' ) ); ?>
   </p>
 
   <table class="rmp-stats__table rmp-data-table js-rmp-stats-table">

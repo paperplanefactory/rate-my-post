@@ -37,7 +37,7 @@
           <?php echo $this->existing_rating_plugin();  ?>
         </p>
         <p class="rmp-migration__notice">
-          <?php echo esc_html__( 'Note: If you already used Rate My Post plugin, the Rate My Post ratings will be overwritten during the migration!', 'rate-my-post' ); ?>
+          <?php echo esc_html__( 'Note: If you already used FeedbackWP plugin, the FeedbackWP ratings will be overwritten during the migration!', 'rate-my-post' ); ?>
         </p>
         <button type="button" class="rmp-btn rmp-btn--warning js-rmp-migrate">
           <?php echo ( esc_html__( 'Start Migration', 'rate-my-post' ) ); ?>

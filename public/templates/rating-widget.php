@@ -26,7 +26,7 @@
 
 ?>
 
-<!-- Rate My Post Plugin -->
+<!-- FeedbackWP Plugin -->
 <div
   class="rmp-widgets-container rmp-wp-plugin rmp-main-container js-rmp-widgets-container <?php echo esc_attr( 'js-rmp-widgets-container--' . $post_id ); ?> <?php echo esc_attr( $custom_class ); ?>"
   data-post-id="<?php echo esc_attr( $post_id ); ?>"
