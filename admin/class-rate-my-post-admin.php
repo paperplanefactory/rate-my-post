@@ -707,7 +707,7 @@ class Rate_My_Post_Admin {
 			} elseif ( function_exists('the_ratings') ) { // wp post ratings
 				$migrated_posts = $this->migrate_ratings( 'ratings_score', 'ratings_users' );
 				$data['successMsg'] = $this->verify_migration( $migrated_posts );
-			} elseif ( function_exists('yasr_get_visitor_votes') || class_exists( 'YasrDatabaseRatings' ) ) { // yasr
+			} elseif ( function_exists('yasr_fs') || class_exists( '\YasrDB' ) || defined('YASR_VERSION_NUM') ) { // yasr
 				$migrated_posts = $this->migrate_ratings('', '', 'yasr');
 				$data['successMsg'] = $this->verify_migration( $migrated_posts );
 			} else {
@@ -726,6 +726,19 @@ class Rate_My_Post_Admin {
 			return esc_html__( 'No existing ratings found! Nothing to migrate!', 'rate-my-post' );
 		}
 	}
+
+    private function yasr_get_votes($post_id) {
+        global $wpdb;
+
+        return $wpdb->get_row(
+            $wpdb->prepare(
+                "SELECT COUNT(id) as count, SUM(vote) as votes FROM " .
+                YASR_LOG_TABLE .
+                " WHERE post_id=%d",
+                intval($post_id)
+            )
+        );
+    }
 
 	// migrate from other plugins to rate my post
 	private function migrate_ratings( $ratings_sum_field, $vote_count_field, $specific_plugin = false ) {
@@ -768,12 +781,12 @@ class Rate_My_Post_Admin {
 
 				// migration for yasr plugin
 				if ( $specific_plugin === 'yasr' ) {
-					if ( function_exists('yasr_get_visitor_votes') ) { // older versions of yasr
-						$yasr_info = yasr_get_visitor_votes( $post_id );
-						if ( is_array($yasr_info) && !empty($yasr_info ) ) {
-							$yasr_rating_object = $yasr_info[0];
-							$ratings_sum = intval( $yasr_rating_object->sum_votes );
-							$vote_count = intval( $yasr_rating_object->number_of_votes );
+                    $yasr_info = $this->yasr_get_votes( $post_id );
+
+                    if($yasr_info) {
+
+                    $vote_count = $yasr_info->count;
+                        $ratings_sum = $yasr_info->votes;
 
 							if ( $ratings_sum && $vote_count ) { // post is rated in yasr
 				        $count++;
@@ -781,18 +794,6 @@ class Rate_My_Post_Admin {
 				        update_post_meta( $post_id, 'rmp_vote_count', $vote_count );
 				      }
 						}
-					} else { // new versions of yasr
-						$yasr_info = YasrDatabaseRatings::getVisitorVotes( $post_id );
-						if ( is_array($yasr_info) && !empty($yasr_info ) ) {
-							$vote_count = $yasr_info['number_of_votes'];
-  						$ratings_sum = $yasr_info['sum_votes'];
-							if ( $ratings_sum && $vote_count ) { // post is rated in yasr
-				        $count++;
-				        update_post_meta( $post_id, 'rmp_rating_val_sum', $ratings_sum );
-				        update_post_meta( $post_id, 'rmp_vote_count', $vote_count );
-				      }
-						}
-					}
 
 
 				} // end yasr
@@ -810,7 +811,7 @@ class Rate_My_Post_Admin {
 			return 'KK StarRatings';
 		} elseif ( function_exists('the_ratings') ) {
 			return 'WP-PostRatings';
-		} elseif ( function_exists('yasr_get_visitor_votes') || class_exists( 'YasrDatabaseRatings' ) ) {
+		} elseif ( function_exists('yasr_fs') || class_exists( '\YasrDB' ) || defined('YASR_VERSION_NUM') ) {
 			return 'Yasr – Yet Another Stars Rating';
 		} else {
 			return false;
