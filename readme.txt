@@ -4,7 +4,7 @@ Donate link: https://feedbackwp.com/pricing/
 Tags: Rating System, Rate Post, Rate Page, Star Rating, Post Rating, Post Feedback, Page Feedback, Responsive Star Rating, Lightweight Post Rating, Ajax Post Rating, Post Rating Analytics, Post Rating, Rich Snippet
 Requires at least: 4.7.0
 Tested up to: 6.4
-Stable tag: 3.4.4
+Stable tag: 3.4.5
 Requires PHP: 5.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -232,6 +232,9 @@ The invalid WP token error (refers to WP nonce) appears if a page is cached for 
 7. Manipulate Votes
 
 == Changelog ==
+
+= 3.4.5 =
+* Fixed bug where a private post could be rated.
 
 = 3.4.4 =
 * Improved compatibility with latest WP and PHP 8.
