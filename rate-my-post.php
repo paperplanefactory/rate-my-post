@@ -6,7 +6,7 @@
  * @package           FeedbackWP
  *
  * @wordpress-plugin
- * Plugin Name: 	  	FeedbackWP - WP Rating System by FeedbackWP
+ * Plugin Name: 	  	FeedbackWP - WP Rating System
  * Plugin URI:        https://feedbackwp.com
  * Description:       Allows you to easily add rating functionality to your WordPress website.
  * Version:           3.4.5
