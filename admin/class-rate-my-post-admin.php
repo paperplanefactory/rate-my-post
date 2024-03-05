@@ -447,21 +447,6 @@ class Rate_My_Post_Admin
                 }
             }
 
-            // verify that all options were provided
-            $errored_options = $this->verify_options($default_options, $updated_options);
-
-            // fix if not all options were provided
-            if ($errored_options) {
-                $updated_options        = $this->fix_options($default_options, $updated_options, $errored_options);
-                $errored_options_string = implode(', ', $errored_options);
-                $data['successMsg']     = esc_html__(
-                                              'Settings Partially Saved. Unable to save: ',
-                                              'rate-my-post'
-                                          ) . $errored_options_string . '. ' . esc_html__(
-                                              'Try clearing all caches, especially your browser cache!',
-                                              'rate-my-post'
-                                          );
-            }
             // update options
             update_option('rmp_options', $updated_options);
             echo json_encode($data);
