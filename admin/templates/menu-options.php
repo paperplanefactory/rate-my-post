@@ -472,6 +472,8 @@
 
   <hr class="rmp-tab-content__divider" />
 
+  <?php do_action('rate_my_post_settings_page_before_archive_page', $rmp_options); ?>
+
   <!-- Archive Pages Settings -->
   <h2 class="rmp-tab-content__title">
     <?php echo ( esc_html__( 'Archive Pages', 'rate-my-post' ) ); ?>

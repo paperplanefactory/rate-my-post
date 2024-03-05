@@ -44,6 +44,7 @@
 
 
 add_action( 'admin_menu', function () {
+    if(defined('RATE_MY_POST_PRO_VERSION')) return;
     global $submenu;
     $submenu[ 'rate-my-post' ][] = [
         '<span style="color: #fff;background-color: #1da867;padding: 6px;">' . esc_html__( 'Upgrade to Pro', 'rate-my-post' ) . '</span>',
