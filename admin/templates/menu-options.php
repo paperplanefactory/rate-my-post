@@ -21,7 +21,9 @@
       esc_html__( 'Hearts', 'rate-my-post' ),
       esc_html__( 'Smileys', 'rate-my-post' ),
       esc_html__( 'Trophies', 'rate-my-post' )
-  ]
+  ];
+
+  if(defined('RATE_MY_POST_PRO_VERSION')) $pro_icon_types = [];
 ?>
 
 <?php $rmp_options = get_option( 'rmp_options' ); ?>
@@ -43,6 +45,7 @@
           <option value="1" <?php echo ($rmp_options['icon_type'] === 1) ? 'selected="selected"':''; ?>>
             <?php echo ( esc_html__( 'Stars', 'rate-my-post' ) ); ?>
           </option>
+          <?php do_action('rate_my_post_icon_types_option_row', $rmp_options); ?>
           <?php foreach ($pro_icon_types as $pro_icon_type) : ?>
             <option disabled value="">
               <?php printf('%s (%s)', $pro_icon_type, esc_html__('Premium Upgrade')) ?>

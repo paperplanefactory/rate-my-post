@@ -416,6 +416,14 @@
       "sC" : 0,
       "tS" : 1
     },
+    "\/.gitignore" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/.gitignore",
+      "oF" : 0
+    },
     "\/admin\/class-rate-my-post-admin.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -843,6 +851,17 @@
       "oA" : 1,
       "oAP" : "\/public\/index.php",
       "oF" : 1
+    },
+    "\/public\/js\/rate-my-post.min.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/public\/js\/rate-my-post.min-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
     },
     "\/public\/templates\/amp-css.php" : {
       "cB" : 0,
