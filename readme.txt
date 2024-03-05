@@ -17,6 +17,8 @@ Functionality to add rating and result widget to custom post types, use differen
 
 What sets Rate My Post apart from other WordPress rating plugins is its simplicity, performance and impact on engagement. It works with any page cache plugin and is probably the most customizable free WordPress rating plugin.
 
+https://www.youtube.com/watch?v=DBbd3sXiT8U&rel=0
+
 = Highlights =
 
 * Lightweight, responsive and free
