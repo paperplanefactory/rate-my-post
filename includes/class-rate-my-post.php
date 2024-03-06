@@ -63,9 +63,6 @@ class Rate_My_Post {
 		// Top Rated Posts Widget
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'widgets/rate-my-post-top-rated-widget.php';
 
-		// PRO VERSION
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'pro/class-rate-my-post-pro.php';
-
     //Fire the loader
 		$this->loader = new Rate_My_Post_Loader();
 	}
