@@ -25,11 +25,8 @@ class Rate_My_Post {
 
     // Set the FeedbackWP and the plugin version, and fire the methods!
 	public function __construct() {
-		if ( defined( 'RATE_MY_POST_VERSION' ) ) {
-			$this->version = RATE_MY_POST_VERSION;
-		} else {
-			$this->version = '3.4.2';
-		}
+		$this->version = RATE_MY_POST_VERSION;
+
 		$this->rate_my_post = 'rate-my-post';
 
 		$this->load_dependencies();
