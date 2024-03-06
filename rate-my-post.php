@@ -83,20 +83,3 @@ function run_rate_my_post() {
 
 }
 run_rate_my_post();
-
-if( class_exists( 'Rate_My_Post_Pro' ) ) {
-	$rate_my_post_pro = new Rate_My_Post_Pro();
-}
-
-//OPTIONS ARRAY
-// var_dump(get_option( 'rmp_options' ));
-// CUSTOMIZATION ARRAY
-// var_dump(get_option( 'rmp_customize_strings' ));
-// SECURITY OPTIONS ARRAY
-// var_dump(get_option( 'rmp_security' ));
-// VERSION
-// var_dump(get_option( 'rmp_version' ));
-// ADMIN NOTICES
-// var_dump(get_option( 'rmp_admin_notices' ));
-// lICENSE
-// var_dump(get_option( 'rmp_license_key' ));
