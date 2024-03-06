@@ -36,10 +36,7 @@ deleteDir('tests');
 deleteDir('codekit');
 @unlink('.gitignore');
 
-echo ".git and tests folders deleted" . "\n";
-
-exec('composer install --dev -o');
-echo "composer install completed." . "\n";
+//exec('composer install --dev -o');
 
 deleteDir('vendor');
 
