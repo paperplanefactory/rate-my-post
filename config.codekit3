@@ -740,14 +740,6 @@
       "oAP" : "\/languages\/rate-my-post.pot",
       "oF" : 1
     },
-    "\/LICENSE.txt" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 1,
-      "oAP" : "\/LICENSE.txt",
-      "oF" : 1
-    },
     "\/node_modules" : {
       "ft" : 65536,
       "oA" : 2,
@@ -769,6 +761,14 @@
       "oF" : 0,
       "oO" : 1,
       "oS" : 1
+    },
+    "\/plugin-build.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/plugin-build.php",
+      "oF" : 0
     },
     "\/pro\/class-rate-my-post-pro.php" : {
       "cB" : 0,
@@ -984,10 +984,11 @@
   },
   "projectAttributes" : {
     "creationDate" : 731320127.52678204,
-    "displayValue" : "rate-my-post-build",
+    "displayValue" : "rate-my-post",
     "displayValueWasSetByUser" : 0,
     "iconImageName" : "brackets-koamaru",
-    "iconImageWasSetByUser" : 0
+    "iconImageWasSetByUser" : 0,
+    "lastBuiltDate" : 731433612.11715901
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,
