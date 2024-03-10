@@ -150,8 +150,6 @@ class Rate_My_Post_Common
      */
     public static function delete_bulk_rate_flag($flag_id)
     {
-        delete_site_option('pand-' . md5('fwp_bulk_rate_notice_' . $flag_id));
-
         $old = get_option('rmp_bulk_rate_flag', []);
 
         return update_option('rmp_bulk_rate_flag', array_diff($old, [$flag_id]), false);
