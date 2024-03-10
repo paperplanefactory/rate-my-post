@@ -116,28 +116,17 @@ class Rate_My_Post_Admin
     public function backend_results_update()
     {
         if (wp_doing_ajax()) {
-            $data = array(
+
+            $data = [
                 'valid'      => true,
                 'successMsg' => esc_html__('Successfully Saved!', 'rate-my-post'),
-                'errorMsg'   => array()
-            );
+                'errorMsg'   => []
+            ];
             // variables
             $vote_count = intval($_POST['votes']);
             $avg_rating = floatval($_POST['avg']);
             $post_id    = intval($_POST['postID']);
             $nonce      = isset($_POST['nonce']) ? $_POST['nonce'] : false;
-            $max_rating = Rate_My_Post_Common::max_rating();
-
-            $rating_sum = intval(round($vote_count * $avg_rating));
-
-            // recalculate avg rating - for example if user inserts vote count 1 and rating 4.5 we want to avg rating to be 4 as the former is not possible
-            if ($rating_sum && $vote_count) {
-                $avg_rating = $rating_sum / $vote_count;
-            } else {
-                $rating_sum = 0;
-                $vote_count = 0;
-                $avg_rating = 0;
-            }
 
             // security checks
             if ( ! $this->has_required_capability($post_id)) {
@@ -153,30 +142,18 @@ class Rate_My_Post_Admin
                 $data['errorMsg'][] = esc_html__('Invalid nonce!', 'rate-my-post');
             }
 
-            if ( ! $vote_count || $vote_count < 1 || $avg_rating < 1 || $avg_rating > $max_rating) {
-                $data['valid']      = false;
-                $data['errorMsg'][] = esc_html__('Invalid vote count or average rating!', 'rate-my-post');
-            }
-
             // die if failed a security check
-            if ( ! $data['valid']) {
-                echo json_encode($data);
-                die();
+            if ( ! $data['valid']) wp_send_json($data);
+
+            $action = Rate_My_Post_Common::update_post_id_rating($post_id, $vote_count, $avg_rating);
+
+            if (is_wp_error($action)) {
+                $data['valid']      = false;
+                $data['errorMsg'][] = $action->get_error_message();
             }
 
-            // update vote count, sum of ratings and average rating
-            if ( ! add_post_meta($post_id, 'rmp_vote_count', $vote_count, true)) {
-                update_post_meta($post_id, 'rmp_vote_count', $vote_count);
-            }
-            if ( ! add_post_meta($post_id, 'rmp_rating_val_sum', $rating_sum, true)) {
-                update_post_meta($post_id, 'rmp_rating_val_sum', $rating_sum);
-            }
-            if ( ! add_post_meta($post_id, 'rmp_avg_rating', $avg_rating, true)) {
-                update_post_meta($post_id, 'rmp_avg_rating', $avg_rating);
-            }
-            echo json_encode($data);
+            wp_send_json($data);
         }
-        die();
     }
 
     //---------------------------------------------------

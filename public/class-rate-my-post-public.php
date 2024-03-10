@@ -621,6 +621,7 @@ class Rate_My_Post_Public
 
             //insert feedback to post meta
             if ( ! add_post_meta($post_id, 'rmp_feedback_val_new', array($feedback_data), true)) {
+
                 // get the current feedback array
                 $existing_feedback = get_post_meta($post_id, 'rmp_feedback_val_new', true);
                 if (is_array($existing_feedback)) { // feedback must be an array

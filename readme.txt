@@ -1,4 +1,4 @@
-=== Rate My Post - WP Rating System by FeedbackWP ===
+=== Rate My Post - Star Rating Plugin by FeedbackWP ===
 Contributors: collizo4sky, properfraction
 Donate link: https://feedbackwp.com/pricing/
 Tags: rating system, rate post, rate page, star rating, post rating
@@ -11,9 +11,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Rate My Post - WP Rating System by FeedbackWP allows you to easily add rating functionality to your WordPress website. Visitors can rate your posts/pages and send you private feedback after rating.
+Rate My Post - Star Rating System by FeedbackWP allows you to easily add rating functionality to your WordPress website. Visitors can rate your posts/pages and send you private feedback after rating.
 
-Functionality to add rating and result widget to custom post types, use different rating icons, create custom rating widgets that work independently of posts and pages is available in the [Premium Version](https://feedbackwp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
+Functionality to add star rating and result widget to custom post types, use different rating icons, create custom rating widgets that work independently of posts and pages is available in the [Premium Version](https://feedbackwp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
 
 What sets Rate My Post apart from other WordPress rating plugins is its simplicity, performance and impact on engagement. It works with any page cache plugin and is probably the most customizable free WordPress rating plugin.
 
