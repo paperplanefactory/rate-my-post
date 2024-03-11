@@ -67,13 +67,9 @@ class Rate_My_Post_Public
             $preload = apply_filters('rmp_font_preload', $preload);
         }
 
-        if ( ! $preload) {
-            return;
-        }
+        if ( ! $preload) return;
 
-        echo '<link rel="preload" href="' . plugin_dir_url(
-                __FILE__
-            ) . 'css/fonts/ratemypost.ttf" type="font/ttf" as="font" crossorigin="anonymous">';
+        echo '<link rel="preload" href="' . plugin_dir_url(__FILE__) . 'css/fonts/ratemypost.ttf" type="font/ttf" as="font" crossorigin="anonymous">';
     }
 
     //---------------------------------------------------
@@ -203,21 +199,21 @@ class Rate_My_Post_Public
             $content .= $this->get_the_rating_widget();
 
             return $content;
-        } elseif ($options['pages'] === 2 && is_page() && ! is_page(
-                $options['exclude']
-            )) { // add rating widget to all pages, except excluded
+        }
+
+        if ($options['pages'] === 2 && is_page() && ! is_page($options['exclude'])) { // add rating widget to all pages, except excluded
             $content .= $this->get_the_rating_widget();
 
-            return $content;
-        } elseif ( ! empty($options['cptRating']) && is_singular($options['cptRating']) && ! is_single(
-                $options['exclude']
-            )) { // add rating widget to all CPT, except excluded
-            $content .= $this->get_the_rating_widget();
-
-            return $content;
-        } else { // no rating widget - return content
             return $content;
         }
+
+        if ( ! empty($options['cptRating']) && is_singular($options['cptRating']) && ! is_single($options['exclude'])) { // add rating widget to all CPT, except excluded
+            $content .= $this->get_the_rating_widget();
+
+            return $content;
+        }
+
+        return $content;
     }
 
     //---------------------------------------------------
@@ -375,6 +371,7 @@ class Rate_My_Post_Public
             $new_rating = $this->save_rating($post_id, $submitted_rating);
             // insert avg rating to post meta
             $post_meta_rating = $this->save_avg_rating($post_id);
+
             //send email if enabled
             $this->send_email_rating($post_id, $submitted_rating, $options);
 
@@ -619,23 +616,23 @@ class Rate_My_Post_Public
                 'ratingID' => $rating_id,
             );
 
-            //insert feedback to post meta
-            if ( ! add_post_meta($post_id, 'rmp_feedback_val_new', array($feedback_data), true)) {
+            // get the current feedback array
+            $existing_feedback = get_post_meta($post_id, 'rmp_feedback_val_new', true);
 
-                // get the current feedback array
-                $existing_feedback = get_post_meta($post_id, 'rmp_feedback_val_new', true);
-                if (is_array($existing_feedback)) { // feedback must be an array
-                    $existing_feedback[] = $feedback_data;
-                    update_post_meta($post_id, 'rmp_feedback_val_new', $existing_feedback);
-                }
+            if ( ! is_array($existing_feedback)) {
+                $existing_feedback = [$feedback_data];
+            } else {
+                $existing_feedback[] = $feedback_data;
             }
+
+            update_post_meta($post_id, 'rmp_feedback_val_new', $existing_feedback);
+
             //send email
             $this->send_email_feedback($post_id, $feedback, $options);
-            echo json_encode($data);
             do_action('rmp_after_feedback', $post_id, $feedback);
             Rate_My_Post_Mutex::release($lockName);
-        };
-        die();
+            wp_send_json($data);
+        }
     }
 
     //---------------------------------------------------
@@ -648,8 +645,7 @@ class Rate_My_Post_Public
         $excluded_posts = $options['exclude'];
         $post_id        = get_the_id();
 
-        if (($options['archivePages'] === 2 && is_archive() && in_the_loop(
-                )) || ($options['archivePages'] === 2 && is_home() && in_the_loop())) { // show ratings
+        if (($options['archivePages'] === 2 && is_archive() && in_the_loop()) || ($options['archivePages'] === 2 && is_home() && in_the_loop())) { // show ratings
             //variables
             $vote_count       = Rate_My_Post_Common::get_vote_count();
             $avg_rating       = Rate_My_Post_Common::get_average_rating();
@@ -718,29 +714,37 @@ class Rate_My_Post_Public
     // saves vote count to post meta
     private function save_vote_count($post_id)
     {
-        if ( ! add_post_meta($post_id, 'rmp_vote_count', 1, true)) {
-            $existing_vote_count = Rate_My_Post_Common::get_vote_count($post_id);
-            $new_vote_count      = intval($existing_vote_count + 1);
+        $existing_vote_count = Rate_My_Post_Common::get_vote_count($post_id);
+
+        if ($existing_vote_count > 0) {
+
+            $new_vote_count = intval($existing_vote_count + 1);
+
             update_post_meta($post_id, 'rmp_vote_count', $new_vote_count);
 
             return $new_vote_count;
-        } else {
-            return false;
         }
+
+        update_post_meta($post_id, 'rmp_vote_count', 1);
+
+        return false;
     }
 
     // saves rating to post meta
     private function save_rating($post_id, $rating)
     {
-        if ( ! add_post_meta($post_id, 'rmp_rating_val_sum', $rating, true)) {
-            $existing_ratings_sum = Rate_My_Post_Common::get_sum_of_ratings($post_id);
-            $new_ratings_sum      = intval($existing_ratings_sum + $rating);
+        $existing_ratings_sum = Rate_My_Post_Common::get_sum_of_ratings($post_id);
+
+        if ($existing_ratings_sum > 0) {
+            $new_ratings_sum = intval($existing_ratings_sum + $rating);
             update_post_meta($post_id, 'rmp_rating_val_sum', $new_ratings_sum);
 
             return $new_ratings_sum;
-        } else {
-            return false;
         }
+
+        update_post_meta($post_id, 'rmp_rating_val_sum', $rating);
+
+        return false;
     }
 
     // saves avg rating as post meta
@@ -851,7 +855,8 @@ class Rate_My_Post_Public
         $options,
         $security,
         $amp
-    ) {
+    )
+    {
         // declare variables
         $ip    = -1;
         $user  = -1;
@@ -928,7 +933,7 @@ class Rate_My_Post_Public
     private function get_the_rating_widget($post_id = false)
     {
         if ( ! $this->display_widget('rmp_display_rating_widget')) {
-            return;
+            return '';
         }
 
         // allow custom templates
@@ -1254,8 +1259,7 @@ class Rate_My_Post_Public
             'error' => false,
         );
 
-        if ($security_options['userTracking'] == 1 || ! get_current_user_id(
-            )) { // no need for verification - either disabled or user is not logged in
+        if ($security_options['userTracking'] == 1 || ! get_current_user_id()) { // no need for verification - either disabled or user is not logged in
             return $data;
         }
 
