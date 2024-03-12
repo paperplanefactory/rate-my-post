@@ -1,5 +1,9 @@
 ﻿== Changelog ==
 
+= 4.0.1 =
+* Pro: [Bulk-Rating Tool](https://feedbackwp.com/docs/#Bulk_Rating_Tool) to add rating to posts without votes.
+* Fixed bug where ratings were not recorded in some cases.
+
 = 4.0.0 =
 * Fixed partial saving issues.
 

@@ -4,7 +4,7 @@ Donate link: https://feedbackwp.com/pricing/
 Tags: rating system, rate post, rate page, star rating, post rating
 Requires at least: 4.9
 Tested up to: 6.4
-Stable tag: 4.0.0
+Stable tag: 4.0.1
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,9 +19,8 @@ What sets Rate My Post apart from other WordPress rating plugins is its simplici
 
 https://www.youtube.com/watch?v=DBbd3sXiT8U&rel=0
 
-= Highlights =
+**Highlights**
 
-* Lightweight, responsive and free
 * Add rating functionality to your website automatically or use shortcodes - no coding required!
 * Option to show ratings visually before the content of each post (so-called results widget)
 * Stats section where you can see how many votes each post/page received and what is its average rating.
@@ -31,13 +30,12 @@ https://www.youtube.com/watch?v=DBbd3sXiT8U&rel=0
 * GDPR compliant
 * Top rated posts widget
 * Custom templates for complete customization
-* Works with infinite scroll plugins and popups (implementation requred)
+* Works with infinite scroll plugins and popups (implementation required)
 
 > <strong>FeedbackWP Premium</strong><br />
 > This is the lite version of [FeedbackWP Premium](https://feedbackwp.com/pricing/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) rating plugin with structured data for rich snippets. <a href="https://feedbackwp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion">Click here to purchase the best WordPress feedback, star rating and rate my post plugin.</a>
 
-
-= Shortcodes =
+**Shortcodes**
 
 [ratemypost] - embeds rating widget
 
@@ -49,17 +47,17 @@ It is also possible to embed a rating of whichever post by passing the id of the
 
 [ratemypost-result id="1"] - embeds results widget for the post with the id of 1
 
-= FeedbackWP Premium =
+**FeedbackWP Premium**
 
 [FeedbackWP Premium](https://feedbackwp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion) comes with advanced schema selector which allows you to select schema type directly in the post editor for each post and supports custom rating widgets. Read more about [FeedbackWP Premium](https://feedbackwp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
 
-Option to add rating and feedback result widgets to Custom Post Types (CPT), support for a different icon other than the Star icon are available in [FeedbackWP Premium](https://feedbackwp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
+Features to add rating and feedback result widgets to Custom Post Types (CPT), add rating to existing posts without votes, and support for a different icon other than the Star icon are available in [FeedbackWP Premium](https://feedbackwp.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion).
 
-= Components =
+**Components**
 
 The plugin includes five components; rating widget, results widget, social widget, feedback widget and top rated posts widget.
 
-**Rating Widget Features:**
+= Rating Widget Features: =
 
 *Rating widget adds the basic rating functionality to your website*
 
@@ -85,17 +83,15 @@ The plugin includes five components; rating widget, results widget, social widge
 
 12. Option to show descriptive ratings while a user hovers over rating icons
 
-13. Google Analytics integration
+13. Option to enable reCAPTCHA v3 protection
 
-14. Option to enable reCAPTCHA v3 protection
+14. Option to show results (visual rating) on archive pages
 
-15. Option to show results (visual rating) on archive pages
+15. Option to allow only logged in users to vote
 
-16. Option to allow only logged in users to vote
+16. Option to prevent double votes via IP addresses
 
-17. Option to prevent double votes via IP addresses
-
-**Results Widget Features:**
+= Results Widget Features: =
 
 *Results widget is similar to the rating widget, but is not interactive - it only displays rating visually.*
 
@@ -105,7 +101,7 @@ The plugin includes five components; rating widget, results widget, social widge
 
 3. Add results widget to all posts or pages with one click in the settings
 
-**Feedback Widget Features:**
+= Feedback Widget Features: =
 
 *Feedback widget enables visitors to leave you anonymous feedback*
 
@@ -119,29 +115,17 @@ The plugin includes five components; rating widget, results widget, social widge
 
 5. Option to get an email if somebody leaves you feedback
 
-**Social Widget Features:**
+= Social Widget Features: =
 
 *Social widget displays social follow or social share links after the rating has been submitted*
 
-1. Optional feature - you can enable it or disable it
+You can show social follow/share links after a positive rating (you define what is a positive rating in the settings).
 
-2. Shows social follow/share links after a positive rating (you define what is a positive rating in the settings)
-
-**Top Rated Posts Widget:**
+= Top Rated Posts Widget: =
 
 *Displays top rated posts on your website*
 
-1. Optional feature - you can enable it under Appearance - Widgets
-
-2. Select how many posts to show
-
-3. Select minimum average rating required
-
-3. Select minimum vote count required
-
-4. Option to show featured image
-
-5. Option to show visual rating
+Display top-rated posts on your website with the "Top Rated Posts" widget. You can specify the number of posts, minimum average rating, and vote count required. Additionally, enable featured images and visual ratings
 
 = Why use Rate My Post? =
 
@@ -235,26 +219,14 @@ The invalid WP token error (refers to WP nonce) appears if a page is cached for 
 
 == Changelog ==
 
+= 4.0.1 =
+* Pro: [Bulk-Rating Tool](https://feedbackwp.com/docs/#Bulk_Rating_Tool) to add rating to posts without votes.
+* Fixed bug where ratings were not recorded in some cases.
+
 = 4.0.0 =
 * Fixed partial saving issues.
 
 = 3.4.4 =
 * Improved compatibility with latest WP and PHP 8.
-
-= 3.4.3 =
-* Security fix - reported by [Patchstack](https://patchstack.com/)
-* Change compatible to version
-
-= 3.4.2 =
-* Security fix - reported by [Patchstack](https://patchstack.com/)
-
-= 3.4.1 =
-* Added JS method to manually init single widget - thanks to [Alfredo Arena](https://github.com/alfredoct96)
-
-= 3.4.0 =
-* Removed jQuery dependency on frontend - thanks to [Alfredo Arena](https://github.com/alfredoct96)
-* Ditching support for IE
-* Improved performance - thanks to [Alfredo Arena](https://github.com/alfredoct96)
-* Added option to disable clear post cache - thanks to [Alfredo Arena](https://github.com/alfredoct96)
 
 See the [changelog file](https://plugins.svn.wordpress.org/rate-my-post/trunk/changelog.txt) for full change log information.

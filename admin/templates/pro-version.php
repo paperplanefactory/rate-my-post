@@ -45,7 +45,7 @@
         <?php echo ( esc_html__( 'Create custom rating widgets which work independently of posts. ', 'rate-my-post' ) ); ?>
       </p>
       <p class="rmp-pro__feature">
-        <?php echo ( esc_html__( 'Add ratings to existing posts, pages and custom post types without any vote and rating.', 'rate-my-post' ) ); ?>
+        <?php echo ( esc_html__( 'Add ratings to existing posts, pages and custom post types without any votes and ratings.', 'rate-my-post' ) ); ?>
       </p>
       <p class="rmp-pro__feature">
         <?php echo ( esc_html__( 'Each custom widget is customizable, including structured data for rich snippets.', 'rate-my-post' ) ); ?>
