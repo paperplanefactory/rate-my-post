@@ -63,7 +63,7 @@ class Rate_My_Post {
 		// Top Rated Posts Widget
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'widgets/rate-my-post-top-rated-widget.php';
 
-    //Fire the loader
+        //Fire the loader
 		$this->loader = new Rate_My_Post_Loader();
 	}
 
@@ -76,6 +76,7 @@ class Rate_My_Post {
 
 	// Register admin hooks
 	private function define_admin_hooks() {
+        /** @var Rate_My_Post_Admin $plugin_admin */
 		$plugin_admin = new Rate_My_Post_Admin( $this->get_rate_my_post(), $this->get_version() );
 		//CSS
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );

@@ -70,4 +70,6 @@
     <p class="rmp-danger-zone__action-msg js-rmp-delete-data-msg"></p>
   </div>
 
+  <?php do_action('rate_my_post_tools_page'); ?>
+
 </div>
