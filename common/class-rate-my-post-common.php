@@ -114,6 +114,42 @@ class Rate_My_Post_Common
         return true;
     }
 
+    public static function is_boolean($maybe_bool)
+    {
+        if (is_bool($maybe_bool)) return true;
+
+        if (is_string($maybe_bool)) {
+
+            $maybe_bool = strtolower($maybe_bool);
+
+            $valid_boolean_values = [
+                'false',
+                'true',
+                '0',
+                '1',
+            ];
+
+            return in_array($maybe_bool, $valid_boolean_values, true);
+        }
+
+        if (is_int($maybe_bool)) {
+            return in_array($maybe_bool, array(0, 1), true);
+        }
+
+        return false;
+    }
+
+    public static function get_setting($key, $default = false, $is_empty = false)
+    {
+        $data = get_option('rmp_options');
+
+        if ($is_empty === true) {
+            return isset($data[$key]) && ( ! empty($data[$key]) || self::is_boolean($data[$key])) ? $data[$key] : $default;
+        }
+
+        return isset($data[$key]) ? $data[$key] : $default;
+    }
+
     /**
      * Check if flag is set or exists.
      *
