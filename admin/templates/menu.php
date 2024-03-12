@@ -17,7 +17,7 @@
   }
 
   $about = esc_html__( 'About', 'rate-my-post' );
-  $pro = esc_html__( 'Pro Version', 'rate-my-post' );
+  $pro = esc_html__( 'Premium Version', 'rate-my-post' );
 
   if( class_exists( 'Rate_My_Post_Pro' ) ) {
     $about = esc_html__( 'Support', 'rate-my-post' );

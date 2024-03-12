@@ -29,11 +29,11 @@
   <div class="rmp-pro">
 
     <p class="rmp-pro__subtitle">
-      <?php echo ( esc_html__( 'FeedbackWP Premium in addition to the free features also includes:', 'rate-my-post' ) ); ?>
+      <?php echo ( esc_html__( 'FeedbackWP Premium includes the following features:', 'rate-my-post' ) ); ?>
     </p>
     <div class="rmp-pro__features">
       <p class="rmp-pro__feature">
-        <?php echo ( esc_html__( 'Add rating to custom post types.', 'rate-my-post' ) ); ?>
+        <?php echo ( esc_html__( 'Add rating widget to custom post types.', 'rate-my-post' ) ); ?>
       </p>
       <p class="rmp-pro__feature">
         <?php echo ( esc_html__( 'Support for different rating icons other than Stars.', 'rate-my-post' ) ); ?>
@@ -45,10 +45,10 @@
         <?php echo ( esc_html__( 'Create custom rating widgets which work independently of posts. ', 'rate-my-post' ) ); ?>
       </p>
       <p class="rmp-pro__feature">
-        <?php echo ( esc_html__( 'Each custom widget is customizable, including structured data for rich snippets.', 'rate-my-post' ) ); ?>
+        <?php echo ( esc_html__( 'Add ratings to existing posts, pages and custom post types without any vote and rating.', 'rate-my-post' ) ); ?>
       </p>
       <p class="rmp-pro__feature">
-        <?php echo ( esc_html__( 'Add custom rating widgets to archives, taxonomies, author pages etc.', 'rate-my-post' ) ); ?>
+        <?php echo ( esc_html__( 'Each custom widget is customizable, including structured data for rich snippets.', 'rate-my-post' ) ); ?>
       </p>
       <!-- <p class="rmp-pro__feature">
         <?php echo ( esc_html__( 'Shortcode generator.', 'rate-my-post' ) ); ?>
