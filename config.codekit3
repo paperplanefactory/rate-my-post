@@ -409,7 +409,7 @@
       "bF" : 4,
       "ft" : 64,
       "ma" : 0,
-      "mi" : 1,
+      "mi" : 2,
       "oA" : 0,
       "oAP" : "\/public\/js\/rate-my-post.min.js",
       "oF" : 2,
@@ -636,6 +636,30 @@
       "oAP" : "\/admin\/templates\/stats.php",
       "oF" : 1
     },
+    "\/build\/.gitignore" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/.gitignore",
+      "oF" : 0
+    },
+    "\/build\/rate-my-post.zip" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/rate-my-post.zip",
+      "oF" : 0
+    },
+    "\/changelog.txt" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/changelog.txt",
+      "oF" : 0
+    },
     "\/common\/class-rate-my-post-common.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -769,14 +793,6 @@
       "oA" : 0,
       "oAP" : "\/plugin-build.php",
       "oF" : 0
-    },
-    "\/pro\/class-rate-my-post-pro.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 1,
-      "oAP" : "\/pro\/class-rate-my-post-pro.php",
-      "oF" : 1
     },
     "\/public\/class-rate-my-post-public.php" : {
       "cB" : 0,
@@ -988,7 +1004,7 @@
     "displayValueWasSetByUser" : 0,
     "iconImageName" : "brackets-koamaru",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 731433612.11715901
+    "lastBuiltDate" : 732099107.64990795
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,

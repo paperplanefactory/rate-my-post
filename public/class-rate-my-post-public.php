@@ -98,7 +98,7 @@ class Rate_My_Post_Public
         );
         wp_register_script(
             'rmp-recaptcha',
-            'https://www.google.com/recaptcha/api.js?render=' . $security['siteKey'],
+            'https://www.google.com/recaptcha/api.js?render=' . sanitize_text_field($security['siteKey']),
             array(),
             null,
             false
@@ -134,11 +134,16 @@ class Rate_My_Post_Public
         );
 
         // enqueue recaptcha if necessary
-        if ($this->do_recaptcha() === 2 && (($options['posts'] === 2 && is_singular(
-                        'post'
-                    )) || ($options['pages'] === 2 && is_page()) || ( ! empty($options['cptRating']) && is_singular(
-                        $options['cptRating']
-                    )))) {
+        if (
+            $this->do_recaptcha() === 2 &&
+            (
+                ($options['posts'] === 2 &&
+                 is_singular('post')
+                ) ||
+                ($options['pages'] === 2 && is_page()) ||
+                ( ! empty($options['cptRating']) && is_singular($options['cptRating']))
+            )
+        ) {
             wp_enqueue_script('rmp-recaptcha');
         };
     }
