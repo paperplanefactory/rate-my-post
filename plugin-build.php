@@ -58,7 +58,7 @@ foreach (
 }
 
 //exec("makepot ../" . $plugin_git_name);
-exec("wp i18n make-pot ../" . $plugin_git_name . " languages/rate-my-post.pot");
+exec("wp i18n make-pot ../" . $plugin_git_name . " languages/rate-my-post.pot --skip-audit");
 
 // move up directory
 chdir($dir);
