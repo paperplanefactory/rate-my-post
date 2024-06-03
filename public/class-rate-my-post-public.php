@@ -1774,9 +1774,9 @@ class Rate_My_Post_Public
         $icons_empty = $max_rating - $icons_highlighted - $icons_half_highlighted;
 
         $count = array(
-            'fullIcons'  => intval($icons_highlighted),
-            'halfIcons'  => intval($icons_half_highlighted),
-            'emptyIcons' => intval($icons_empty),
+            'fullIcons'  => absint($icons_highlighted),
+            'halfIcons'  => absint($icons_half_highlighted),
+            'emptyIcons' => absint($icons_empty),
             'avgRating'  => $average_rating
         );
 
