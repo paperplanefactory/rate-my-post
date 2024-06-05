@@ -115,20 +115,20 @@ class Rate_My_Post_Public
                 'noVotes'           => $customization['noRating'],
                 'cookie'            => $customization['cookieNotice'],
                 'afterVote'         => $customization['afterVote'],
-                'notShowRating'     => intval($options['notShowRating']),
+                'notShowRating'     => absint($options['notShowRating']),
                 'social'            => $options['social'],
                 'feedback'          => $options['feedback'],
                 'cookieDisable'     => $options['cookieDisable'],
                 'emptyFeedback'     => $customization['feedbackAlert'],
-                'hoverTexts'        => intval($options['hoverTexts']),
-                'preventAccidental' => intval($options['preventAccidental']),
+                'hoverTexts'        => absint($options['hoverTexts']),
+                'preventAccidental' => absint($options['preventAccidental']),
                 'grecaptcha'        => $this->do_recaptcha(),
                 'siteKey'           => $security['siteKey'],
                 'votingPriv'        => $security['votingPriv'],
                 'loggedIn'          => is_user_logged_in(),
-                'positiveThreshold' => intval($options['positiveNegative']),
-                'ajaxLoad'          => intval($options['ajaxLoad']),
-                'disableClearCache' => intval($options['disableClearCache']),
+                'positiveThreshold' => absint($options['positiveNegative']),
+                'ajaxLoad'          => absint($options['ajaxLoad']),
+                'disableClearCache' => absint($options['disableClearCache']),
                 'nonce'             => wp_create_nonce('rmp_public_nonce'),
             )
         );
@@ -269,7 +269,7 @@ class Rate_My_Post_Public
                 'errorMsg'  => '',
             );
 
-            $post_id = intval($_POST['postID']);
+            $post_id = absint($_POST['postID']);
             $nonce   = isset($_POST['nonce']) ? $_POST['nonce'] : false;
 
             // security check
@@ -311,7 +311,7 @@ class Rate_My_Post_Public
     {
         if (wp_doing_ajax()) {
             // mutex
-            $lockName = 'rmp-ajax-rating-' . get_current_user_id() . '-' . intval($_POST['postID']);
+            $lockName = 'rmp-ajax-rating-' . get_current_user_id() . '-' . absint($_POST['postID']);
             if ( ! Rate_My_Post_Mutex::acquire($lockName)) {
                 return new WP_Error('ajax_rating_fail', __('Ajax rating fail', 'rate-my-post'), ['status' => 400]);
             }
@@ -324,14 +324,14 @@ class Rate_My_Post_Public
             );
 
             // variables
-            $post_id = intval($_POST['postID']);
+            $post_id = absint($_POST['postID']);
             if (get_post_status($post_id) == 'private') {
                 die();
             }
             $security_options = get_option('rmp_security');
             $custom_strings   = $this->custom_strings($post_id);
-            $submitted_rating = intval($_POST['star_rating']);
-            $duration         = intval($_POST['duration']);
+            $submitted_rating = absint($_POST['star_rating']);
+            $duration         = absint($_POST['duration']);
             $recaptcha_token  = isset($_POST['token']) ? $_POST['token'] : false;
             $nonce            = isset($_POST['nonce']) ? $_POST['nonce'] : false;
 
@@ -430,7 +430,7 @@ class Rate_My_Post_Public
 
         if (wp_doing_ajax()) {
             // mutex
-            $lockName = 'rmp-amp-ajax-rating-' . get_current_user_id() . '-' . intval($_POST['postID']);
+            $lockName = 'rmp-amp-ajax-rating-' . get_current_user_id() . '-' . absint($_POST['postID']);
             if ( ! Rate_My_Post_Mutex::acquire($lockName)) {
                 return new WP_Error(
                     'amp_ajax_rating_fail',
@@ -447,13 +447,13 @@ class Rate_My_Post_Public
             );
             // variables
             $options = get_option('rmp_options');
-            $post_id = intval($_POST['postID']);
+            $post_id = absint($_POST['postID']);
             if (get_post_status($post_id) == 'private') {
                 die();
             }
             $security_options = get_option('rmp_security');
             $custom_strings   = $this->custom_strings($post_id);
-            $submitted_rating = intval($_POST['star_rating']);
+            $submitted_rating = absint($_POST['star_rating']);
             $nonce            = isset($_POST['nonce']) ? $_POST['nonce'] : false;
 
             // if amp not enabled, exit
@@ -552,11 +552,11 @@ class Rate_My_Post_Public
     public function process_feedback()
     {
         if (wp_doing_ajax()) {
-            $lockName = 'rmp-ajax-feedback-' . get_current_user_id() . '-' . intval($_POST['postID']);
+            $lockName = 'rmp-ajax-feedback-' . get_current_user_id() . '-' . absint($_POST['postID']);
             if ( ! Rate_My_Post_Mutex::acquire($lockName)) {
                 return new WP_Error('ajax_feedback_fail', __('Ajax feedback fail', 'rate-my-post'), ['status' => 400]);
             }
-            $post_id       = intval($_POST['postID']);
+            $post_id       = absint($_POST['postID']);
             $options       = get_option('rmp_options');
             $customization = $this->custom_strings($post_id);
             // if feedback disabled, die
@@ -575,9 +575,9 @@ class Rate_My_Post_Public
             $recaptcha_token  = isset($_POST['token']) ? $_POST['token'] : false;
             $rmp_token        = isset($_POST['rating_token']) ? $_POST['rating_token'] : false;
             $feedback         = sanitize_text_field($_POST['feedback']);
-            $rating_id        = isset($_POST['rating_id']) ? intval($_POST['rating_id']) : false;
+            $rating_id        = isset($_POST['rating_id']) ? absint($_POST['rating_id']) : false;
             $time             = date("d-m-Y H:i:s");
-            $user             = $security_options['userTracking'] == 2 ? intval(get_current_user_id()) : false;
+            $user             = $security_options['userTracking'] == 2 ? absint(get_current_user_id()) : false;
             $nonce            = isset($_POST['nonce']) ? $_POST['nonce'] : false;
 
             // security checks
@@ -721,7 +721,7 @@ class Rate_My_Post_Public
 
         if ($existing_vote_count > 0) {
 
-            $new_vote_count = intval($existing_vote_count + 1);
+            $new_vote_count = absint($existing_vote_count + 1);
 
             update_post_meta($post_id, 'rmp_vote_count', $new_vote_count);
 
@@ -739,7 +739,7 @@ class Rate_My_Post_Public
         $existing_ratings_sum = Rate_My_Post_Common::get_sum_of_ratings($post_id);
 
         if ($existing_ratings_sum > 0) {
-            $new_ratings_sum = intval($existing_ratings_sum + $rating);
+            $new_ratings_sum = absint($existing_ratings_sum + $rating);
             update_post_meta($post_id, 'rmp_rating_val_sum', $new_ratings_sum);
 
             return $new_ratings_sum;
@@ -867,7 +867,7 @@ class Rate_My_Post_Public
 
         // get rater's username
         if ($security['userTracking'] == 2) {
-            $user = intval(get_current_user_id());
+            $user = absint(get_current_user_id());
         }
         // get rater's ip
         if ($security['ipTracking'] == 2) {
@@ -1364,7 +1364,7 @@ class Rate_My_Post_Public
     private function do_recaptcha()
     {
         $security  = get_option('rmp_security');
-        $recaptcha = intval($security['recaptcha']);
+        $recaptcha = absint($security['recaptcha']);
         $siteKey   = str_replace(' ', '', $security['siteKey']);
         $secretKey = str_replace(' ', '', $security['secretKey']);
         if ($recaptcha === 2 && $siteKey && $secretKey) {
@@ -1679,7 +1679,7 @@ class Rate_My_Post_Public
                 $the_query->the_post();
                 //data we'll need
                 $post_id    = get_the_id();
-                $avg_rating = intval(Rate_My_Post_Common::get_average_rating() * 10); //floats are hassle
+                $avg_rating = absint(Rate_My_Post_Common::get_average_rating() * 10); //floats are hassle
                 $vote_count = Rate_My_Post_Common::get_vote_count($post_id);
                 //save post ids and average rating
                 if ($avg_rating && $avg_rating >= ($required_rating * 10) && $vote_count && $vote_count >= $required_votes) {
@@ -1759,7 +1759,7 @@ class Rate_My_Post_Public
         $icons_empty            = 0;
 
         // let's not compare floats
-        $decimals = intval(($average_rating * 10) - ($icons_highlighted * 10));
+        $decimals = absint(($average_rating * 10) - ($icons_highlighted * 10));
 
         // determine whether we need a half highlighted icon
         if ($decimals > 7) {

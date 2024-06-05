@@ -33,7 +33,7 @@ class Rate_My_Post_Common
             $post_id = get_the_id();
         }
 
-        return intval(get_post_meta($post_id, 'rmp_vote_count', true));
+        return absint(get_post_meta($post_id, 'rmp_vote_count', true));
     }
 
     // post's sum of ratings
@@ -43,7 +43,7 @@ class Rate_My_Post_Common
             $post_id = get_the_id();
         }
 
-        return intval(get_post_meta($post_id, 'rmp_rating_val_sum', true));
+        return absint(get_post_meta($post_id, 'rmp_rating_val_sum', true));
     }
 
     // calculate average rating
@@ -80,16 +80,16 @@ class Rate_My_Post_Common
             $max_rating = apply_filters('rmp_max_rating', $max_rating);
         }
 
-        return intval($max_rating);
+        return absint($max_rating);
     }
 
     public static function update_post_id_rating($post_id, $vote_count, $avg_rating)
     {
-        $post_id = intval($post_id);
+        $post_id = absint($post_id);
 
         $max_rating = self::max_rating();
 
-        $rating_sum = intval(round($vote_count * $avg_rating));
+        $rating_sum = absint(round($vote_count * $avg_rating));
 
         // recalculate avg rating - for example if user inserts vote count 1 and rating 4.5 we want to avg rating to be 4 as the former is not possible
         if ($rating_sum && $vote_count) {

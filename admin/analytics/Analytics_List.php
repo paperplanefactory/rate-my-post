@@ -84,7 +84,7 @@ class Rate_My_Post_Analytics_List extends \WP_List_Table
         }
 
         if (in_array($column_name, ['votes', 'value'])) {
-            return intval($item[$column_name]);
+            return absint($item[$column_name]);
         }
 
         return $item[$column_name] ?? '';
@@ -130,7 +130,7 @@ class Rate_My_Post_Analytics_List extends \WP_List_Table
 
     public function column_post($item)
     {
-        $postID = intval($item['post'] ?? '');
+        $postID = absint($item['post'] ?? '');
 
         if (get_post_type($postID) != 'crw') {
             return sprintf('<a href="%s">%s</a>', get_the_permalink($postID), get_the_title($postID));
@@ -145,7 +145,7 @@ class Rate_My_Post_Analytics_List extends \WP_List_Table
 
         if ($duration == -1) return 'AMP - n/a';
 
-        return intval($duration) . ' seconds';
+        return absint($duration) . ' seconds';
     }
 
     public function column_time($item)

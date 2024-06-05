@@ -76,9 +76,9 @@
     //backend form
     public function form( $instance ) {
       $title = ( isset( $instance['title'] ) ) ? strip_tags( $instance['title'] ) : '';
-      $postsNumber = ( isset( $instance['postsNumber'] ) ) ? intval( $instance['postsNumber'] ) : '';
+      $postsNumber = ( isset( $instance['postsNumber'] ) ) ? absint( $instance['postsNumber'] ) : '';
       $minRating = ( isset( $instance['minRating'] ) ) ? floatval( $instance['minRating'] ) : '';
-      $minVotes = ( isset( $instance['minVotes'] ) ) ? intval( $instance['minVotes'] ) : '';
+      $minVotes = ( isset( $instance['minVotes'] ) ) ? absint( $instance['minVotes'] ) : '';
       $showThumb = ( isset( $instance['showThumb'] ) && $instance['showThumb'] ) ? true : false;
       $showStars = ( isset( $instance['showStars'] ) && $instance['showStars'] ) ? true : false;
   		?>
@@ -123,9 +123,9 @@
 
   		$instance = $old_instance;
   		$instance['title'] = sanitize_text_field( $new_instance['title'] );
-      $instance['postsNumber'] = intval( $new_instance['postsNumber'] );
+      $instance['postsNumber'] = absint( $new_instance['postsNumber'] );
       $instance['minRating'] = floatval( $new_instance['minRating'] );
-      $instance['minVotes'] = intval( $new_instance['minVotes'] );
+      $instance['minVotes'] = absint( $new_instance['minVotes'] );
       $instance['showThumb'] = sanitize_text_field( $showThumb );
       $instance['showStars'] = sanitize_text_field( $showStars );
   		return $instance;

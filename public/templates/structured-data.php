@@ -28,7 +28,7 @@
   "aggregateRating": {
     "@type": "AggregateRating",
     "bestRating": "<?php echo $max_rating; ?>",
-    "ratingCount": "<?php echo intval( $vote_count ); ?>",
+    "ratingCount": "<?php echo absint( $vote_count ); ?>",
     "ratingValue": "<?php echo $average_rating; ?>"
   },
   "image": "<?php echo $image; ?>",

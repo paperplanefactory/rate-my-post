@@ -126,9 +126,9 @@ class Rate_My_Post_Admin
                 'errorMsg'   => []
             ];
             // variables
-            $vote_count = intval($_POST['votes']);
+            $vote_count = absint($_POST['votes']);
             $avg_rating = floatval($_POST['avg']);
-            $post_id    = intval($_POST['postID']);
+            $post_id    = absint($_POST['postID']);
             $nonce      = isset($_POST['nonce']) ? $_POST['nonce'] : false;
 
             // security checks
@@ -172,7 +172,7 @@ class Rate_My_Post_Admin
                 'errorMsg'   => array()
             );
             // variables
-            $post_id = intval($_POST['postID']);
+            $post_id = absint($_POST['postID']);
             $nonce   = isset($_POST['nonce']) ? $_POST['nonce'] : false;
 
             // security checks
@@ -216,7 +216,7 @@ class Rate_My_Post_Admin
                 'errorMsg'   => array()
             );
             // variables
-            $post_id = intval($_POST['postID']);
+            $post_id = absint($_POST['postID']);
             $nonce   = isset($_POST['nonce']) ? $_POST['nonce'] : false;
             // security checks
             if ( ! $this->has_required_capability($post_id)) {
@@ -256,7 +256,7 @@ class Rate_My_Post_Admin
             );
 
             // variables
-            $post_id     = intval($_POST['postID']);
+            $post_id     = absint($_POST['postID']);
             $feedback_id = sanitize_text_field($_POST['feedbackID']);
             $nonce       = isset($_POST['nonce']) ? $_POST['nonce'] : false;
 
@@ -821,7 +821,7 @@ class Rate_My_Post_Admin
                 "SELECT COUNT(id) as count, SUM(vote) as votes FROM " .
                 YASR_LOG_TABLE .
                 " WHERE post_id=%d",
-                intval($post_id)
+                absint($post_id)
             )
         );
     }
@@ -850,8 +850,8 @@ class Rate_My_Post_Admin
                 $post_id = get_the_id();
 
                 if ( ! $specific_plugin) { // migration based on post meta
-                    $ratings_sum = intval(get_post_meta($post_id, $ratings_sum_field, true));
-                    $vote_count  = intval(get_post_meta($post_id, $vote_count_field, true));
+                    $ratings_sum = absint(get_post_meta($post_id, $ratings_sum_field, true));
+                    $vote_count  = absint(get_post_meta($post_id, $vote_count_field, true));
 
                     if ($ratings_sum && $vote_count) { // post is rated in another plugin
                         $count++;
@@ -921,8 +921,8 @@ class Rate_My_Post_Admin
     // return empty string rather than 0 - for options
     private function numeric_option($number)
     {
-        if (intval($number)) {
-            return intval($number);
+        if (absint($number)) {
+            return absint($number);
         }
 
         return '';
@@ -955,7 +955,7 @@ class Rate_My_Post_Admin
     {
         // numeric options
         if (in_array($key, Rate_My_Post_Settings::$numeric_options)) {
-            return intval($value);
+            return absint($value);
         };
         // url options
         if (in_array($key, Rate_My_Post_Settings::$url_options)) {
@@ -971,7 +971,7 @@ class Rate_My_Post_Admin
             $new_array     = array();
             $input_numbers = explode(',', ($value));
             foreach ($input_numbers as $input_number) {
-                $input_number = intval($input_number);
+                $input_number = absint($input_number);
                 if ($input_number) {
                     $new_array[] = $input_number;
                 }
@@ -1000,7 +1000,7 @@ class Rate_My_Post_Admin
     private function sanitize_customization($key, $value)
     {
         if (in_array($key, Rate_My_Post_Settings::$customization_numeric)) {
-            return intval($value);
+            return absint($value);
         } else {
             return sanitize_text_field($value);
         }
@@ -1010,7 +1010,7 @@ class Rate_My_Post_Admin
     private function sanitize_security($key, $value)
     {
         if (in_array($key, Rate_My_Post_Settings::$security_numeric)) {
-            return intval($value);
+            return absint($value);
         } else {
             return sanitize_text_field($value);
         }
@@ -1031,8 +1031,8 @@ class Rate_My_Post_Admin
             }
             // Authors can only do actions on their own posts
             if (current_user_can('publish_posts')) {
-                $postAuthorId  = intval(get_post_field('post_author', $post_id));
-                $currentUserId = intval(get_current_user_id());
+                $postAuthorId  = absint(get_post_field('post_author', $post_id));
+                $currentUserId = absint(get_current_user_id());
                 if ($postAuthorId === $currentUserId) {
                     return true;
                 }

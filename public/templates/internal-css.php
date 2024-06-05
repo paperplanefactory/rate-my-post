@@ -99,15 +99,15 @@
 }
 <?php endif; ?>
 
-<?php if( intval( $customization_options['borderWidth'] ) || $customization_options['borderColor'] ): // rating widget border width and color ?>
+<?php if( absint( $customization_options['borderWidth'] ) || $customization_options['borderColor'] ): // rating widget border width and color ?>
 .rmp-widgets-container {
-	border: <?php echo intval( $customization_options['borderWidth'] ? $customization_options['borderWidth'] : '1' ); ?>px solid <?php echo  $customization_options['borderColor'] ? $customization_options['borderColor'] : 'grey'; ?>;
+	border: <?php echo absint( $customization_options['borderWidth'] ? $customization_options['borderWidth'] : '1' ); ?>px solid <?php echo  $customization_options['borderColor'] ? $customization_options['borderColor'] : 'grey'; ?>;
 }
 <?php endif; ?>
 
-<?php if( intval( $customization_options['borderRadius'] ) ): // rating widget border radius ?>
+<?php if( absint( $customization_options['borderRadius'] ) ): // rating widget border radius ?>
 .rmp-widgets-container {
-	border-radius: <?php echo intval( $customization_options['borderRadius'] ); ?>px;
+	border-radius: <?php echo absint( $customization_options['borderRadius'] ); ?>px;
 }
 <?php endif; ?>
 
@@ -117,53 +117,53 @@
 }
 <?php endif; ?>
 
-<?php if( intval( $customization_options['iconMargin'] ) ): // icons margin in rating widget ?>
+<?php if( absint( $customization_options['iconMargin'] ) ): // icons margin in rating widget ?>
 .rmp-widgets-container.rmp-wp-plugin.rmp-main-container .rmp-rating-widget__icons-list__icon {
-	margin-left: <?php echo intval( $customization_options['iconMargin'] ); ?>px;
-	margin-right: <?php echo intval( $customization_options['iconMargin'] ); ?>px;
+	margin-left: <?php echo absint( $customization_options['iconMargin'] ); ?>px;
+	margin-right: <?php echo absint( $customization_options['iconMargin'] ); ?>px;
 }
 <?php endif; ?>
 
-<?php if( intval( $customization_options['titleFontSize'] ) ): // title font size ?>
+<?php if( absint( $customization_options['titleFontSize'] ) ): // title font size ?>
 .rmp-widgets-container.rmp-wp-plugin.rmp-main-container .rmp-heading--title {
-  font-size: <?php echo intval( $customization_options['titleFontSize'] ); ?>px;
+  font-size: <?php echo absint( $customization_options['titleFontSize'] ); ?>px;
 }
 <?php endif; ?>
 
-<?php if( intval( $customization_options['subtitleFontSize'] ) ): // subtitle font size ?>
+<?php if( absint( $customization_options['subtitleFontSize'] ) ): // subtitle font size ?>
 .rmp-widgets-container.rmp-wp-plugin.rmp-main-container .rmp-heading--subtitle {
-  font-size: <?php echo intval( $customization_options['subtitleFontSize'] ); ?>px;
+  font-size: <?php echo absint( $customization_options['subtitleFontSize'] ); ?>px;
 }
 <?php endif; ?>
 
-<?php if( intval( $customization_options['textFontSize'] ) ): // text font size ?>
+<?php if( absint( $customization_options['textFontSize'] ) ): // text font size ?>
  .rmp-widgets-container p {
-  font-size: <?php echo intval( $customization_options['textFontSize'] ); ?>px;
+  font-size: <?php echo absint( $customization_options['textFontSize'] ); ?>px;
 }
 <?php endif; ?>
 
-<?php if( intval( $customization_options['titleMarginBottom'] ) ): // title margin bottom ?>
+<?php if( absint( $customization_options['titleMarginBottom'] ) ): // title margin bottom ?>
 .rmp-widgets-container.rmp-wp-plugin.rmp-main-container .rmp-heading.rmp-heading--title {
-  margin-bottom: <?php echo intval( $customization_options['titleMarginBottom'] ); ?>px;
+  margin-bottom: <?php echo absint( $customization_options['titleMarginBottom'] ); ?>px;
 }
 <?php endif; ?>
 
-<?php if( intval( $customization_options['subtitleMarginBottom'] ) ): // subtitle margin bottom ?>
+<?php if( absint( $customization_options['subtitleMarginBottom'] ) ): // subtitle margin bottom ?>
 .rmp-widgets-container.rmp-wp-plugin.rmp-main-container .rmp-heading.rmp-heading--subtitle {
-  margin-bottom: <?php echo intval( $customization_options['subtitleMarginBottom'] ); ?>px;
+  margin-bottom: <?php echo absint( $customization_options['subtitleMarginBottom'] ); ?>px;
 }
 <?php endif; ?>
 
-<?php if( intval( $customization_options['socialFontSize'] ) ): // social icon size ?>
+<?php if( absint( $customization_options['socialFontSize'] ) ): // social icon size ?>
 .rmp-social-widget .rmp-icon--social {
-  font-size: <?php echo intval( $customization_options['socialFontSize'] ); ?>px;
-  padding: <?php echo intval( $customization_options['socialFontSize'] * 0.67 ); ?>px;
-  width: <?php echo intval( $customization_options['socialFontSize'] * 2.33 ); ?>px;
+  font-size: <?php echo absint( $customization_options['socialFontSize'] ); ?>px;
+  padding: <?php echo absint( $customization_options['socialFontSize'] * 0.67 ); ?>px;
+  width: <?php echo absint( $customization_options['socialFontSize'] * 2.33 ); ?>px;
 }
 <?php endif; ?>
 
-<?php if( intval( $customization_options['iconSize'] ) ): // rate icon size ?>
+<?php if( absint( $customization_options['iconSize'] ) ): // rate icon size ?>
 .rmp-rating-widget .rmp-icon--ratings {
-  font-size: <?php echo intval( $customization_options['iconSize'] ); ?>px;
+  font-size: <?php echo absint( $customization_options['iconSize'] ); ?>px;
 }
 <?php endif; ?>
