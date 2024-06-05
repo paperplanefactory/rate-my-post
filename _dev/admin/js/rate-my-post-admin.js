@@ -4,7 +4,6 @@ import AjaxOptions from './modules/AjaxOptions';
 import MigrateRatings from './modules/MigrateRatings';
 import CptHandler from './modules/CptHandler';
 import RelationsHandler from './modules/RelationsHandler';
-import OrderlyTables from './modules/OrderlyTables';
 import AjaxRatings from './modules/AjaxRatings';
 import AjaxFeedback from './modules/AjaxFeedback';
 import WaypointsHandler from './modules/WaypointsHandler';
@@ -24,7 +23,6 @@ $(document).ready(() => {
   let ajaxNotices = new AjaxNotices();
 
   let settingsPage = $('.js-rmp-menu').length;
-  let orderlyTablesPage = $('.js-rmp-orderly-tables').length;
   let metaboxPage = $('.js-rmp-meta-box').length;
   let crw = $('.column-crw_shortcode').length;
   let metaboxPagePro = $('.js-rmp-customize-mb').length;
@@ -42,10 +40,6 @@ $(document).ready(() => {
     let stickySaveSecurity = new WaypointsHandler('js-rmp-security-waypoint', '.js-rmp-security-sticky');
     let ajaxWipe = new AjaxWipe();
     let ajaxLicense = new AjaxLicense();
-  }
-
-  if(orderlyTablesPage) {
-    let orderlyTables = new OrderlyTables();
   }
 
   if(metaboxPage) {

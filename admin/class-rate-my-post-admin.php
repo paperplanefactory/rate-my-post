@@ -24,6 +24,9 @@ class Rate_My_Post_Admin
     {
         $this->rate_my_post = $rate_my_post;
         $this->version      = $version;
+
+        require_once dirname(__FILE__) . '/analytics/analytics.php';
+        require_once dirname(__FILE__) . '/stats/stats.php';
     }
 
     //---------------------------------------------------
@@ -93,7 +96,7 @@ class Rate_My_Post_Admin
         if ( ! $this->has_required_capability($post_id)) {
             return;
         }
-        add_meta_box('rmp-rate-id', 'FeedbackWP Ratings', array($this, 'display_metabox'), $this->define_post_types());
+        add_meta_box('rmp-rate-id', 'FeedbackWP Ratings', array($this, 'display_metabox'), self::define_post_types());
     }
 
     public function display_metabox()
@@ -317,23 +320,27 @@ class Rate_My_Post_Admin
             'rate-my-post'
         );
         // stats item
-        add_submenu_page(
+        $stats_hook = add_submenu_page(
             'rate-my-post',
             'FeedbackWP Stats',
             esc_html__('Stats', 'rate-my-post'),
             'edit_others_posts',
             'rate-my-post-stats',
-            array($this, 'submenu_stats_display')
+            ['Rate_My_Post_Stats', 'admin_page_callback']
         );
         // analytics item
-        add_submenu_page(
+        $analytics_hook = add_submenu_page(
             'rate-my-post',
             'FeedbackWP Analytics',
             esc_html__('Analytics', 'rate-my-post'),
             'edit_others_posts',
             'rate-my-post-analytics',
-            array($this, 'submenu_analytics_display')
+            ['Rate_My_Post_Analytics', 'admin_page_callback']
         );
+
+        add_action("load-$stats_hook", ['Rate_My_Post_Stats', 'screen_option']);
+        add_action("load-$analytics_hook", ['Rate_My_Post_Analytics', 'screen_option']);
+
         // custom rating widgets
         if (class_exists('Rate_My_Post_Pro')) { // PRO only
             add_submenu_page(
@@ -354,28 +361,6 @@ class Rate_My_Post_Admin
             echo ob_get_clean();
         } else {
             echo '<p>' . esc_html__('You do not have adequate permissions for this action!', 'rate-my-post') . '</p>';
-        }
-    }
-
-    public function submenu_stats_display()
-    {
-        if (current_user_can('edit_others_posts')) {
-            ob_start();
-            include_once plugin_dir_path(__FILE__) . 'templates/stats.php';
-            echo ob_get_clean();
-        } else {
-            echo 'Access Denied';
-        }
-    }
-
-    public function submenu_analytics_display()
-    {
-        if (current_user_can('edit_others_posts')) {
-            ob_start();
-            include_once plugin_dir_path(__FILE__) . 'templates/analytics.php';
-            echo ob_get_clean();
-        } else {
-            echo 'Access Denied';
         }
     }
 
@@ -919,78 +904,6 @@ class Rate_My_Post_Admin
     }
 
     //---------------------------------------------------
-    // ANALYTICS SECTION
-    //---------------------------------------------------
-
-    // retrieve data for analytics table
-    private function retrieve_analytics_table_data()
-    {
-        // get the data from plugin's table
-        global $wpdb;
-        $analytics_table = $wpdb->prefix . "rmp_analytics";
-        $analytics_data  = $wpdb->get_results("SELECT * FROM $analytics_table ORDER BY id DESC LIMIT 100");
-        // reverse array - we want latest actions first
-        $analytics_data = array_reverse($analytics_data);
-        // for storing
-        $complete_data = array();
-
-        // populate complete_data array
-        foreach ($analytics_data as $row) {
-            $analytics_row = array();
-
-            $analytics_row['id']        = intval($row->id);
-            $analytics_row['postTitle'] = get_the_title($row->post);
-            $analytics_row['postLink']  = get_the_permalink($row->post);
-            $analytics_row['postID']    = intval($row->post);
-            $analytics_row['action']    = intval($row->action);
-            $analytics_row['newRating'] = floatval($row->average);
-            $analytics_row['newVotes']  = intval($row->votes);
-            $analytics_row['value']     = intval($row->value);
-
-            // not yet functional
-            $analytics_row['country'] = $row->country;
-            // reformat time
-            $time                  = strtotime($row->time);
-            $analytics_row['time'] = date('d-m-Y H:i:s', $time);
-            // user if available
-            if ($row->user == -1) {
-                $analytics_row['user'] = esc_html__('Tracking Disabled', 'rate-my-post');
-            } elseif ($row->user) {
-                $user_info = get_userdata($row->user);
-                $username  = $user_info->user_login;
-                // allow hiding username in admin panel
-                if (has_filter('rmp_rater_username')) {
-                    $username = apply_filters('rmp_rater_username', $username);
-                }
-                $analytics_row['user'] = $username;
-            } else {
-                $analytics_row['user'] = esc_html__('Not logged in', 'rate-my-post');
-            }
-
-            // ip if enabled
-            if ($row->ip == -1) {
-                $analytics_row['ip'] = esc_html__('Tracking Disabled', 'rate-my-post');
-            } elseif ($row->ip) {
-                $analytics_row['ip'] = sanitize_text_field($row->ip);
-            } else {
-                $analytics_row['ip'] = 'n/a';
-            }
-
-            // duration
-            if ($row->duration == -1) {
-                $analytics_row['duration'] = 'AMP - n/a';
-            } else {
-                $analytics_row['duration'] = intval($row->duration) . ' seconds';
-            }
-
-            //push $analyticsRow to $completeAnalyticsData
-            $complete_data[] = $analytics_row;
-        }
-
-        return $complete_data;
-    }
-
-    //---------------------------------------------------
     // ADMIN NOTICES
     //---------------------------------------------------
 
@@ -1150,7 +1063,7 @@ class Rate_My_Post_Admin
     //---------------------------------------------------
 
     // post type to which the ratings apply
-    private function define_post_types()
+    public static function define_post_types()
     {
         $args                  = array(
             'public' => true,
@@ -1197,12 +1110,14 @@ class Rate_My_Post_Admin
     //---------------------------------------------------
 
     // returns an array of feedback for the post
-    private function feedbacks()
+    public static function feedbacks($post_id = false)
     {
+        $post_id = $post_id ?? get_the_id();
+
         // get feedback before version 2.7.0
-        $legacy_feedback = get_post_meta(get_the_id(), 'rmp_feedback_val', true);
+        $legacy_feedback = get_post_meta($post_id, 'rmp_feedback_val', true);
         // get feedback after version 2.7.0
-        $feedback = get_post_meta(get_the_id(), 'rmp_feedback_val_new', true);
+        $feedback = get_post_meta($post_id, 'rmp_feedback_val_new', true);
 
         // restructure legacy feedback
         if ($legacy_feedback && ! is_array($legacy_feedback)) {
@@ -1261,57 +1176,6 @@ class Rate_My_Post_Admin
         }
 
         return false;
-    }
-
-    //---------------------------------------------------
-    // STATS SECTION
-    //---------------------------------------------------
-
-    // returns rows for stats table
-    private function stats_rows()
-    {
-        $rated_posts = array();
-        $args        = array(
-            'fields'                 => 'ids',
-            'post_type'              => $this->define_post_types(),
-            'posts_per_page'         => -1,
-            'no_found_rows'          => true,
-            'update_post_term_cache' => false,
-            'meta_query'             => array(
-                array(
-                    'key'     => 'rmp_vote_count',
-                    'value'   => 0,
-                    'compare' => '>'
-                )
-            )
-        );
-        $the_query   = new WP_Query($args);
-        // The Loop
-        if ($the_query->have_posts()) {
-            while ($the_query->have_posts()) {
-                $the_query->the_post();
-                //data we'll need
-                $vote_count = intval(get_post_meta(get_the_ID(), 'rmp_vote_count', true));
-                $rating_sum = intval(get_post_meta(get_the_ID(), 'rmp_rating_val_sum', true));
-
-                if ($vote_count && $rating_sum) { // post is rated
-                    $post_id        = get_the_ID();
-                    $feedback_count = 0;
-                    if ($this->feedbacks()) {
-                        $feedback_count = count($this->feedbacks());
-                    }
-
-                    $rated_posts[$post_id]['title']          = get_the_title();
-                    $rated_posts[$post_id]['edit_link']      = get_edit_post_link();
-                    $rated_posts[$post_id]['vote_count']     = $vote_count;
-                    $rated_posts[$post_id]['feedback_count'] = $feedback_count;
-                    $rated_posts[$post_id]['avg_rating']     = Rate_My_Post_Common::get_average_rating();
-                }
-            }
-            wp_reset_postdata();
-        }
-
-        return $rated_posts;
     }
 
     //---------------------------------------------------

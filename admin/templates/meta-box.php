@@ -18,7 +18,7 @@
 ?>
 
 <?php
-  $feedback = $this->feedbacks();
+  $feedback = Rate_My_Post_Admin::feedbacks();
   $max_rating = Rate_My_Post_Common::max_rating();
 ?>
 

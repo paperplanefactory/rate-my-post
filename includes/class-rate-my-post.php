@@ -116,6 +116,9 @@ class Rate_My_Post {
 		$this->loader->add_action( 'admin_notices', $plugin_admin, 'admin_notices' );
 		// DISMISS ADMIN NOTICE
 		$this->loader->add_action( 'wp_ajax_rmp_dismiss_notice', $plugin_admin, 'dismiss_notice' );
+
+        Rate_My_Post_Analytics::init();
+        Rate_My_Post_Stats::init();
 	}
 
 	// Register public hooks

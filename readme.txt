@@ -2,7 +2,7 @@
 Contributors: collizo4sky, properfraction
 Donate link: https://feedbackwp.com/pricing/
 Tags: rating system, rate post, rate page, star rating, post rating
-Requires at least: 4.9
+Requires at least: 5.3
 Tested up to: 6.5
 Stable tag: 4.0.2
 Requires PHP: 7.4

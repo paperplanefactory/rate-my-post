@@ -8,7 +8,6 @@
   "repository": {},
   "private": true,
   "dependencies": {
-    "datatables.net-dt": "^2.0.1",
     "js-cookie": "^2.2.1",
     "waypoints": "^4.0.1"
   }

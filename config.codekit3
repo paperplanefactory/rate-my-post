@@ -7,7 +7,7 @@
       "uuidString" : "9192B3F5-0739-418F-AA0B-76E561758898"
     }
   ],
-  "creatorBuild" : "34564",
+  "creatorBuild" : "34576",
   "files" : {
     "\/_dev\/admin\/js\/modules\/AjaxClass.js" : {
       "bF" : 0,
@@ -137,17 +137,6 @@
       "mi" : 1,
       "oA" : 1,
       "oAP" : "\/_dev\/admin\/js\/modules\/MigrateRatings-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/_dev\/admin\/js\/modules\/OrderlyTables.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 1,
-      "oAP" : "\/_dev\/admin\/js\/modules\/OrderlyTables-min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -424,6 +413,12 @@
       "oAP" : "\/.gitignore",
       "oF" : 0
     },
+    "\/admin\/analytics" : {
+      "ft" : 65536,
+      "oA" : 1,
+      "oAP" : "\/admin\/analytics",
+      "oF" : 0
+    },
     "\/admin\/class-rate-my-post-admin.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -540,100 +535,26 @@
       "sC" : 3,
       "tS" : 0
     },
-    "\/admin\/templates\/admin-notices.php" : {
+    "\/admin\/stats\/stats_list.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 1,
-      "oAP" : "\/admin\/templates\/admin-notices.php",
-      "oF" : 1
+      "oA" : 0,
+      "oAP" : "\/admin\/stats\/stats_list.php",
+      "oF" : 0
     },
-    "\/admin\/templates\/analytics.php" : {
+    "\/admin\/stats\/stats.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 1,
-      "oAP" : "\/admin\/templates\/analytics.php",
-      "oF" : 1
+      "oA" : 0,
+      "oAP" : "\/admin\/stats\/stats.php",
+      "oF" : 0
     },
-    "\/admin\/templates\/menu-about.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
+    "\/admin\/templates" : {
+      "ft" : 65536,
       "oA" : 1,
-      "oAP" : "\/admin\/templates\/menu-about.php",
-      "oF" : 1
-    },
-    "\/admin\/templates\/menu-alerts.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 1,
-      "oAP" : "\/admin\/templates\/menu-alerts.php",
-      "oF" : 1
-    },
-    "\/admin\/templates\/menu-customize.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 1,
-      "oAP" : "\/admin\/templates\/menu-customize.php",
-      "oF" : 1
-    },
-    "\/admin\/templates\/menu-migration.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 1,
-      "oAP" : "\/admin\/templates\/menu-migration.php",
-      "oF" : 1
-    },
-    "\/admin\/templates\/menu-options.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 1,
-      "oAP" : "\/admin\/templates\/menu-options.php",
-      "oF" : 1
-    },
-    "\/admin\/templates\/menu-security.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 1,
-      "oAP" : "\/admin\/templates\/menu-security.php",
-      "oF" : 1
-    },
-    "\/admin\/templates\/menu.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 1,
-      "oAP" : "\/admin\/templates\/menu.php",
-      "oF" : 1
-    },
-    "\/admin\/templates\/meta-box.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 1,
-      "oAP" : "\/admin\/templates\/meta-box.php",
-      "oF" : 1
-    },
-    "\/admin\/templates\/pro-version.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 1,
-      "oAP" : "\/admin\/templates\/pro-version.php",
-      "oF" : 1
-    },
-    "\/admin\/templates\/stats.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 1,
-      "oAP" : "\/admin\/templates\/stats.php",
+      "oAP" : "\/admin\/templates",
       "oF" : 1
     },
     "\/build\/.gitignore" : {
@@ -996,7 +917,7 @@
     "displayValueWasSetByUser" : 0,
     "iconImageName" : "brackets-koamaru",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 732099107.64990795
+    "lastBuiltDate" : 739284559.85627401
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,
@@ -2563,7 +2484,7 @@
     ],
     "rollupTreeshakingEnabled" : 1,
     "rollupTreeshakingModuleSideEffects" : 1,
-    "skippedFoldersString" : "log, _logs, logs, _cache, cache, .idea, \/storage\/framework\/sessions, node_modules",
+    "skippedFoldersString" : "logs,log,\/admin\/analytics,.idea,_logs,node_modules,cache,_cache,\/admin\/templates,\/storage\/framework\/sessions",
     "sourceFolderName" : "source",
     "susyVersion" : 3,
     "tsAllowArbitraryExtensions" : 0,

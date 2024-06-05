@@ -238,9 +238,7 @@ class Rate_My_Post_Public
             $content        = $results_widget . $content;
 
             return $content;
-        } elseif ($options['resultPages'] === 2 && is_page() && ! is_page(
-                $options['exclude']
-            )) { // add result widget to all pages, except excluded
+        } elseif ($options['resultPages'] === 2 && is_page() && ! is_page($options['exclude'])) { // add result widget to all pages, except excluded
             $results_widget = $this->get_the_results_widget();
             $content        = $results_widget . $content;
 
