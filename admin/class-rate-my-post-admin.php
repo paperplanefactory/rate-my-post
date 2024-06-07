@@ -29,11 +29,6 @@ class Rate_My_Post_Admin
 
         add_action('admin_notices', [$this, 'cpt_header_design'], 1);
 
-        add_action('admin_init', function () {
-            global $submenu;
-            ray($submenu);
-        });
-
         add_action('admin_head', [$this, 'fix_current_item']);
     }
 
