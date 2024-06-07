@@ -1,5 +1,9 @@
 ﻿== Changelog ==
 
+= 4.1.0 =
+* New admin dashboard design.
+* Fixed PHP fatal error triggered in rare rating cases.
+
 = 4.0.2 =
 * Fixed bug where ratings not working if recaptcha is enabled.
 

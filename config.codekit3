@@ -427,18 +427,6 @@
       "oAP" : "\/admin\/class-rate-my-post-admin.php",
       "oF" : 1
     },
-    "\/admin\/css\/rate-my-post-admin-rtl.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 1,
-      "oAP" : "\/admin\/css\/rate-my-post-admin-rtl-min.css",
-      "oF" : 1,
-      "pg" : 0
-    },
     "\/admin\/css\/rate-my-post-admin.css" : {
       "aP" : 1,
       "bl" : 0,
@@ -917,7 +905,7 @@
     "displayValueWasSetByUser" : 0,
     "iconImageName" : "brackets-koamaru",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 739287303.67411804
+    "lastBuiltDate" : 739463627.79284501
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,

@@ -4,7 +4,7 @@ Donate link: https://feedbackwp.com/pricing/
 Tags: rating system, rate post, rate page, star rating, post rating
 Requires at least: 5.3
 Tested up to: 6.5
-Stable tag: 4.0.2
+Stable tag: 4.1.0
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -218,6 +218,10 @@ The invalid WP token error (refers to WP nonce) appears if a page is cached for 
 7. Manipulate Votes
 
 == Changelog ==
+
+= 4.1.0 =
+* New admin dashboard design.
+* Fixed PHP fatal error triggered in rare rating cases.
 
 = 4.0.2 =
 * Fixed bug where ratings not working if recaptcha is enabled.
