@@ -29,10 +29,9 @@ class Rate_My_Post_Analytics
     public static function admin_page_callback()
     {
         ?>
-        <div class="wrap">
-            <h2><?php esc_html_e('FeedbackWP Analytics', 'rate-my-post'); ?></h2>
-            <p><?php esc_html_e( 'Here you can see the details about the recent votes on your website.', 'rate-my-post' ); ?></p>
+        <div class="wrap rmp">
             <div id="poststuff">
+                <p><?php esc_html_e( 'Here you can see the details about the recent votes on your website.', 'rate-my-post' ); ?></p>
                 <div id="post-body" class="metabox-holder">
                     <div id="post-body-content">
                         <div class="meta-box-sortables ui-sortable">

@@ -12,7 +12,6 @@
 
 class Rate_My_Post_Admin
 {
-
     // plugin name - string
     private $rate_my_post;
 
@@ -27,6 +26,152 @@ class Rate_My_Post_Admin
 
         require_once dirname(__FILE__) . '/analytics/analytics.php';
         require_once dirname(__FILE__) . '/stats/stats.php';
+
+        add_action('admin_notices', [$this, 'cpt_header_design'], 1);
+
+        add_action('admin_init', function () {
+            global $submenu;
+            ray($submenu);
+        });
+
+        add_action('admin_head', [$this, 'fix_current_item']);
+    }
+
+    /**
+     * Make sure our admin menu item is highlighted.
+     */
+    public function fix_current_item()
+    {
+        global $parent_file, $submenu_file, $post_type;
+
+        if ('crw' === $post_type) {
+            $parent_file  = 'rate-my-post';
+            $submenu_file = 'edit.php?post_type=crw';
+        }
+    }
+
+    private function is_rmp_page()
+    {
+        global $pagenow, $typenow;
+
+        $screen = function_exists('get_current_screen') ? get_current_screen() : false;
+        if ($screen && $screen->is_block_editor()) return false;
+
+        if ($typenow == 'crw') return true;
+
+        if (isset($_GET['page']) && strstr($_GET['page'], 'rate-my-post')) return true;
+
+        return false;
+    }
+
+    public function cpt_header_design()
+    {
+        if ( ! $this->is_rmp_page()) return;
+
+        echo '<div class="rmp-header-wrap">';
+        Rate_My_Post_Admin::admin_header_design();
+        echo '</div>';
+    }
+
+    private static function rmp_pro_upsell_sidebar_content()
+    {
+        $integrations = [
+            esc_html__('Custom post types support', 'rate-my-post'),
+            esc_html__('Support for different rating icons', 'rate-my-post'),
+            esc_html__('Robust structured data for rich snippets', 'rate-my-post'),
+            esc_html__('Create custom rating widgets', 'rate-my-post'),
+            esc_html__('Bulk rate existing posts', 'rate-my-post'),
+            esc_html__('Premium support', 'rate-my-post'),
+        ];
+
+        $upsell_url = 'https://feedbackwp.com/pricing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=sidebar_upsell';
+
+        $content = '<p>';
+        $content .= sprintf(
+            esc_html__('Enhance the power of FeedbackWP with the premium version that include more features. %sLearn more%s', 'rate-my-post'),
+            '<a target="_blank" href="' . $upsell_url . '">', '</a>'
+        );
+        $content .= '</p>';
+
+        $content .= '<ul>';
+
+        foreach ($integrations as $integration) :
+            $content .= sprintf('<li>%s</li>', $integration);
+        endforeach;
+
+        $content .= '</ul>';
+
+        $content .= '<a href="' . $upsell_url . '" target="__blank" class="button">' . esc_html__('Get FeedbackWP Premium →', 'rate-my-post') . '</a>';
+
+        return $content;
+    }
+
+    private static function rmp_support_docs_sidebar_content($support_url, $review_url)
+    {
+        $link_icon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="linkIcon"><path d="M18.2 17c0 .7-.6 1.2-1.2 1.2H7c-.7 0-1.2-.6-1.2-1.2V7c0-.7.6-1.2 1.2-1.2h3.2V4.2H7C5.5 4.2 4.2 5.5 4.2 7v10c0 1.5 1.2 2.8 2.8 2.8h10c1.5 0 2.8-1.2 2.8-2.8v-3.6h-1.5V17zM14.9 3v1.5h3.7l-6.4 6.4 1.1 1.1 6.4-6.4v3.7h1.5V3h-6.3z"></path></svg>';
+
+        $content = '<p>';
+
+        $content .= sprintf(
+            esc_html__('Whether you need help or have a new feature request, let us know. %sRequest Support%s', 'rate-my-post'),
+            '<a class="feedbackwp-link" href="' . $support_url . '" target="_blank">', $link_icon . '</a>'
+        );
+
+        $content .= '</p>';
+
+        $content .= '<p>';
+        $content .= sprintf(
+            esc_html__('Detailed documentation is also available on the plugin website. %sView Knowledge Base%s', 'rate-my-post'),
+            '<a class="feedbackwp-link" href="https://feedbackwp.com/docs/" target="_blank">', $link_icon . '</a>'
+        );
+
+        $content .= '</p>';
+
+        $content .= '<p>';
+        $content .= sprintf(
+            esc_html__('If you are enjoying FeedbackWP and find it useful, please consider leaving a ★★★★★ review on WordPress.org. %sLeave a Review%s', 'rate-my-post'),
+            '<a class="feedbackwp-link" href="' . $review_url . '">', $link_icon . '</a>'
+        );
+        $content .= '</p>';
+
+        return $content;
+    }
+
+    public static function sidebar_content()
+    {
+        $support_url = 'https://wordpress.org/support/plugin/rate-my-post/';
+        $review_url  = 'https://wordpress.org/support/plugin/rate-my-post/reviews/?filter=5#new-post';
+
+        if (class_exists('Rate_My_Post_Pro')) {
+            $support_url = 'https://feedbackwp.com/support/';
+        }
+
+        if ( ! class_exists('Rate_My_Post_Pro')) { ?>
+            <div class="postbox">
+                <div class="postbox-header">
+                    <h3 class="hndle is-non-sortable">
+                        <span><?php esc_html_e('Upgrade to Premium', 'rate-my-post'); ?></span>
+                    </h3>
+                </div>
+
+                <div class="inside">
+                    <?php echo self::rmp_pro_upsell_sidebar_content() ?>
+                </div>
+            </div>
+        <?php } ?>
+
+        <div class="postbox">
+            <div class="postbox-header">
+                <h3 class="hndle is-non-sortable">
+                    <span><?php esc_html_e('Docs & Support', 'rate-my-post'); ?></span>
+                </h3>
+            </div>
+
+            <div class="inside">
+                <?php echo self::rmp_support_docs_sidebar_content($support_url, $review_url) ?>
+            </div>
+        </div>
+        <?php
     }
 
     //---------------------------------------------------
@@ -35,24 +180,14 @@ class Rate_My_Post_Admin
 
     public function enqueue_styles()
     {
-        // register style
-        if ( ! is_rtl()) {
-            wp_register_style(
-                $this->rate_my_post,
-                plugin_dir_url(__FILE__) . 'css/rate-my-post-admin.css',
-                array(),
-                $this->version,
-                'all'
-            );
-        } else {
-            wp_register_style(
-                $this->rate_my_post,
-                plugin_dir_url(__FILE__) . 'css/rate-my-post-admin-rtl.css',
-                array(),
-                $this->version,
-                'all'
-            );
-        }
+        wp_register_style(
+            $this->rate_my_post,
+            plugin_dir_url(__FILE__) . 'css/rate-my-post-admin.css',
+            array(),
+            $this->version,
+            'all'
+        );
+
         // enqueue style
         wp_enqueue_style($this->rate_my_post);
     }
@@ -1195,4 +1330,49 @@ class Rate_My_Post_Admin
         return false;
     }
 
+    public static function admin_header_design($header_text = '')
+    {
+        $header_text = ! empty($header_text) ? $header_text : 'FeedbackWP';
+
+        $support_url = 'https://wordpress.org/support/plugin/rate-my-post/';
+        $review_url  = 'https://wordpress.org/support/plugin/rate-my-post/reviews/?filter=5#new-post';
+        $upgrade_url = 'https://feedbackwp.com/pricing/?utm_source=wp_dashboard&utm_medium=upgrade&utm_campaign=feedbackwp-header-top';
+
+        if (class_exists('Rate_My_Post_Pro')) {
+            $support_url = 'https://feedbackwp.com/support/';
+        }
+
+        ?>
+        <div id="rmp-header" class="rmp-header">
+            <div class="rmp-header-left"><h3 class="rmp-heading"><?php echo $header_text; ?></h3></div>
+            <div class="rmp-header-right">
+                <a href="<?php echo $review_url ?>" target="_blank" class="rmp-header-action review">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24">
+                        <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2.5" d="m12 2l3.104 6.728l7.358.873l-5.44 5.03l1.444 7.268L12 18.28L5.534 21.9l1.444-7.268L1.538 9.6l7.359-.873L12 2Z"></path>
+                    </svg>
+                    <?php esc_html_e('Review', 'rate-my-post'); ?>
+                </a> <a href="https://feedbackwp.com/docs" target="_blank" class="rmp-header-action translate">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 56 56">
+                        <path fill="currentColor" d="M15.555 53.125h24.89c4.852 0 7.266-2.461 7.266-7.336V24.508c0-3.024-.328-4.336-2.203-6.258L32.57 5.102c-1.78-1.829-3.234-2.227-5.882-2.227H15.555c-4.828 0-7.266 2.484-7.266 7.36v35.554c0 4.898 2.438 7.336 7.266 7.336m.187-3.773c-2.414 0-3.68-1.29-3.68-3.633V10.305c0-2.32 1.266-3.657 3.704-3.657h10.406v13.618c0 2.953 1.5 4.406 4.406 4.406h13.36v21.047c0 2.343-1.243 3.633-3.68 3.633ZM31 21.132c-.914 0-1.29-.374-1.29-1.312V7.375l13.5 13.758Z"/>
+                    </svg>
+                    <?php esc_html_e('Documentation', 'rate-my-post'); ?>
+                </a>
+
+                <a href="<?php echo $support_url ?>" target="_blank" class="rmp-header-action feedback">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16">
+                        <path fill="currentColor" d="M1 2.75C1 1.784 1.784 1 2.75 1h10.5c.966 0 1.75.784 1.75 1.75v7.5A1.75 1.75 0 0 1 13.25 12H9.06l-2.573 2.573A1.458 1.458 0 0 1 4 13.543V12H2.75A1.75 1.75 0 0 1 1 10.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h4.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+                    </svg>
+                    <?php esc_html_e('Get Help', 'rate-my-post'); ?>
+                </a>
+                <?php if ( ! class_exists('Rate_My_Post_Pro')) { ?>
+                    <a href="<?php echo $upgrade_url; ?>" target="_blank" class="button-primary plugin-upgrade"> Get
+                        FeedbackWP Premium </a>
+                <?php } ?>
+            </div>
+        </div>
+        <?php // necessary so all admin notices will be under the top header above
+        ?>
+        <h1 style="display:none">FeedbackWP</h1>
+        <?php
+    }
 }

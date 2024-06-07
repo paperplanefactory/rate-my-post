@@ -29,23 +29,37 @@ class Rate_My_Post_Stats
     public static function admin_page_callback()
     {
         ?>
-        <div class="wrap">
-            <h2><?php esc_html_e('FeedbackWP Stats', 'rate-my-post'); ?></h2>
-            <p><?php esc_html_e('Displaying only rated posts and pages! To see feedback or change ratings click on a post/page title below and find the FeedbackWP Metabox at the bottom.', 'rate-my-post'); ?></p>
-            <div id="poststuff">
-                <div id="post-body" class="metabox-holder">
-                    <div id="post-body-content">
-                        <div class="meta-box-sortables ui-sortable">
+        <div class="wrap rmp">
+
+        <div id="poststuff">
+
+        <div id="post-body" class="metabox-holder columns-2">
+
+            <div id="post-body-content">
+
+                <p><?php esc_html_e('List of rated posts and pages! To see feedback or change ratings click on a post/page title below and find the FeedbackWP Metabox at the bottom.', 'rate-my-post'); ?></p>
                             <form method="post">
                                 <?php
                                 self::$stats_record->prepare_items();
                                 self::$stats_record->display(); ?>
                             </form>
-                        </div>
-                    </div>
+
+
                 </div>
-                <br class="clear">
+
+            <div id="postbox-container-1" class="postbox-container">
+
+                <div class="meta-box-sortables">
+                    <?php Rate_My_Post_Admin::sidebar_content(); ?>
+                </div>
+
             </div>
+
+        </div>
+
+        <br class="clear">
+        </div>
+
         </div>
         <?php
     }

@@ -16,10 +16,10 @@ class Tabs {
     let tabNumber = $(event.currentTarget).data('tab');
     let tabContentToShow = $('.js-rmp-tab-content--' + tabNumber );
     // remove classes
-    $(this.tabs).removeClass('rmp-menu__tabs__tab--selected');
+    $(this.tabs).removeClass('nav-tab-active');
     $(this.tabContents).removeClass('rmp-tab-content--visible');
     // add classes
-    $(event.currentTarget).addClass('rmp-menu__tabs__tab--selected');
+    $(event.currentTarget).addClass('nav-tab-active');
     $(tabContentToShow).addClass('rmp-tab-content--visible');
     Waypoint.refreshAll()
   }
