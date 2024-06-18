@@ -1,5 +1,9 @@
 ﻿== Changelog ==
 
+= 4.1.1 =
+* Fixed bug where feedbacks didn't show up in post edit screens.
+* Fixed DB error due to absence of primary key in table.
+
 = 4.1.0 =
 * New admin dashboard design.
 * Fixed PHP fatal error triggered in rare rating cases.
