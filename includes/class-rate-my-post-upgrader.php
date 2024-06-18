@@ -107,7 +107,7 @@ class Rate_My_Post_Upgrader
 					average decimal(2, 1) NOT NULL,
 					votes smallint(5) NOT NULL,
 					value smallint(5) NOT NULL,
-					UNIQUE KEY id (id)
+					PRIMARY KEY (id)
 				) $charset_collate;";
 
                 require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
@@ -135,7 +135,7 @@ class Rate_My_Post_Upgrader
 					votes smallint(5) NOT NULL,
 					value smallint(5) NOT NULL,
 					token tinytext NOT NULL,
-					UNIQUE KEY id (id)
+					PRIMARY KEY (id)
 				) $charset_collate;";
 
                 require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
@@ -162,7 +162,7 @@ class Rate_My_Post_Upgrader
 					votes smallint(5) NOT NULL,
 					value smallint(5) NOT NULL,
 					token tinytext NOT NULL,
-					UNIQUE KEY id (id)
+					PRIMARY KEY (id)
 				) $charset_collate;";
 
                 require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
