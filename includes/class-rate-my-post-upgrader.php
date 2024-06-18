@@ -169,9 +169,8 @@ class Rate_My_Post_Upgrader
                 dbDelta($sql);
             }
 
-            //DATABASE UPGRADE - SINCE 2.10.3
-            //bug fix - change postid to mediumint for larger websites
-            if (version_compare(get_option('rmp_version'), '5.1.1') < 0) {
+            // Add primary key to table and remove the unique key index
+            if (version_compare(get_option('rmp_version'), '4.1.1') < 0) {
 
                 global $wpdb;
 
