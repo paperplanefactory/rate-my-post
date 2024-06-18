@@ -9,6 +9,8 @@ Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+Add Star Rating to WordPress posts & pages, collect feedbacks from users and improve website SEO with Schema markup for Rich Snippets.
+
 == Description ==
 
 Rate My Post - Star Rating System by FeedbackWP allows you to easily add rating functionality to your WordPress website. Visitors can rate your posts/pages and send you private feedback after rating.

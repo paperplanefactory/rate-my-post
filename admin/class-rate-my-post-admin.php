@@ -125,7 +125,7 @@ class Rate_My_Post_Admin
         $content .= '<p>';
         $content .= sprintf(
             esc_html__('If you are enjoying FeedbackWP and find it useful, please consider leaving a ★★★★★ review on WordPress.org. %sLeave a Review%s', 'rate-my-post'),
-            '<a class="feedbackwp-link" href="' . $review_url . '">', $link_icon . '</a>'
+            '<a target="_blank" class="feedbackwp-link" href="' . $review_url . '">', $link_icon . '</a>'
         );
         $content .= '</p>';
 
