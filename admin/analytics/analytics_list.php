@@ -20,7 +20,7 @@ class Rate_My_Post_Analytics_List extends \WP_List_Table
         $replacement = [1];
 
         $orderby = ! empty($_REQUEST['orderby']) &&
-                   in_array($_REQUEST['orderby'], ['id', 'average', 'votes']) ? $_REQUEST['orderby'] : 'id';
+                   in_array($_REQUEST['orderby'], ['id', 'average', 'votes', 'value']) ? $_REQUEST['orderby'] : 'id';
 
         $sql .= " ORDER BY $orderby";
 
