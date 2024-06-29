@@ -910,7 +910,7 @@
   "projectAttributes" : {
     "creationDate" : 731320127.52678204,
     "displayValue" : "rate-my-post",
-    "displayValueWasSetByUser" : 0,
+    "displayValueWasSetByUser" : 1,
     "iconImageName" : "brackets-koamaru",
     "iconImageWasSetByUser" : 0,
     "lastBuiltDate" : 739463627.79284501
