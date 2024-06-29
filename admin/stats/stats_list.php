@@ -17,19 +17,11 @@ class Rate_My_Post_Stats_List extends \WP_List_Table
     {
 
         if (is_null(self::$cache)) {
-            $orderby = ! empty($_REQUEST['orderby']) &&
-                       in_array($_REQUEST['orderby'], ['id', 'average', 'votes']) ? $_REQUEST['orderby'] : 'id';
-
-            $order = ! empty($_REQUEST['order']) &&
-                     in_array($_REQUEST['order'], ['asc', 'desc']) ? $_REQUEST['order'] : 'desc';
-
             $args = [
                 'fields'                 => 'ids',
                 'post_type'              => Rate_My_Post_Admin::define_post_types(),
                 'posts_per_page'         => $per_page,
                 'paged'                  => $page_number,
-                'orderby'                => $orderby,
-                'order'                  => strtoupper($order),
                 //'no_found_rows'          => true,
                 'update_post_term_cache' => false,
                 'meta_query'             => [
@@ -55,18 +47,6 @@ class Rate_My_Post_Stats_List extends \WP_List_Table
     public function record_count()
     {
         return self::$cache->found_posts;
-    }
-
-    public function get_sortable_columns()
-    {
-        $sortable_columns = [
-            'time'    => ['time', false],
-            'average' => ['average', false],
-            'votes'   => ['votes', false],
-            'value'   => ['value', false]
-        ];
-
-        return $sortable_columns;
     }
 
     public function get_columns()
