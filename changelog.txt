@@ -1,5 +1,9 @@
 ﻿== Changelog ==
 
+= 4.1.2 =
+* Fixed sorting by rating in Analytics.
+* Removed redundant sorting from stat.
+
 = 4.1.1 =
 * Fixed bug where feedbacks didn't show up in post edit screens.
 * Fixed DB error due to absence of primary key in table.
