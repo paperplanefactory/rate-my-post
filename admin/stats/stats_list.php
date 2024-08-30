@@ -15,16 +15,17 @@ class Rate_My_Post_Stats_List extends \WP_List_Table
 
     private function get_wp_query($per_page, $page_number)
     {
-
         if (is_null(self::$cache)) {
+
+            $order = ! empty($_REQUEST['order']) &&
+                     in_array($_REQUEST['order'], ['asc', 'desc']) ? $_REQUEST['order'] : 'desc';
+
             $args = [
-                'fields'                 => 'ids',
-                'post_type'              => Rate_My_Post_Admin::define_post_types(),
-                'posts_per_page'         => $per_page,
-                'paged'                  => $page_number,
-                //'no_found_rows'          => true,
-                'update_post_term_cache' => false,
-                'meta_query'             => [
+                'fields'         => 'ids',
+                'post_type'      => Rate_My_Post_Admin::define_post_types(),
+                'posts_per_page' => $per_page,
+                'paged'          => $page_number,
+                'meta_query'     => [
                     [
                         'key'     => 'rmp_vote_count',
                         'value'   => 0,
@@ -32,6 +33,15 @@ class Rate_My_Post_Stats_List extends \WP_List_Table
                     ]
                 ]
             ];
+
+            if ( ! empty($_REQUEST['orderby']) && in_array($_REQUEST['orderby'], [
+                    'rmp_avg_rating',
+                    'rmp_vote_count'
+                ])) {
+                $args['meta_key'] = sanitize_text_field($_REQUEST['orderby']);
+                $args['orderby']  = 'meta_value_num';
+                $args['order']    = strtoupper($order);
+            }
 
             self::$cache = new WP_Query($args);
         }
@@ -52,10 +62,18 @@ class Rate_My_Post_Stats_List extends \WP_List_Table
     public function get_columns()
     {
         return [
-            'title'    => __('Title', 'rate-my-post'),
-            'votes'    => __('Votes', 'rate-my-post'),
-            'average'  => __('Average Rating', 'rate-my-post'),
-            'feedback' => __('Feedback', 'rate-my-post')
+            'title'          => __('Title', 'rate-my-post'),
+            'rmp_vote_count' => __('Votes', 'rate-my-post'),
+            'rmp_avg_rating' => __('Average Rating', 'rate-my-post'),
+            'feedback'       => __('Feedback', 'rate-my-post')
+        ];
+    }
+
+    public function get_sortable_columns()
+    {
+        return [
+            'rmp_avg_rating' => ['rmp_avg_rating', true],
+            'rmp_vote_count' => ['rmp_vote_count', true]
         ];
     }
 
@@ -69,10 +87,10 @@ class Rate_My_Post_Stats_List extends \WP_List_Table
         switch ($column_name) {
             case 'title':
                 return sprintf('<a href="%s" target="_blank">%s</a>', get_edit_post_link($item), get_the_title($item));
-            case 'votes':
+            case 'rmp_vote_count':
                 return absint(get_post_meta($item, 'rmp_vote_count', true));
-            case 'average':
-                return Rate_My_Post_Common::get_average_rating($item);
+            case 'rmp_avg_rating':
+                return get_post_meta($item, 'rmp_avg_rating', true);
             case 'feedback':
                 $feedback_count = 0;
                 $data           = Rate_My_Post_Admin::feedbacks($item);
@@ -81,7 +99,7 @@ class Rate_My_Post_Stats_List extends \WP_List_Table
                 return $feedback_count;
         }
 
-        return $item;
+        return '';
     }
 
     public function prepare_items()
