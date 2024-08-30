@@ -223,9 +223,10 @@ class Rate_My_Post_Admin
     public function meta_boxes()
     {
         $post_id = get_the_id();
-        if ( ! $this->has_required_capability($post_id)) {
-            return;
-        }
+        if ( ! $this->has_required_capability($post_id)) return;
+
+        if ( ! Rate_My_Post_Common::is_show_for_post_edit_screen()) return;
+
         add_meta_box('rmp-rate-id', 'FeedbackWP Ratings', array($this, 'display_metabox'), self::define_post_types());
     }
 

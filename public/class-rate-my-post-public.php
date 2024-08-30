@@ -1683,7 +1683,7 @@ class Rate_My_Post_Public
                 $vote_count = Rate_My_Post_Common::get_vote_count($post_id);
                 //save post ids and average rating
                 if ($avg_rating && $avg_rating >= ($required_rating * 10) && $vote_count && $vote_count >= $required_votes) {
-                    $rated_posts[$post_id] = $avg_rating;
+                    $rated_posts[$post_id] = $avg_raxting;
                 }
             }
             // sort by averatge rating
