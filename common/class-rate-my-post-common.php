@@ -198,7 +198,7 @@ class Rate_My_Post_Common
 
     public static function enabled_post_types()
     {
-        $bucket = [];
+        $bucket = ['crw'];
 
         $options = get_option("rmp_options", []);
 
