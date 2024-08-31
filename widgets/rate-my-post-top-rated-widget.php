@@ -67,22 +67,22 @@ class Rate_My_Post_Top_Rated_Widget extends WP_Widget
         ?>
         <p>
             <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label>
-            <input class="rmp-widget-input" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>"/>
+            <input class=" widefat rmp-widget-input" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>"/>
         </p>
 
         <p>
             <label for="<?php echo $this->get_field_id('postsNumber'); ?>"><?php echo esc_html__('Number of posts to show:', 'rate-my-post'); ?></label>
-            <input class="rmp-widget-input" id="<?php echo $this->get_field_id('postsNumber'); ?>" name="<?php echo $this->get_field_name('postsNumber'); ?>" type="number" value="<?php echo esc_attr($postsNumber); ?>"/>
+            <input class="tiny-text rmp-widget-input" id="<?php echo $this->get_field_id('postsNumber'); ?>" name="<?php echo $this->get_field_name('postsNumber'); ?>" type="number" value="<?php echo esc_attr($postsNumber); ?>"/>
         </p>
 
         <p>
             <label for="<?php echo $this->get_field_id('minRating'); ?>"><?php echo esc_html__('Minimum average rating required:', 'rate-my-post'); ?></label>
-            <input class="rmp-widget-input" id="<?php echo $this->get_field_id('minRating'); ?>" name="<?php echo $this->get_field_name('minRating'); ?>" type="text" value="<?php echo esc_attr($minRating); ?>"/>
+            <input class="tiny-text rmp-widget-input" id="<?php echo $this->get_field_id('minRating'); ?>" name="<?php echo $this->get_field_name('minRating'); ?>" type="text" value="<?php echo esc_attr($minRating); ?>"/>
         </p>
 
         <p>
             <label for="<?php echo $this->get_field_id('minVotes'); ?>"><?php echo esc_html__('Minimum votes required:', 'rate-my-post'); ?></label>
-            <input class="rmp-widget-input" id="<?php echo $this->get_field_id('minVotes'); ?>" name="<?php echo $this->get_field_name('minVotes'); ?>" type="text" value="<?php echo esc_attr($minVotes); ?>"/>
+            <input class="tiny-text rmp-widget-input" id="<?php echo $this->get_field_id('minVotes'); ?>" name="<?php echo $this->get_field_name('minVotes'); ?>" type="text" value="<?php echo esc_attr($minVotes); ?>"/>
         </p>
 
         <p>
