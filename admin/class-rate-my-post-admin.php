@@ -30,6 +30,8 @@ class Rate_My_Post_Admin
         add_action('admin_notices', [$this, 'cpt_header_design'], 1);
 
         add_action('admin_head', [$this, 'fix_current_item']);
+
+        $this->posts_column_rating();
     }
 
     /**
@@ -1370,5 +1372,45 @@ class Rate_My_Post_Admin
         ?>
         <h1 style="display:none">FeedbackWP</h1>
         <?php
+    }
+
+    public function posts_column_rating()
+    {
+        foreach (Rate_My_Post_Common::enabled_post_types() as $post_type) {
+
+            add_filter("manage_{$post_type}_posts_columns", function ($columns) {
+                $columns['rmp-average-rating'] = __('Average Rating', 'rate-my-post');
+
+                return $columns;
+            }, 1);
+
+            add_action("manage_{$post_type}_posts_custom_column", function ($column_name, $post_id) {
+                if ($column_name == 'rmp-average-rating') {
+                    echo get_post_meta($post_id, 'rmp_avg_rating', true);
+                }
+            }, 10, 2);
+
+            static $cache = null;
+
+            if (is_null($cache)) {
+
+                $cache = true;
+
+                add_action('admin_head', function () {
+
+                    $screen = get_current_screen();
+
+                    if ('edit' === $screen->base) {
+                        ?>
+                        <style>
+                            .fixed .column-rmp-average-rating {
+                                width: 10%;
+                            }
+                        </style>
+                        <?php
+                    }
+                });
+            }
+        }
     }
 }

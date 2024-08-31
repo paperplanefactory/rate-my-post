@@ -196,15 +196,11 @@ class Rate_My_Post_Common
         return defined('RMP_BULK_RATE_PROCESS_TASK') && RMP_BULK_RATE_PROCESS_TASK === 'true';
     }
 
-    public static function is_show_for_post_edit_screen()
+    public static function enabled_post_types()
     {
-        global $post;
-
-        if ( ! isset($post->post_type)) return false;
+        $bucket = [];
 
         $options = get_option("rmp_options", []);
-
-        $bucket = [];
 
         if ( ! empty($options['posts'] && $options['posts'] == 2)) $bucket[] = 'post';
         if ( ! empty($options['pages'] && $options['pages'] == 2)) $bucket[] = 'page';
@@ -213,9 +209,16 @@ class Rate_My_Post_Common
             $bucket = array_merge($bucket, $options['cptRating']);
         }
 
-        if (in_array($post->post_type, $bucket)) {
-            return true;
-        }
+        return $bucket;
+    }
+
+    public static function is_show_for_post_edit_screen()
+    {
+        global $post;
+
+        if ( ! isset($post->post_type)) return false;
+
+        if (in_array($post->post_type, self::enabled_post_types())) return true;
 
         return false;
     }
