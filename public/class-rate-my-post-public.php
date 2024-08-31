@@ -32,24 +32,13 @@ class Rate_My_Post_Public
 
     public function enqueue_styles()
     {
-        // register style
-        if ( ! is_rtl()) {
-            wp_register_style(
-                $this->rate_my_post,
-                plugin_dir_url(__FILE__) . 'css/rate-my-post.css',
-                array(),
-                $this->version,
-                'all'
-            );
-        } else {
-            wp_register_style(
-                $this->rate_my_post,
-                plugin_dir_url(__FILE__) . 'css/rate-my-post-rtl.css',
-                array(),
-                $this->version,
-                'all'
-            );
-        }
+        wp_register_style(
+            $this->rate_my_post,
+            plugin_dir_url(__FILE__) . 'css/rate-my-post.min.css',
+            array(),
+            $this->version,
+            'all'
+        );
         // enqueue style
         wp_enqueue_style($this->rate_my_post);
         // internal style for overriding
@@ -1646,7 +1635,6 @@ class Rate_My_Post_Public
     // returns an array of top rated posts
     public static function top_rated_posts($max_posts = 10, $required_rating = 1, $required_votes = 1)
     {
-        $rated_posts      = array();
         $top_rated_posts  = array();
         $defaultImageSize = 'medium';
 
@@ -1665,7 +1653,24 @@ class Rate_My_Post_Public
         $args = array(
             'fields'         => 'ids',
             'post_type'      => $post_types,
-            'posts_per_page' => -1
+            'posts_per_page' => $max_posts,
+            'meta_key'       => 'rmp_avg_rating',
+            'orderby'        => 'meta_value_num',
+            'order'          => 'DESC',
+            'no_found_row'   => true,
+            'meta_query'     => [
+                'relation' => 'AND',
+                [
+                    'key'     => 'rmp_avg_rating',
+                    'value'   => $required_rating,
+                    'compare' => '>='
+                ],
+                [
+                    'key'     => 'rmp_vote_count',
+                    'value'   => $required_votes,
+                    'compare' => '>='
+                ]
+            ]
         );
 
         if (has_filter('rmp_top_rated_query')) {
@@ -1675,47 +1680,25 @@ class Rate_My_Post_Public
         $the_query = new WP_Query($args);
 
         if ($the_query->have_posts()) {
-            while ($the_query->have_posts()) {
-                $the_query->the_post();
-                //data we'll need
-                $post_id    = get_the_id();
-                $avg_rating = absint(Rate_My_Post_Common::get_average_rating() * 10); //floats are hassle
-                $vote_count = Rate_My_Post_Common::get_vote_count($post_id);
-                //save post ids and average rating
-                if ($avg_rating && $avg_rating >= ($required_rating * 10) && $vote_count && $vote_count >= $required_votes) {
-                    $rated_posts[$post_id] = $avg_raxting;
-                }
-            }
-            // sort by averatge rating
-            arsort($rated_posts);
-            // reorganize to output the top rated posts
-            $count = 0;
-            foreach ($rated_posts as $key => $value) {
-                $count++;
 
-                $post_id    = $key;
-                $avg_rating = $value / 10;
-                $title      = get_the_title($post_id);
-                $link       = get_the_permalink($post_id);
-                $thumb      = get_the_post_thumbnail_url($post_id, $defaultImageSize);
-                $votes      = Rate_My_Post_Common::get_vote_count($post_id);
+            foreach ($the_query->get_posts() as $post_id) {
+
+                $avg_rating = Rate_My_Post_Common::get_average_rating($post_id);
+
+                $title = get_the_title($post_id);
+                $link  = get_the_permalink($post_id);
+                $thumb = get_the_post_thumbnail_url($post_id, $defaultImageSize);
+                $votes = Rate_My_Post_Common::get_vote_count($post_id);
 
                 $top_rated_posts[] = array(
-                    'postID'    => $key,
+                    'postID'    => $post_id,
                     'avgRating' => $avg_rating,
                     'title'     => $title,
                     'postLink'  => $link,
                     'thumb'     => $thumb,
                     'votes'     => $votes,
                 );
-                // only output the defined number
-                if ($count >= $max_posts) {
-                    break;
-                }
-            } // end foreach
-
-            // restore original post data
-            wp_reset_postdata();
+            }
         }
 
         return $top_rated_posts;

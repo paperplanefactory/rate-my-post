@@ -15,7 +15,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/admin\/js\/modules\/AjaxClass-min.js",
+      "oAP" : "\/_dev\/admin\/js\/modules\/AjaxClass.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -26,7 +26,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/admin\/js\/modules\/AjaxFeedback-min.js",
+      "oAP" : "\/_dev\/admin\/js\/modules\/AjaxFeedback.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -37,7 +37,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/admin\/js\/modules\/AjaxLicense-min.js",
+      "oAP" : "\/_dev\/admin\/js\/modules\/AjaxLicense.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -48,7 +48,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/admin\/js\/modules\/AjaxNotices-min.js",
+      "oAP" : "\/_dev\/admin\/js\/modules\/AjaxNotices.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -59,7 +59,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/admin\/js\/modules\/AjaxOptions-min.js",
+      "oAP" : "\/_dev\/admin\/js\/modules\/AjaxOptions.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -70,7 +70,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/admin\/js\/modules\/AjaxRatings-min.js",
+      "oAP" : "\/_dev\/admin\/js\/modules\/AjaxRatings.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -81,7 +81,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/admin\/js\/modules\/AjaxSchema-min.js",
+      "oAP" : "\/_dev\/admin\/js\/modules\/AjaxSchema.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -92,7 +92,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/admin\/js\/modules\/AjaxStrings-min.js",
+      "oAP" : "\/_dev\/admin\/js\/modules\/AjaxStrings.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -103,7 +103,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/admin\/js\/modules\/AjaxWipe-min.js",
+      "oAP" : "\/_dev\/admin\/js\/modules\/AjaxWipe.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -114,7 +114,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/admin\/js\/modules\/CptHandler-min.js",
+      "oAP" : "\/_dev\/admin\/js\/modules\/CptHandler.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -125,7 +125,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/admin\/js\/modules\/MetaboxTabs-min.js",
+      "oAP" : "\/_dev\/admin\/js\/modules\/MetaboxTabs.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -136,7 +136,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/admin\/js\/modules\/MigrateRatings-min.js",
+      "oAP" : "\/_dev\/admin\/js\/modules\/MigrateRatings.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -147,7 +147,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/admin\/js\/modules\/RelationsHandler-min.js",
+      "oAP" : "\/_dev\/admin\/js\/modules\/RelationsHandler.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -158,7 +158,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/admin\/js\/modules\/SchemaRepeater-min.js",
+      "oAP" : "\/_dev\/admin\/js\/modules\/SchemaRepeater.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -169,7 +169,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/admin\/js\/modules\/SchemaSelector-min.js",
+      "oAP" : "\/_dev\/admin\/js\/modules\/SchemaSelector.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -180,7 +180,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/admin\/js\/modules\/ShortcodeHandler-min.js",
+      "oAP" : "\/_dev\/admin\/js\/modules\/ShortcodeHandler.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -191,7 +191,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/admin\/js\/modules\/Tabs-min.js",
+      "oAP" : "\/_dev\/admin\/js\/modules\/Tabs.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -202,7 +202,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/admin\/js\/modules\/WaypointsHandler-min.js",
+      "oAP" : "\/_dev\/admin\/js\/modules\/WaypointsHandler.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -213,7 +213,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 0,
-      "oAP" : "\/admin\/js\/rate-my-post-admin.min.js",
+      "oAP" : "\/_dev\/admin\/js\/rate-my-post-admin.min.js",
       "oF" : 2,
       "sC" : 0,
       "tS" : 1
@@ -224,7 +224,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/public\/js\/modules\/AjaxFeedback-min.js",
+      "oAP" : "\/_dev\/public\/js\/modules\/AjaxFeedback.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -235,7 +235,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/public\/js\/modules\/AjaxLoad-min.js",
+      "oAP" : "\/_dev\/public\/js\/modules\/AjaxLoad.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -246,7 +246,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/public\/js\/modules\/AjaxRating-min.js",
+      "oAP" : "\/_dev\/public\/js\/modules\/AjaxRating.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -257,7 +257,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/public\/js\/modules\/AnalyticsPush-min.js",
+      "oAP" : "\/_dev\/public\/js\/modules\/AnalyticsPush.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -268,7 +268,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/public\/js\/modules\/BrowserSupport-min.js",
+      "oAP" : "\/_dev\/public\/js\/modules\/BrowserSupport.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -279,7 +279,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/public\/js\/modules\/CookieCheck-min.js",
+      "oAP" : "\/_dev\/public\/js\/modules\/CookieCheck.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -290,7 +290,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/public\/js\/modules\/CookiePush-min.js",
+      "oAP" : "\/_dev\/public\/js\/modules\/CookiePush.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -301,7 +301,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/public\/js\/modules\/DestroyWidgets-min.js",
+      "oAP" : "\/_dev\/public\/js\/modules\/DestroyWidgets.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -312,7 +312,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/public\/js\/modules\/FeedbackSubmitted-min.js",
+      "oAP" : "\/_dev\/public\/js\/modules\/FeedbackSubmitted.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -323,7 +323,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/public\/js\/modules\/FeedbackWidget-min.js",
+      "oAP" : "\/_dev\/public\/js\/modules\/FeedbackWidget.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -334,7 +334,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/public\/js\/modules\/FreezeWidget-min.js",
+      "oAP" : "\/_dev\/public\/js\/modules\/FreezeWidget.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -345,7 +345,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/public\/js\/modules\/IconHighlighter-min.js",
+      "oAP" : "\/_dev\/public\/js\/modules\/IconHighlighter.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -356,7 +356,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/public\/js\/modules\/InitWidget-min.js",
+      "oAP" : "\/_dev\/public\/js\/modules\/InitWidget.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -367,7 +367,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/public\/js\/modules\/LoadResults-min.js",
+      "oAP" : "\/_dev\/public\/js\/modules\/LoadResults.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -378,7 +378,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/public\/js\/modules\/PrivilegeCheck-min.js",
+      "oAP" : "\/_dev\/public\/js\/modules\/PrivilegeCheck.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -389,7 +389,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/_dev\/public\/js\/modules\/SocialWidget-min.js",
+      "oAP" : "\/_dev\/public\/js\/modules\/SocialWidget.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -400,7 +400,7 @@
       "ma" : 0,
       "mi" : 2,
       "oA" : 0,
-      "oAP" : "\/public\/js\/rate-my-post.min.js",
+      "oAP" : "\/_dev\/public\/js\/rate-my-post.min.js",
       "oF" : 2,
       "sC" : 0,
       "tS" : 1
@@ -424,8 +424,8 @@
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/admin\/class-rate-my-post-admin.php",
-      "oF" : 1
+      "oAP" : "\/admin\/class-rate-my-post-admin-output.php",
+      "oF" : 0
     },
     "\/admin\/css\/rate-my-post-admin.css" : {
       "aP" : 1,
@@ -509,8 +509,8 @@
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/admin\/index.php",
-      "oF" : 1
+      "oAP" : "\/admin\/index-output.php",
+      "oF" : 0
     },
     "\/admin\/js\/rate-my-post-admin.min.js" : {
       "bF" : 0,
@@ -518,7 +518,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 0,
-      "oAP" : "\/admin\/js\/rate-my-post-admin.min-min.js",
+      "oAP" : "\/admin\/js\/rate-my-post-admin.min.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -527,16 +527,16 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/admin\/stats\/stats_list.php",
+      "oA" : 1,
+      "oAP" : "\/admin\/stats\/stats_list-output.php",
       "oF" : 0
     },
     "\/admin\/stats\/stats.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/admin\/stats\/stats.php",
+      "oA" : 1,
+      "oAP" : "\/admin\/stats\/stats-output.php",
       "oF" : 0
     },
     "\/admin\/templates" : {
@@ -574,104 +574,104 @@
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/common\/class-rate-my-post-common.php",
-      "oF" : 1
+      "oAP" : "\/common\/class-rate-my-post-common-output.php",
+      "oF" : 0
     },
     "\/common\/class-rate-my-post-mutex.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/common\/class-rate-my-post-mutex.php",
-      "oF" : 1
+      "oAP" : "\/common\/class-rate-my-post-mutex-output.php",
+      "oF" : 0
     },
     "\/common\/class-rate-my-post-settings.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/common\/class-rate-my-post-settings.php",
-      "oF" : 1
+      "oAP" : "\/common\/class-rate-my-post-settings-output.php",
+      "oF" : 0
     },
     "\/includes\/class-rate-my-post-activator.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/includes\/class-rate-my-post-activator.php",
-      "oF" : 1
+      "oAP" : "\/includes\/class-rate-my-post-activator-output.php",
+      "oF" : 0
     },
     "\/includes\/class-rate-my-post-deactivator.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/includes\/class-rate-my-post-deactivator.php",
-      "oF" : 1
+      "oAP" : "\/includes\/class-rate-my-post-deactivator-output.php",
+      "oF" : 0
     },
     "\/includes\/class-rate-my-post-i18n.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/includes\/class-rate-my-post-i18n.php",
-      "oF" : 1
+      "oAP" : "\/includes\/class-rate-my-post-i18n-output.php",
+      "oF" : 0
     },
     "\/includes\/class-rate-my-post-loader.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/includes\/class-rate-my-post-loader.php",
-      "oF" : 1
+      "oAP" : "\/includes\/class-rate-my-post-loader-output.php",
+      "oF" : 0
     },
     "\/includes\/class-rate-my-post-upgrader.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/includes\/class-rate-my-post-upgrader.php",
-      "oF" : 1
+      "oAP" : "\/includes\/class-rate-my-post-upgrader-output.php",
+      "oF" : 0
     },
     "\/includes\/class-rate-my-post.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/includes\/class-rate-my-post.php",
-      "oF" : 1
+      "oAP" : "\/includes\/class-rate-my-post-output.php",
+      "oF" : 0
     },
     "\/includes\/dev-functions.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/includes\/dev-functions.php",
-      "oF" : 1
+      "oAP" : "\/includes\/dev-functions-output.php",
+      "oF" : 0
     },
     "\/includes\/index.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/includes\/index.php",
-      "oF" : 1
+      "oAP" : "\/includes\/index-output.php",
+      "oF" : 0
     },
     "\/index.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/index.php",
-      "oF" : 1
+      "oAP" : "\/index-output.php",
+      "oF" : 0
     },
     "\/languages\/rate-my-post.pot" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 1,
+      "oA" : 0,
       "oAP" : "\/languages\/rate-my-post.pot",
-      "oF" : 1
+      "oF" : 0
     },
     "\/node_modules" : {
       "ft" : 65536,
@@ -699,8 +699,8 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/plugin-build.php",
+      "oA" : 1,
+      "oAP" : "\/plugin-build-output.php",
       "oF" : 0
     },
     "\/public\/class-rate-my-post-public.php" : {
@@ -708,16 +708,16 @@
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/public\/class-rate-my-post-public.php",
-      "oF" : 1
+      "oAP" : "\/public\/class-rate-my-post-public-output.php",
+      "oF" : 0
     },
     "\/public\/css\/fonts\/ratemypost.eot" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 1,
+      "oA" : 0,
       "oAP" : "\/public\/css\/fonts\/ratemypost.eot",
-      "oF" : 1
+      "oF" : 0
     },
     "\/public\/css\/fonts\/ratemypost.svg" : {
       "ft" : 2097152,
@@ -733,40 +733,40 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 1,
+      "oA" : 0,
       "oAP" : "\/public\/css\/fonts\/ratemypost.ttf",
-      "oF" : 1
+      "oF" : 0
     },
     "\/public\/css\/fonts\/ratemypost.woff" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 1,
+      "oA" : 0,
       "oAP" : "\/public\/css\/fonts\/ratemypost.woff",
-      "oF" : 1
-    },
-    "\/public\/css\/rate-my-post-rtl.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 1,
-      "oAP" : "\/public\/css\/rate-my-post-rtl-min.css",
-      "oF" : 1,
-      "pg" : 0
+      "oF" : 0
     },
     "\/public\/css\/rate-my-post.css" : {
       "aP" : 1,
       "bl" : 0,
       "ci" : 0,
+      "co" : 1,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/public\/css\/rate-my-post.min.css",
+      "oF" : 3,
+      "pg" : 0
+    },
+    "\/public\/css\/rate-my-post.min.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
       "co" : 0,
       "ft" : 16,
       "ma" : 0,
-      "oA" : 1,
-      "oAP" : "\/public\/css\/rate-my-post-min.css",
-      "oF" : 1,
+      "oA" : 0,
+      "oAP" : "\/public\/css\/rate-my-post.min-min.css",
+      "oF" : 0,
       "pg" : 0
     },
     "\/public\/index.php" : {
@@ -774,8 +774,8 @@
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/public\/index.php",
-      "oF" : 1
+      "oAP" : "\/public\/index-output.php",
+      "oF" : 0
     },
     "\/public\/js\/rate-my-post.min.js" : {
       "bF" : 0,
@@ -783,7 +783,7 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 0,
-      "oAP" : "\/public\/js\/rate-my-post.min-min.js",
+      "oAP" : "\/public\/js\/rate-my-post.min.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -793,112 +793,120 @@
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/public\/templates\/amp-css.php",
-      "oF" : 1
+      "oAP" : "\/public\/templates\/amp-css-output.php",
+      "oF" : 0
     },
     "\/public\/templates\/amp-rating-widget.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/public\/templates\/amp-rating-widget.php",
-      "oF" : 1
+      "oAP" : "\/public\/templates\/amp-rating-widget-output.php",
+      "oF" : 0
     },
     "\/public\/templates\/amp-results-widget.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/public\/templates\/amp-results-widget.php",
-      "oF" : 1
+      "oAP" : "\/public\/templates\/amp-results-widget-output.php",
+      "oF" : 0
     },
     "\/public\/templates\/feedback-widget.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/public\/templates\/feedback-widget.php",
-      "oF" : 1
+      "oAP" : "\/public\/templates\/feedback-widget-output.php",
+      "oF" : 0
     },
     "\/public\/templates\/internal-css.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/public\/templates\/internal-css.php",
-      "oF" : 1
+      "oAP" : "\/public\/templates\/internal-css-output.php",
+      "oF" : 0
     },
     "\/public\/templates\/rating-widget.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/public\/templates\/rating-widget.php",
-      "oF" : 1
+      "oAP" : "\/public\/templates\/rating-widget-output.php",
+      "oF" : 0
     },
     "\/public\/templates\/results-widget.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/public\/templates\/results-widget.php",
-      "oF" : 1
+      "oAP" : "\/public\/templates\/results-widget-output.php",
+      "oF" : 0
     },
     "\/public\/templates\/social-widget.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/public\/templates\/social-widget.php",
-      "oF" : 1
+      "oAP" : "\/public\/templates\/social-widget-output.php",
+      "oF" : 0
     },
     "\/public\/templates\/structured-data.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/public\/templates\/structured-data.php",
-      "oF" : 1
+      "oAP" : "\/public\/templates\/structured-data-output.php",
+      "oF" : 0
     },
     "\/public\/templates\/visual-rating.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/public\/templates\/visual-rating.php",
-      "oF" : 1
+      "oAP" : "\/public\/templates\/visual-rating-output.php",
+      "oF" : 0
     },
     "\/rate-my-post.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/rate-my-post.php",
-      "oF" : 1
+      "oAP" : "\/rate-my-post-output.php",
+      "oF" : 0
     },
     "\/readme.txt" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 1,
+      "oA" : 0,
       "oAP" : "\/readme.txt",
-      "oF" : 1
+      "oF" : 0
     },
     "\/uninstall.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/uninstall.php",
-      "oF" : 1
+      "oAP" : "\/uninstall-output.php",
+      "oF" : 0
     },
     "\/widgets\/rate-my-post-top-rated-widget.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/widgets\/rate-my-post-top-rated-widget.php",
-      "oF" : 1
+      "oAP" : "\/widgets\/rate-my-post-top-rated-widget-output.php",
+      "oF" : 0
+    },
+    "\/widgets\/top-rated-widget-shortcode.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/widgets\/top-rated-widget-shortcode-output.php",
+      "oF" : 0
     }
   },
   "hooks" : [
@@ -2245,7 +2253,7 @@
     },
     "languageDefaultsJS" : {
       "autoOutputAction" : 0,
-      "autoOutputPathFilenamePattern" : "*-min.js",
+      "autoOutputPathFilenamePattern" : "*.min.js",
       "autoOutputPathRelativePath" : "\/min",
       "autoOutputPathReplace1" : "",
       "autoOutputPathReplace2" : "",
@@ -2427,7 +2435,17 @@
       "targetECMAVersion" : 2018
     },
     "languageDefaultsUserDefined" : [
-
+      {
+        "autoOutputAction" : 1,
+        "autoOutputPathFilenamePattern" : "*-output.php",
+        "autoOutputPathRelativePath" : "",
+        "autoOutputPathReplace1" : "",
+        "autoOutputPathReplace2" : "",
+        "autoOutputPathStyle" : 0,
+        "fileExtension" : "php",
+        "htmlMinifierStyle" : 0,
+        "shouldRunCacheBuster" : 0
+      }
     ],
     "npmAbbreviatedPath" : "",
     "npmCreatePackageLock" : 1,
