@@ -175,6 +175,10 @@
     margin-top: 6px;
 }
 
+.rmp-tr-posts-widget__post p {
+    margin-bottom: 1.5rem !important;
+}
+
 .rmp-tr-posts-widget__star-rating {
     font-size: 14px
 }
