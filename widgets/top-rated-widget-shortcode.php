@@ -4,7 +4,7 @@ class Rate_My_Post_Top_Rated_Widget_Shortcode
 {
     public function __construct()
     {
-        add_shortcode('ratemypost_widget', [$this, 'render']);
+        add_shortcode('ratemypost-top-rated', [$this, 'render']);
     }
 
     public function render($atts)
