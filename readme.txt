@@ -4,7 +4,7 @@ Donate link: https://feedbackwp.com/pricing/
 Tags: rating system, rate post, rate page, star rating, post rating
 Requires at least: 5.3
 Tested up to: 6.6
-Stable tag: 4.1.2
+Stable tag: 4.2.0
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -127,7 +127,9 @@ You can show social follow/share links after a positive rating (you define what 
 
 *Displays top rated posts on your website*
 
-Display top-rated posts on your website with the "Top Rated Posts" widget. You can specify the number of posts, minimum average rating, and vote count required. Additionally, enable featured images and visual ratings
+Display top-rated posts on your website with the "Top Rated Posts" widget. You can specify the number of posts, minimum average rating, and vote count required. Additionally, enable featured images and visual ratings.
+
+[ratemypost-top-rated] - embeds the top-rated posts widget.
 
 = Why use Rate My Post? =
 
@@ -221,6 +223,13 @@ The invalid WP token error (refers to WP nonce) appears if a page is cached for 
 
 == Changelog ==
 
+= 4.2.0 =
+* Added [ratemypost-top-rated] top rated shortcode.
+* Added Average rating column to post edit listing page.
+* Added sorting to Stat page.
+* Improved top-rated widget query especially for site with large posts.
+* Improvements: Ensure rating metaboxes in post edit screen are shown only when necessary.
+
 = 4.1.2 =
 * Fixed sorting by rating in Analytics.
 * Removed redundant sorting from stat.
@@ -239,11 +248,5 @@ The invalid WP token error (refers to WP nonce) appears if a page is cached for 
 = 4.0.1 =
 * Pro: [Bulk-Rating Tool](https://feedbackwp.com/docs/#Bulk_Rating_Tool) to add rating to posts without votes.
 * Fixed bug where ratings were not recorded in some cases.
-
-= 4.0.0 =
-* Fixed partial saving issues.
-
-= 3.4.4 =
-* Improved compatibility with latest WP and PHP 8.
 
 See the [changelog file](https://plugins.svn.wordpress.org/rate-my-post/trunk/changelog.txt) for full change log information.

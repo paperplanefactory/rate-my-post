@@ -1,5 +1,12 @@
 ﻿== Changelog ==
 
+= 4.2.0 =
+* Added [ratemypost-top-rated] top rated shortcode.
+* Added Average rating column to post edit listing page.
+* Added sorting to Stat page.
+* Improved top-rated widget query especially for site with large posts.
+* Improvements: Ensure rating metaboxes in post edit screen are shown only when necessary.
+
 = 4.1.2 =
 * Fixed sorting by rating in Analytics.
 * Removed redundant sorting from stat.
