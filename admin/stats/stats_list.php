@@ -90,7 +90,7 @@ class Rate_My_Post_Stats_List extends \WP_List_Table
             case 'rmp_vote_count':
                 return absint(get_post_meta($item, 'rmp_vote_count', true));
             case 'rmp_avg_rating':
-                return get_post_meta($item, 'rmp_avg_rating', true);
+                return round(get_post_meta($item, 'rmp_avg_rating', true), 1);
             case 'feedback':
                 $feedback_count = 0;
                 $data           = Rate_My_Post_Admin::feedbacks($item);
