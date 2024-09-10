@@ -198,11 +198,10 @@ class Rate_My_Post_Common
 
     public static function enabled_post_types()
     {
-        $bucket = ['crw'];
+        $bucket = ['crw', 'post'];
 
         $options = get_option("rmp_options", []);
 
-        if ( ! empty($options['posts'] && $options['posts'] == 2)) $bucket[] = 'post';
         if ( ! empty($options['pages'] && $options['pages'] == 2)) $bucket[] = 'page';
 
         if ( ! empty($options['cptRating']) && is_array($options['cptRating'])) {
