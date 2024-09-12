@@ -18,13 +18,13 @@ class RelationsHandler {
 
   events() {
     // Social dependencies
-    this.socialFollowDependencies.change((event) => this.handleSocialFollowDependencies());
+    this.socialFollowDependencies.on('change', (event) => this.handleSocialFollowDependencies());
     this.handleSocialFollowDependencies();
     // Multilingual dependencies
-    this.multilingualCb.change((event) => this.handleMultilingualDependencies());
+    this.multilingualCb.on('change', (event) => this.handleMultilingualDependencies());
     this.handleMultilingualDependencies();
     // IP dependencies
-    this.ipTracking.change((event) => this.handleIpTrackingDependencies());
+    this.ipTracking.on('change', (event) => this.handleIpTrackingDependencies());
     this.handleIpTrackingDependencies();
   }
 
