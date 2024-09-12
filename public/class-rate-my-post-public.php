@@ -1653,7 +1653,7 @@ class Rate_My_Post_Public
         $args = array(
             'fields'         => 'ids',
             'post_type'      => $post_types,
-            'posts_per_page' => $max_posts,
+            'posts_per_page' => absint($max_posts),
             'meta_key'       => 'rmp_avg_rating',
             'orderby'        => 'meta_value_num',
             'order'          => 'DESC',
@@ -1663,12 +1663,14 @@ class Rate_My_Post_Public
                 [
                     'key'     => 'rmp_avg_rating',
                     'value'   => $required_rating,
-                    'compare' => '>='
+                    'compare' => '>=',
+                    'type'    => 'NUMERIC'
                 ],
                 [
                     'key'     => 'rmp_vote_count',
                     'value'   => $required_votes,
-                    'compare' => '>='
+                    'compare' => '>=',
+                    'type'    => 'NUMERIC'
                 ]
             ]
         );
