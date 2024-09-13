@@ -133,17 +133,6 @@
       "sC" : 3,
       "tS" : 0
     },
-    "\/admin\/js\/rate-my-post-admin.min.min.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/admin\/js\/rate-my-post-admin.min.min.min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
     "\/admin\/stats\/stats_list.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -401,17 +390,6 @@
       "sC" : 3,
       "tS" : 0
     },
-    "\/public\/js\/rate-my-post.min.min.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/public\/js\/rate-my-post.min.min.min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
     "\/public\/templates\/amp-css.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -545,7 +523,7 @@
     "displayValueWasSetByUser" : 1,
     "iconImageName" : "brackets-koamaru",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 747663155.05106902
+    "lastBuiltDate" : 747869189.74301004
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,
