@@ -1,5 +1,12 @@
 ﻿== Changelog ==
 
+= 4.2.1 =
+* Fixed top-rated posts widget not working correctly.
+* Improvement: add rating customization metaboxes to posts edit screen by default.
+* Improve top-rated post widget appearance.
+* Removed redundant datatable CSS.
+* Remove deprecated jQuery codes.
+
 = 4.2.0 =
 * Added [ratemypost-top-rated] top rated shortcode.
 * Added Average rating column to post edit listing page.

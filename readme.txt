@@ -4,7 +4,7 @@ Donate link: https://feedbackwp.com/pricing/
 Tags: rating system, rate post, rate page, star rating, post rating
 Requires at least: 5.3
 Tested up to: 6.6
-Stable tag: 4.2.0
+Stable tag: 4.2.1
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -223,30 +223,18 @@ The invalid WP token error (refers to WP nonce) appears if a page is cached for 
 
 == Changelog ==
 
+= 4.2.1 =
+* Fixed top-rated posts widget not working correctly.
+* Improvement: add rating customization metaboxes to posts edit screen by default.
+* Improve top-rated post widget appearance.
+* Removed redundant datatable CSS.
+* Remove deprecated jQuery codes.
+
 = 4.2.0 =
 * Added [ratemypost-top-rated] top rated shortcode.
 * Added Average rating column to post edit listing page.
 * Added sorting to Stat page.
 * Improved top-rated widget query especially for site with large posts.
 * Improvements: Ensure rating metaboxes in post edit screen are shown only when necessary.
-
-= 4.1.2 =
-* Fixed sorting by rating in Analytics.
-* Removed redundant sorting from stat.
-
-= 4.1.1 =
-* Fixed bug where feedbacks didn't show up in post edit screens.
-* Fixed DB error due to absence of primary key in table.
-
-= 4.1.0 =
-* New admin dashboard design.
-* Fixed PHP fatal error triggered in rare rating cases.
-
-= 4.0.2 =
-* Fixed bug where ratings not working if recaptcha is enabled.
-
-= 4.0.1 =
-* Pro: [Bulk-Rating Tool](https://feedbackwp.com/docs/#Bulk_Rating_Tool) to add rating to posts without votes.
-* Fixed bug where ratings were not recorded in some cases.
 
 See the [changelog file](https://plugins.svn.wordpress.org/rate-my-post/trunk/changelog.txt) for full change log information.
