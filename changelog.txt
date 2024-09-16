@@ -1,5 +1,8 @@
 ﻿== Changelog ==
 
+= 4.2.2 =
+* Further improved the top-rated posts database query and added caching.
+
 = 4.2.1 =
 * Fixed top-rated posts widget not working correctly.
 * Improvement: add rating customization metaboxes to posts edit screen by default.
