@@ -1635,7 +1635,6 @@ class Rate_My_Post_Public
     // returns an array of top rated posts
     public static function top_rated_posts($max_posts = 10, $required_rating = 1, $required_votes = 1)
     {
-        $top_rated_posts  = array();
         $defaultImageSize = 'medium';
 
         if (has_filter('rmp_thumbnail_size')) {
@@ -1654,19 +1653,21 @@ class Rate_My_Post_Public
             'fields'         => 'ids',
             'post_type'      => $post_types,
             'posts_per_page' => absint($max_posts),
-            'meta_key'       => 'rmp_avg_rating',
-            'orderby'        => 'meta_value_num',
+            'orderby'        => [
+                'avg_rating_clause' => 'DESC',
+                'vote_count_clause' => 'DESC',
+            ],
             'order'          => 'DESC',
             'no_found_row'   => true,
             'meta_query'     => [
-                'relation' => 'AND',
-                [
+                'relation'          => 'AND',
+                'avg_rating_clause' => [
                     'key'     => 'rmp_avg_rating',
                     'value'   => $required_rating,
                     'compare' => '>=',
                     'type'    => 'NUMERIC'
                 ],
-                [
+                'vote_count_clause' => [
                     'key'     => 'rmp_vote_count',
                     'value'   => $required_votes,
                     'compare' => '>=',
@@ -1679,28 +1680,39 @@ class Rate_My_Post_Public
             $args = apply_filters('rmp_top_rated_query', $args);
         }
 
-        $the_query = new WP_Query($args);
+        $cache_key = 'rmp_top_rated_posts_' . implode(':', func_get_args());
 
-        if ($the_query->have_posts()) {
+        $top_rated_posts = get_transient($cache_key);
 
-            foreach ($the_query->get_posts() as $post_id) {
+        if ($top_rated_posts === false) {
 
-                $avg_rating = Rate_My_Post_Common::get_average_rating($post_id);
+            $top_rated_posts = [];
 
-                $title = get_the_title($post_id);
-                $link  = get_the_permalink($post_id);
-                $thumb = get_the_post_thumbnail_url($post_id, $defaultImageSize);
-                $votes = Rate_My_Post_Common::get_vote_count($post_id);
+            $the_query = new WP_Query($args);
 
-                $top_rated_posts[] = array(
-                    'postID'    => $post_id,
-                    'avgRating' => $avg_rating,
-                    'title'     => $title,
-                    'postLink'  => $link,
-                    'thumb'     => $thumb,
-                    'votes'     => $votes,
-                );
+            if ($the_query->have_posts()) {
+
+                foreach ($the_query->get_posts() as $post_id) {
+
+                    $avg_rating = Rate_My_Post_Common::get_average_rating($post_id);
+
+                    $title = get_the_title($post_id);
+                    $link  = get_the_permalink($post_id);
+                    $thumb = get_the_post_thumbnail_url($post_id, $defaultImageSize);
+                    $votes = Rate_My_Post_Common::get_vote_count($post_id);
+
+                    $top_rated_posts[] = array(
+                        'postID'    => $post_id,
+                        'avgRating' => $avg_rating,
+                        'title'     => $title,
+                        'postLink'  => $link,
+                        'thumb'     => $thumb,
+                        'votes'     => $votes,
+                    );
+                }
             }
+
+            set_transient($cache_key, $top_rated_posts, 6 * HOUR_IN_SECONDS);
         }
 
         return $top_rated_posts;
