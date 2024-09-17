@@ -1712,7 +1712,7 @@ class Rate_My_Post_Public
                 }
             }
 
-            set_transient($cache_key, $top_rated_posts, 6 * HOUR_IN_SECONDS);
+            set_transient($cache_key, $top_rated_posts, HOUR_IN_SECONDS);
         }
 
         return $top_rated_posts;
