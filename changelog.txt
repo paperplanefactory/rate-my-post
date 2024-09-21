@@ -1,5 +1,10 @@
 ﻿== Changelog ==
 
+= 4.2.3 =
+* Fixed: Uncaught TypeError: round(): Argument #1 ($num) must be of type int|float, string given
+* Reduced top-rated post query cache to 1 hour.
+* Re-added common functions used by other plugins/themes.
+
 = 4.2.2 =
 * Further improved the top-rated posts database query and added caching.
 
