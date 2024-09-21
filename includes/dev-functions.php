@@ -26,3 +26,35 @@ add_filter("{$prefix}plugin_action_links_$basename", function ($actions, $plugin
     return array_merge($custom_actions, $actions);
 
 }, 10, 4);
+
+// returns average rating for any post
+function rmp_get_avg_rating( $post_id = false ) {
+    if ( ! $post_id ) {
+        $post_id = get_the_id();
+    }
+
+    return Rate_My_Post_Common::get_average_rating( $post_id );
+}
+
+// returns vote count for any post
+function rmp_get_vote_count( $post_id = false ) {
+    if ( ! $post_id ) {
+        $post_id = get_the_id();
+    }
+
+    return Rate_My_Post_Common::get_vote_count( $post_id );
+}
+
+// returns visual rating for any post
+function rmp_get_visual_rating( $post_id = false ) {
+    if ( ! $post_id ) {
+        $post_id = get_the_id();
+    }
+
+    return Rate_My_Post_Public::get_visual_rating( $post_id );
+}
+
+// returns an array of top rated posts
+function rmp_get_top_rated_posts( $max_posts = 10, $required_rating = 1,  $required_votes = 1 ) {
+    return Rate_My_Post_Public::top_rated_posts( $max_posts, $required_rating, $required_votes );
+}
