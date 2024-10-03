@@ -309,7 +309,7 @@ if (defined('RATE_MY_POST_PRO_VERSION')) $pro_icon_types = [];
 
     <label class="rmp-tab-content__label" for="rmp-exclude">
         <?php echo(esc_html__('Exclude rating and result widget from', 'rate-my-post')); ?>: </label>
-    <input type="text" class="rmp-tab-content__input js-rmp-option" data-key="exclude" id="rmp-exclude" value="<?php echo esc_html(implode(',', $rmp_options['exclude'])); ?>">
+    <input type="text" class="rmp-tab-content__input js-rmp-option" data-key="exclude" id="rmp-exclude" value="<?php echo isset($rmp_options['exclude']) ? esc_html(implode(',', $rmp_options['exclude'])) : ''; ?>">
     <p class="rmp-tab-content__notice">
         <?php echo(esc_html__('Insert comma separated post/page IDs', 'rate-my-post')); ?>.
         <a href="https://feedbackwp.com/docs/#exclude" target="_blank"><?php echo(esc_html__('Read more', 'rate-my-post')); ?>&raquo;</a>
