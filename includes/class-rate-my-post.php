@@ -127,12 +127,35 @@ class Rate_My_Post
         Rate_My_Post_Stats::init();
     }
 
+    public function avada_theme_compat()
+    {
+        // Avada theme incompatibility fix
+        add_action('awb_remove_third_party_the_content_changes', function () {
+
+            global $plugin_public;
+
+            remove_filter('the_content', [$plugin_public, 'automatically_add_rating_widget']);
+            remove_filter('the_content', [$plugin_public, 'automatically_add_result_widget']);
+        });
+
+        add_action('awb_readd_third_party_the_content_changes', function () {
+
+            global $plugin_public;
+
+            add_filter('the_content', [$plugin_public, 'automatically_add_rating_widget']);
+            add_filter('the_content', [$plugin_public, 'automatically_add_result_widget']);
+        });
+    }
+
     // Register public hooks
     private function define_public_hooks()
     {
+        global $plugin_public;
+
         Rate_My_Post_Top_Rated_Widget_Shortcode::init();
 
         $plugin_public = new Rate_My_Post_Public($this->get_rate_my_post(), $this->get_version());
+
         //CSS
         $this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_styles');
         //JS
@@ -172,6 +195,8 @@ class Rate_My_Post
     public function run()
     {
         $this->loader->run();
+
+        $this->avada_theme_compat();
     }
 
     // FeedbackWP for identification
