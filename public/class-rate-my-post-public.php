@@ -1677,7 +1677,7 @@ class Rate_My_Post_Public
         );
 
         if (has_filter('rmp_top_rated_query')) {
-            $args = apply_filters('rmp_top_rated_query', $args);
+            $args = apply_filters('rmp_top_rated_query', $args, $required_rating, $required_votes, $max_posts);
         }
 
         $cache_key = 'rmp_top_rated_posts_' . implode(':', func_get_args());
