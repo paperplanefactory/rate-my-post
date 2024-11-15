@@ -1,5 +1,10 @@
 ﻿== Changelog ==
 
+= 4.2.4 =
+* Fixed PHP Fatal error:  Uncaught TypeError: implode(): Argument #1 ($pieces) must be of type array, string given
+* Added compatibility with Avada theme.
+* Added more params to rmp_top_rated_query filter.
+
 = 4.2.3 =
 * Fixed: Uncaught TypeError: round(): Argument #1 ($num) must be of type int|float, string given
 * Reduced top-rated post query cache to 1 hour.

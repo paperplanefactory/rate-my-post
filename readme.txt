@@ -3,8 +3,8 @@ Contributors: collizo4sky, properfraction
 Donate link: https://feedbackwp.com/pricing/
 Tags: rating system, rate post, rate page, star rating, post rating
 Requires at least: 5.3
-Tested up to: 6.6
-Stable tag: 4.2.3
+Tested up to: 6.7
+Stable tag: 4.2.4
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -222,6 +222,11 @@ The invalid WP token error (refers to WP nonce) appears if a page is cached for 
 7. Manipulate Votes
 
 == Changelog ==
+
+= 4.2.4 =
+* Fixed PHP Fatal error:  Uncaught TypeError: implode(): Argument #1 ($pieces) must be of type array, string given
+* Added compatibility with Avada theme.
+* Added more params to rmp_top_rated_query filter.
 
 = 4.2.3 =
 * Fixed: Uncaught TypeError: round(): Argument #1 ($num) must be of type int|float, string given
