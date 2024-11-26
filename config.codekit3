@@ -153,7 +153,7 @@
       "ft" : 65536,
       "oA" : 1,
       "oAP" : "\/admin\/templates",
-      "oF" : 1
+      "oF" : 0
     },
     "\/build\/.gitignore" : {
       "cB" : 0,
@@ -265,6 +265,14 @@
       "hM" : 0,
       "oA" : 1,
       "oAP" : "\/includes\/index-output.php",
+      "oF" : 0
+    },
+    "\/includes\/Shogun.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/includes\/Shogun-output.php",
       "oF" : 0
     },
     "\/index.php" : {

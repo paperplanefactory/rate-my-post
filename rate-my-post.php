@@ -65,6 +65,7 @@ add_action('plugins_loaded', 'upgrade_rate_my_post');
 
 //developer functions
 require plugin_dir_path(__FILE__) . 'includes/dev-functions.php';
+require plugin_dir_path(__FILE__) . 'includes/Shogun.php';
 
 // The core plugin class
 require plugin_dir_path(__FILE__) . 'includes/class-rate-my-post.php';
