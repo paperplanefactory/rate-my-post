@@ -314,7 +314,8 @@ class Rate_My_Post_Public
 
             // variables
             $post_id = absint($_POST['postID']);
-            if (get_post_status($post_id) == 'private') {
+            $post_status = get_post_status($post_id);
+            if ($post_status != 'publish') {
                 die();
             }
             $security_options = get_option('rmp_security');
@@ -437,7 +438,8 @@ class Rate_My_Post_Public
             // variables
             $options = get_option('rmp_options');
             $post_id = absint($_POST['postID']);
-            if (get_post_status($post_id) == 'private') {
+            $post_status = get_post_status($post_id);
+            if ($post_status != 'publish') {
                 die();
             }
             $security_options = get_option('rmp_security');
