@@ -4,7 +4,7 @@ Donate link: https://feedbackwp.com/pricing/
 Tags: rating system, rate post, rate page, star rating, post rating
 Requires at least: 5.3
 Tested up to: 6.7
-Stable tag: 4.2.4
+Stable tag: 4.2.5
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -223,31 +223,12 @@ The invalid WP token error (refers to WP nonce) appears if a page is cached for 
 
 == Changelog ==
 
+= 4.2.5 =
+* Fixed security issue where posts that aren’t published and private can be rated.
+
 = 4.2.4 =
 * Fixed PHP Fatal error:  Uncaught TypeError: implode(): Argument #1 ($pieces) must be of type array, string given
 * Added compatibility with Avada theme.
 * Added more params to rmp_top_rated_query filter.
-
-= 4.2.3 =
-* Fixed: Uncaught TypeError: round(): Argument #1 ($num) must be of type int|float, string given
-* Reduced top-rated post query cache to 1 hour.
-* Re-added common functions used by other plugins/themes.
-
-= 4.2.2 =
-* Further improved the top-rated posts database query and added caching.
-
-= 4.2.1 =
-* Fixed top-rated posts widget not working correctly.
-* Improvement: add rating customization metaboxes to posts edit screen by default.
-* Improve top-rated post widget appearance.
-* Removed redundant datatable CSS.
-* Remove deprecated jQuery codes.
-
-= 4.2.0 =
-* Added [ratemypost-top-rated] top rated shortcode.
-* Added Average rating column to post edit listing page.
-* Added sorting to Stat page.
-* Improved top-rated widget query especially for site with large posts.
-* Improvements: Ensure rating metaboxes in post edit screen are shown only when necessary.
 
 See the [changelog file](https://plugins.svn.wordpress.org/rate-my-post/trunk/changelog.txt) for full change log information.

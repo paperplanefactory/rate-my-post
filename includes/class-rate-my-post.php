@@ -32,7 +32,6 @@ class Rate_My_Post
         $this->rate_my_post = 'rate-my-post';
 
         $this->load_dependencies();
-        $this->set_locale();
         $this->define_admin_hooks();
         $this->define_public_hooks();
 
@@ -44,9 +43,6 @@ class Rate_My_Post
     {
         // Manages hooks
         require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-rate-my-post-loader.php';
-
-        // Manages internationalization
-        require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-rate-my-post-i18n.php';
 
         // Manages admin side
         require_once plugin_dir_path(dirname(__FILE__)) . 'admin/class-rate-my-post-admin.php';
@@ -69,14 +65,6 @@ class Rate_My_Post
 
         //Fire the loader
         $this->loader = new Rate_My_Post_Loader();
-    }
-
-    // Register internationalization
-    private function set_locale()
-    {
-        $plugin_i18n = new Rate_My_Post_i18n();
-
-        $this->loader->add_action('plugins_loaded', $plugin_i18n, 'load_plugin_textdomain');
     }
 
     // Register admin hooks
