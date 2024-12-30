@@ -219,14 +219,6 @@
       "oAP" : "\/includes\/class-rate-my-post-deactivator-output.php",
       "oF" : 0
     },
-    "\/includes\/class-rate-my-post-i18n.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 1,
-      "oAP" : "\/includes\/class-rate-my-post-i18n-output.php",
-      "oF" : 0
-    },
     "\/includes\/class-rate-my-post-loader.php" : {
       "cB" : 0,
       "ft" : 8192,

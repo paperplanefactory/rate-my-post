@@ -391,7 +391,7 @@ class Rate_My_Post_Admin
             // variables
             $post_id     = absint($_POST['postID']);
             $feedback_id = sanitize_text_field($_POST['feedbackID']);
-            $nonce       = isset($_POST['nonce']) ? $_POST['nonce'] : false;
+            $nonce       = isset($_POST['nonce']) ?? false;
 
             // security checks
             if ( ! $this->has_required_capability($post_id)) {
@@ -512,7 +512,7 @@ class Rate_My_Post_Admin
             // variables
             $default_options = Rate_My_Post_Settings::default_options();
             $updated_options = array();
-            $nonce           = isset($_POST['nonce']) ? $_POST['nonce'] : false;
+            $nonce           = $_POST['nonce'] ?? false;
 
             if ( ! $this->is_administrator()) {
                 $data['valid']      = false;
@@ -561,7 +561,7 @@ class Rate_My_Post_Admin
                 'errorMsg'   => array()
             );
 
-            $nonce = isset($_POST['nonce']) ? $_POST['nonce'] : false;
+            $nonce = $_POST['nonce'] ?? false;
 
             if ( ! $this->is_administrator()) {
                 $data['valid']      = false;
@@ -797,7 +797,7 @@ class Rate_My_Post_Admin
                 'errorMsg'   => array()
             );
 
-            $nonce = isset($_POST['nonce']) ? $_POST['nonce'] : false;
+            $nonce = $_POST['nonce'] ?? false;
 
             if ( ! $this->is_administrator()) {
                 $data['valid']      = false;
@@ -848,7 +848,7 @@ class Rate_My_Post_Admin
                 'errorMsg'   => array()
             );
 
-            $nonce  = isset($_POST['nonce']) ? $_POST['nonce'] : false;
+            $nonce  = $_POST['nonce'] ?? false;
             $notice = sanitize_text_field($_POST['noticeKey']);
 
             if ( ! $this->is_administrator()) {
@@ -894,7 +894,7 @@ class Rate_My_Post_Admin
                 'errorMsg'   => array()
             );
 
-            $nonce = isset($_POST['nonce']) ? $_POST['nonce'] : false;
+            $nonce = isset($_POST['nonce']) ?? false;
 
             if ( ! $this->is_administrator()) {
                 $data['valid']      = false;
