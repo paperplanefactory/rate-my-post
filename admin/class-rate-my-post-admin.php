@@ -1019,6 +1019,11 @@ class Rate_My_Post_Admin
 
         wp_reset_postdata();
 
+        // ensure structured datatype is set.
+        $existing                       = get_option("rmp_options");
+        $existing['structuredDataType'] = 'CreativeWorkSeries';
+        update_option('rmp_options', $existing);
+
         return $count;
     }
 
