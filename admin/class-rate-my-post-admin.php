@@ -103,6 +103,43 @@ class Rate_My_Post_Admin
         return $content;
     }
 
+    private static function available_shortcodes_content()
+    {
+        $content = '<p style="border-bottom: 1px solid #eee">';
+        $content .= sprintf(
+            esc_html__('%s[ratemypost]%s displays rating widget.', 'rate-my-post'),
+            '<code>', '</code>'
+        );
+        $content .= '</p>';
+        $content .= sprintf(
+            esc_html__('%s[ratemypost id="1"]%s displays rating widget for the post with the ID of 1.', 'rate-my-post'),
+            '<code>', '</code>'
+        );
+        $content .= '</p>';
+
+        $content .= '<p style="border-bottom: 1px solid #eee">';
+        $content .= sprintf(
+            esc_html__('%s[ratemypost-result]%s displays results widget.', 'rate-my-post'),
+            '<code>', '</code>'
+        );
+        $content .= '</p>';
+        $content .= '<p style="border-bottom: 1px solid #eee">';
+        $content .= sprintf(
+            esc_html__('%s[ratemypost-result id="1"]%s displays results widget for the post with the ID of 1.', 'rate-my-post'),
+            '<code>', '</code>'
+        );
+        $content .= '</p>';
+
+        $content .= '<p>';
+        $content .= sprintf(
+            esc_html__('%s[ratemypost-top-rated]%s displays a list of top-rated posts. %sLearn more%s', 'rate-my-post'),
+            '<code>', '</code>', '<a href="https://feedbackwp.com/docs/#Top-rated_Posts_Widget" target="__blank">', '</a>'
+        );
+        $content .= '</p>';
+
+        return $content;
+    }
+
     private static function rmp_support_docs_sidebar_content($support_url, $review_url)
     {
         $link_icon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="linkIcon"><path d="M18.2 17c0 .7-.6 1.2-1.2 1.2H7c-.7 0-1.2-.6-1.2-1.2V7c0-.7.6-1.2 1.2-1.2h3.2V4.2H7C5.5 4.2 4.2 5.5 4.2 7v10c0 1.5 1.2 2.8 2.8 2.8h10c1.5 0 2.8-1.2 2.8-2.8v-3.6h-1.5V17zM14.9 3v1.5h3.7l-6.4 6.4 1.1 1.1 6.4-6.4v3.7h1.5V3h-6.3z"></path></svg>';
@@ -156,6 +193,17 @@ class Rate_My_Post_Admin
                 </div>
             </div>
         <?php } ?>
+
+        <div class="postbox">
+            <div class="postbox-header">
+                <h3 class="hndle is-non-sortable">
+                    <span><?php esc_html_e('Available Shortcodes', 'rate-my-post'); ?></span>
+                </h3>
+            </div>
+            <div class="inside">
+                <?php echo self::available_shortcodes_content() ?>
+            </div>
+        </div>
 
         <div class="postbox">
             <div class="postbox-header">
