@@ -3,14 +3,13 @@ import FreezeWidget from './FreezeWidget';
 
 class PrivilegeCheck {
   constructor() {
-    this.requiresLogin = rmp_frontend.votingPriv;
-    this.isLoggedIn = rmp_frontend.loggedIn;
+    this.is_not_votable = rmp_frontend.is_not_votable;
     this.ratingWidget = document.querySelectorAll('.js-rmp-rating-widget');
     this.events();
   }
 
   events() {
-    if(this.requiresLogin == 2 && !this.isLoggedIn ) {
+    if(this.is_not_votable === 'true') {
       let freezeWidget = new FreezeWidget('');
       this.ratingWidget.forEach((item) => {
         // loop required if multiple widgets on one page

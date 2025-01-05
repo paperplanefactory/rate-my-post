@@ -7,13 +7,41 @@
       "uuidString" : "9192B3F5-0739-418F-AA0B-76E561758898"
     }
   ],
-  "creatorBuild" : "34576",
+  "creatorBuild" : "34627",
   "files" : {
-    "\/_dev" : {
+    "\/_dev\/admin\/js\/modules" : {
       "ft" : 65536,
       "oA" : 1,
-      "oAP" : "\/_dev",
+      "oAP" : "\/_dev\/admin\/js\/modules",
       "oF" : 0
+    },
+    "\/_dev\/admin\/js\/rate-my-post-admin.js" : {
+      "bF" : 4,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/admin\/js\/rate-my-post-admin.min.js",
+      "oF" : 2,
+      "sC" : 0,
+      "tS" : 1
+    },
+    "\/_dev\/public\/js\/modules" : {
+      "ft" : 65536,
+      "oA" : 1,
+      "oAP" : "\/_dev\/public\/js\/modules",
+      "oF" : 0
+    },
+    "\/_dev\/public\/js\/rate-my-post.js" : {
+      "bF" : 4,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/public\/js\/rate-my-post.min.js",
+      "oF" : 2,
+      "sC" : 0,
+      "tS" : 1
     },
     "\/.gitignore" : {
       "cB" : 0,
@@ -155,6 +183,12 @@
       "oAP" : "\/admin\/templates",
       "oF" : 0
     },
+    "\/blocks" : {
+      "ft" : 65536,
+      "oA" : 1,
+      "oAP" : "\/blocks",
+      "oF" : 0
+    },
     "\/build\/.gitignore" : {
       "cB" : 0,
       "ft" : 8192,
@@ -163,20 +197,20 @@
       "oAP" : "\/build\/.gitignore",
       "oF" : 0
     },
-    "\/build\/rate-my-post.zip" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/rate-my-post.zip",
-      "oF" : 0
-    },
     "\/changelog.txt" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/changelog.txt",
+      "oF" : 0
+    },
+    "\/common\/class-rate-my-post-blocks.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/common\/class-rate-my-post-blocks-output.php",
       "oF" : 0
     },
     "\/common\/class-rate-my-post-common.php" : {
@@ -531,7 +565,7 @@
     "displayValueWasSetByUser" : 1,
     "iconImageName" : "brackets-koamaru",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 747869189.74301004
+    "lastBuiltDate" : 757764124.26555395
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,
@@ -1031,10 +1065,6 @@
         "active" : 0,
         "optionString" : "{'before': true, 'after': true, 'overrides': {}}"
       },
-      "line-comment-position" : {
-        "active" : 0,
-        "optionString" : "{'position': 'above'}"
-      },
       "linebreak-style" : {
         "active" : 0,
         "optionString" : "'unix'"
@@ -1086,10 +1116,6 @@
       "max-statements-per-line" : {
         "active" : 0,
         "optionString" : "{'max': 1}"
-      },
-      "multiline-comment-style" : {
-        "active" : 0,
-        "optionString" : "'starred-block'"
       },
       "multiline-ternary" : {
         "active" : 0,
@@ -1232,7 +1258,8 @@
         "active" : 0
       },
       "no-extra-boolean-cast" : {
-        "active" : 1
+        "active" : 1,
+        "optionString" : "{'enforceForInnerExpressions': false}"
       },
       "no-extra-label" : {
         "active" : 0
@@ -1317,7 +1344,8 @@
         "optionString" : "{'ignore': [], 'ignoreArrayIndexes': true, 'ignoreDefaultValues': false, 'ignoreClassFieldInitialValues': false, 'enforceConst': false, 'detectObjects': false}"
       },
       "no-misleading-character-class" : {
-        "active" : 1
+        "active" : 1,
+        "optionString" : "{'allowEscape': false}"
       },
       "no-mixed-operators" : {
         "active" : 0,
@@ -1685,7 +1713,8 @@
         "active" : 0
       },
       "require-unicode-regexp" : {
-        "active" : 0
+        "active" : 0,
+        "optionString" : "{'requireFlag': 'u'}"
       },
       "require-yield" : {
         "active" : 1
@@ -1976,11 +2005,9 @@
       "autoOutputPathReplace1" : "sass",
       "autoOutputPathReplace2" : "css",
       "autoOutputPathStyle" : 0,
-      "compilerType" : 0,
       "cssoStyle" : 0,
-      "decimalPrecision" : 10,
       "emitCharset" : 1,
-      "outputStyle" : 0,
+      "outputStyle" : 1,
       "purgeCSSStyle" : 0,
       "shouldRunAutoprefixer" : 0,
       "shouldRunBless" : 0,
@@ -2108,7 +2135,8 @@
     ],
     "rollupTreeshakingEnabled" : 1,
     "rollupTreeshakingModuleSideEffects" : 1,
-    "skippedFoldersString" : ".idea,_logs,node_modules,_cache,cache,logs,\/admin\/templates,\/storage\/framework\/sessions,log,\/admin\/analytics,\/_dev",
+    "sassWarningStyle" : 1,
+    "skippedFoldersString" : ".idea,log,node_modules,cache,\/_dev\/admin\/js\/modules,_logs,\/admin\/templates,\/storage\/framework\/sessions,\/admin\/analytics,logs,\/_dev\/public\/js\/modules,\/blocks,_cache",
     "sourceFolderName" : "source",
     "susyVersion" : 3,
     "tsAllowArbitraryExtensions" : 0,
@@ -2128,6 +2156,7 @@
     "tsImportHelpers" : 0,
     "tsIsolatedModules" : 0,
     "tsJSXFactory" : "React.createElement",
+    "tsJSXFragmentFactory" : "Fragment",
     "tsNoEmitHelpers" : 0,
     "tsNoFallthroughCasesInSwitch" : 0,
     "tsNoImplicitAny" : 0,
