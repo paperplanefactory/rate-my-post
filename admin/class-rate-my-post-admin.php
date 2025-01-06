@@ -226,7 +226,7 @@ class Rate_My_Post_Admin
     public function enqueue_styles()
     {
         wp_register_style(
-            $this->rate_my_post,
+            $this->rate_my_post . '-block',
             plugin_dir_url(__FILE__) . 'css/rate-my-post-admin.css',
             array(),
             $this->version,
@@ -234,7 +234,7 @@ class Rate_My_Post_Admin
         );
 
         // enqueue style
-        wp_enqueue_style($this->rate_my_post);
+        wp_enqueue_style($this->rate_my_post . '-block');
     }
 
     //---------------------------------------------------
