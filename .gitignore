@@ -6,3 +6,5 @@ third-party
 node_modules
 build/
 codekit
+blocks/node_modules
+!blocks/build

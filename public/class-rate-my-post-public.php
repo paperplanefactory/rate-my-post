@@ -46,8 +46,7 @@ class Rate_My_Post_Public
             $this->rate_my_post,
             plugin_dir_url(__FILE__) . 'css/rate-my-post.min.css',
             array(),
-            $this->version,
-            'all'
+            $this->version
         );
         // enqueue style
         wp_enqueue_style($this->rate_my_post);

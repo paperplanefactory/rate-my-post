@@ -9,13 +9,13 @@ class Rate_My_Post_Top_Rated_Widget_Shortcode
 
     public function render($atts)
     {
-        $atts = shortcode_atts(array(
+        $atts = shortcode_atts([
             'number'              => 10,
             'minimum_rating'      => 1,
             'minimum_votes'       => 1,
             'show_featured_image' => 'false',
             'show_star_rating'    => 'false'
-        ), $atts);
+        ], $atts);
 
         $topRatedPosts = Rate_My_Post_Public::top_rated_posts($atts['number'], $atts['minimum_rating'], $atts['minimum_votes']);
 

@@ -52,6 +52,7 @@ class Rate_My_Post
 
         // Common methods for public and admin side
         require_once plugin_dir_path(dirname(__FILE__)) . 'common/class-rate-my-post-common.php';
+        require_once plugin_dir_path(dirname(__FILE__)) . 'common/class-rate-my-post-blocks.php';
 
         // Plugin default settings
         require_once plugin_dir_path(dirname(__FILE__)) . 'common/class-rate-my-post-settings.php';
@@ -143,6 +144,8 @@ class Rate_My_Post
         Rate_My_Post_Top_Rated_Widget_Shortcode::init();
 
         $plugin_public = new Rate_My_Post_Public($this->get_rate_my_post(), $this->get_version());
+
+        Rate_My_Post_Blocks::get_instance();
 
         //CSS
         $this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_styles');
