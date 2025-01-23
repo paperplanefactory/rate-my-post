@@ -332,8 +332,8 @@ class Rate_My_Post_Public
             $custom_strings   = $this->custom_strings($post_id);
             $submitted_rating = absint($_POST['star_rating']);
             $duration         = absint($_POST['duration']);
-            $recaptcha_token  = isset($_POST['token']) ? $_POST['token'] : false;
-            $nonce            = isset($_POST['nonce']) ? $_POST['nonce'] : false;
+            $recaptcha_token  = $_POST['token'] ?? false;
+            $nonce            = $_POST['nonce'] ?? false;
 
             // security checks
             $security_passed = true;
@@ -580,7 +580,7 @@ class Rate_My_Post_Public
             $time             = date("d-m-Y H:i:s");
             $user             = $security_options['userTracking'] == 2 ? absint(get_current_user_id()) : false;
             $nonce            = isset($_POST['nonce']) ? $_POST['nonce'] : false;
-
+            
             // security checks
             $security_passed       = true;
             $recaptcha             = $this->is_recaptcha_valid($recaptcha_token);
@@ -632,7 +632,7 @@ class Rate_My_Post_Public
             update_post_meta($post_id, 'rmp_feedback_val_new', $existing_feedback);
 
             //send email
-            $this->send_email_feedback($post_id, $feedback, $options);
+            $this->send_email_feedback($post_id, $feedback, $options, $user);
             do_action('rmp_after_feedback', $post_id, $feedback);
             Rate_My_Post_Mutex::release($lockName);
             wp_send_json($data);
@@ -818,7 +818,7 @@ class Rate_My_Post_Public
     }
 
     // sends email when new feedback is submitted
-    private function send_email_feedback($post_id, $feedback, $options)
+    private function send_email_feedback($post_id, $feedback, $options, $user_id = false)
     {
         if ($options['feedback_email'] == 1) { // feedback emails disabled
             return;
@@ -828,9 +828,13 @@ class Rate_My_Post_Public
         $post_title = get_the_title($post_id);
         // messy translations
         $strLeftFeedback = esc_html__('Somebody left feedback on', 'rate-my-post');
-        $strFeedbackOn   = esc_html__('Feedback on', 'rate-my-post');
-        $subject         = '[RMP]' . $strLeftFeedback . ' ' . $post_title;
-        $message         = $strFeedbackOn . ' ' . $post_title . ': ' . $feedback;
+        if (is_int($user_id) && $user_id > 0) {
+            $username        = get_userdata($user_id)->user_login;
+            $strLeftFeedback = sprintf(__('%s left feedback on', 'rate-my-post'), $username);
+        }
+        $strFeedbackOn = esc_html__('Feedback on', 'rate-my-post');
+        $subject       = '[RMP]' . $strLeftFeedback . ' ' . $post_title;
+        $message       = $strFeedbackOn . ' ' . $post_title . ': ' . $feedback;
 
         // filter for email receiver
         if (has_filter('rmp_mail_address')) {
@@ -874,7 +878,7 @@ class Rate_My_Post_Public
         if ($security['ipTracking'] == 2) {
             $ip = sanitize_text_field($this->get_user_ip());
         }
-        $ip = $ip ? $ip : false;
+        $ip = $ip ?: false;
 
         // get country - to be finished
         $country = 0;
@@ -1223,7 +1227,7 @@ class Rate_My_Post_Public
             'error' => false,
         );
 
-        if ( self::is_not_votable()) {
+        if (self::is_not_votable()) {
             $data['error'] = esc_html__('You are not authorized to rate!', 'rate-my-post');
             $data['valid'] = false;
         }
