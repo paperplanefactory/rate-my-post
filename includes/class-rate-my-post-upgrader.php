@@ -199,6 +199,36 @@ class Rate_My_Post_Upgrader
                 dbDelta($sql);
             }
 
+            // MAKE user column bigint
+            if (version_compare(get_option('rmp_version'), '4.3.2') < 0) {
+
+                global $wpdb;
+
+                $charset_collate = $wpdb->get_charset_collate();
+                $table_name      = $wpdb->prefix . 'rmp_analytics';
+
+                $wpdb->query("ALTER TABLE $table_name DROP INDEX id");
+
+                $sql = "CREATE TABLE $table_name (
+					id mediumint(9) NOT NULL AUTO_INCREMENT,
+					time datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
+					ip tinytext NOT NULL,
+					country tinytext NOT NULL,
+					user bigint(20) unsigned NOT NULL,
+					post mediumint(9) NOT NULL,
+					action smallint(5) NOT NULL,
+					duration smallint(5) NOT NULL,
+					average decimal(2, 1) NOT NULL,
+					votes bigint(20) unsigned NOT NULL,
+					value smallint(5) NOT NULL,
+					token tinytext NOT NULL,
+					PRIMARY KEY (id)
+				) $charset_collate;";
+
+                require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+                dbDelta($sql);
+            }
+
             //UPDATE VERSION
             update_option('rmp_version', RATE_MY_POST_VERSION);
         } //end of upgrade required

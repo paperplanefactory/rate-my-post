@@ -1,5 +1,8 @@
 ﻿== Changelog ==
 
+= 4.3.2 =
+* Fixed bug with user tracking after rating not working.
+
 = 4.3.1 =
 * Added tracking of user on email notification after rating.
 * Added tracking of user on email notification after feedback.
