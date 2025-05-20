@@ -77,6 +77,19 @@ class Rate_My_Post_Analytics_List extends \WP_List_Table
         esc_html_e('No analytics found.', 'rate-my-post');
     }
 
+    protected function extra_tablenav($which)
+    {
+        ?>
+        <form method="post" action="">
+            <?php wp_nonce_field('rmp_export_analytics_nonce', 'rmp_export_analytics'); ?>
+            <input type="hidden" name="action" value="rmp_export_analytics_csv">
+            <button type="submit" class="button">
+                <?php esc_html_e('Export to CSV', 'rate-my-post'); ?>
+            </button>
+        </form>
+        <?php
+    }
+
     public function column_default($item, $column_name)
     {
         if ($column_name == 'average') {

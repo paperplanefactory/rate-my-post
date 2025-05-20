@@ -70,6 +70,11 @@ require plugin_dir_path(__FILE__) . 'includes/Shogun.php';
 // The core plugin class
 require plugin_dir_path(__FILE__) . 'includes/class-rate-my-post.php';
 
+if (file_exists(dirname(__FILE__) . '/vendor/autoload.php')) {
+    require_once dirname(__FILE__) . '/vendor/autoload.php';
+}
+
+
 // Execute the plugin
 function run_rate_my_post()
 {
