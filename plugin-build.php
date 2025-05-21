@@ -36,9 +36,7 @@ deleteDir('tests');
 deleteDir('codekit');
 @unlink('.gitignore');
 
-//exec('composer install --dev -o');
-
-deleteDir('vendor');
+exec('composer install -o');
 
 foreach (
     array(

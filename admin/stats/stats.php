@@ -2,9 +2,6 @@
 
 use League\Csv\Writer;
 
-/**
- * Add CSV export functionality to Rate_My_Post_Stats using League CSV
- */
 class Rate_My_Post_Stats
 {
     public static $stats_record;
