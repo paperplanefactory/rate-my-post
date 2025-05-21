@@ -1,5 +1,8 @@
 ﻿== Changelog ==
 
+= 4.4.0 =
+* Added button to export stats and analytics.
+
 = 4.3.2 =
 * Fixed bug with user tracking after rating not working.
 
