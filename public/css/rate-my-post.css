@@ -1,4 +1,6 @@
-.rmp-results-widget p:empty:before, .rmp-widgets-container p:empty:before, .widget_rate-my-post-top-rated-widget p:empty:before {
+.rmp-results-widget p:empty:before,
+.rmp-widgets-container p:empty:before,
+.widget_rate-my-post-top-rated-widget p:empty:before {
     display: none
 }
 
@@ -11,7 +13,8 @@
     font-display: block
 }
 
-[class*=" rmp-icon--"], [class^=rmp-icon--] {
+[class*=" rmp-icon--"],
+[class^=rmp-icon--] {
     font-family: ratemypost !important;
     speak: none;
     font-style: normal;
@@ -304,7 +307,18 @@
 }
 
 .rmp-rating-widget .rmp-icon--ratings {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
     font-size: 2.5rem
+}
+
+.rmp-rating-widget .rmp-icon--ratings:focus-visible {
+    color: #ffcc36;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+    background: 0 0;
+    transition: .1s color ease-in
 }
 
 .rmp-icon--full-highlight {
@@ -391,7 +405,8 @@
     margin-bottom: .4rem
 }
 
-.rmp-btn:focus, .rmp-btn:hover {
+.rmp-btn:focus,
+.rmp-btn:hover {
     background: initial;
     background-color: #ffd966;
     border: none;
@@ -407,7 +422,8 @@
     padding: .8rem
 }
 
-.rmp-btn--large:focus, .rmp-btn--large:hover {
+.rmp-btn--large:focus,
+.rmp-btn--large:hover {
     padding: .8rem
 }
 
@@ -446,7 +462,9 @@
         top: 4px;
         height: 32px
     }
-    100%, 50% {
+
+    100%,
+    50% {
         top: 12px;
         height: 16px
     }
@@ -457,7 +475,9 @@
         top: 4px;
         height: 32px
     }
-    100%, 50% {
+
+    100%,
+    50% {
         top: 12px;
         height: 16px
     }
@@ -467,7 +487,8 @@
     display: inline
 }
 
-.rmp-amp-results-widget .rmp-amp-results-widget__average-rating, .rmp-amp-results-widget .rmp-amp-results-widget__vote-count {
+.rmp-amp-results-widget .rmp-amp-results-widget__average-rating,
+.rmp-amp-results-widget .rmp-amp-results-widget__vote-count {
     display: inline-block;
     position: relative;
     bottom: 4px
@@ -509,7 +530,8 @@
     margin-bottom: 0
 }
 
-#rmp-amp-action, #rmp-amp-post-id {
+#rmp-amp-action,
+#rmp-amp-post-id {
     display: none
 }
 
@@ -538,25 +560,29 @@
     line-height: normal
 }
 
-.rmp-amp-rating-widget__fieldset > label {
+.rmp-amp-rating-widget__fieldset>label {
     display: inline-block;
     position: relative;
     width: 1.1em;
     width: calc(var(--star-size) / 3 * 1.1em)
 }
 
-.rmp-amp-rating-widget__fieldset:not(:hover) > input:checked ~ label, .rmp-amp-rating-widget__fieldset > :hover, .rmp-amp-rating-widget__fieldset > :hover ~ label {
+.rmp-amp-rating-widget__fieldset:not(:hover)>input:checked~label,
+.rmp-amp-rating-widget__fieldset> :hover,
+.rmp-amp-rating-widget__fieldset> :hover~label {
     color: transparent;
     cursor: inherit
 }
 
-.rmp-amp-rating-widget__fieldset:not(:hover) > input:checked ~ label:before, .rmp-amp-rating-widget__fieldset > :hover:before, .rmp-amp-rating-widget__fieldset > :hover ~ label:before {
+.rmp-amp-rating-widget__fieldset:not(:hover)>input:checked~label:before,
+.rmp-amp-rating-widget__fieldset> :hover:before,
+.rmp-amp-rating-widget__fieldset> :hover~label:before {
     content: "★";
     position: absolute;
     color: gold
 }
 
-.rmp-amp-rating-widget__fieldset > input {
+.rmp-amp-rating-widget__fieldset>input {
     position: relative;
     transform: scale(3);
     transform: scale(var(--star-size));
@@ -583,4 +609,17 @@ form.amp-form-submit-error [submit-error] {
 
 label#rmp-amp-post-nonce {
     display: none
+}
+
+.visually-hidden {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
 }
